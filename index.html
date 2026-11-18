@@ -146,8 +146,8 @@ tr:last-child td{border-bottom:0}
 
 <script>
 const EMBEDDED_SNAPSHOT = {
- "as_of": "2026-11-18 11:55",
- "_pushed_at": 1794974128,
+ "as_of": "2026-11-18 12:05",
+ "_pushed_at": 1794974730,
  "m15": {
   "pnl": -53062.54,
   "n": 102081,
@@ -211,7 +211,7 @@ const EMBEDDED_SNAPSHOT = {
   "per_trade": 1.53,
   "span": "11-09 ~ 11-18",
   "cycle": "11-18 14:00",
-  "hours_left": 2.1,
+  "hours_left": 1.9,
   "top": [
    {
     "sid": "cheap_fade.v1",
@@ -343,13 +343,13 @@ const EMBEDDED_SNAPSHOT = {
    "equity": 154.87,
    "status": "空仓停手",
    "source": "https://api.hyperliquid.xyz/info userFills",
-   "as_of": "2026-11-18 11:55:37"
+   "as_of": "2026-11-18 12:05:33"
   }
  ],
  "gate": {
   "sessions": "20/8",
   "sessions_ok": true,
-  "ev": "346/20",
+  "ev": "347/20",
   "ev_ok": true,
   "mature": "3/3",
   "mature_ok": true,
@@ -902,7 +902,7 @@ const EMBEDDED_SNAPSHOT = {
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T11:55:23.198943+08:00",
+  "as_of": "2026-11-18T12:02:57.534469+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 38,
@@ -914,7 +914,7 @@ const EMBEDDED_SNAPSHOT = {
   "rejects": 8,
   "fill_rate": 97.7,
   "avg_slip": 0.00041,
-  "cycles": 1030,
+  "cycles": 1032,
   "rows": [
    {
     "sid": "daily_timed.open_control",
@@ -1390,7 +1390,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band100": {
-  "as_of": "2026-11-18T11:55:16.679928+08:00",
+  "as_of": "2026-11-18T12:05:32.965433+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1878,7 +1878,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T11:55:16.657832+08:00",
+  "as_of": "2026-11-18T12:05:21.691306+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2371,21 +2371,21 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "forward100": {
-  "as_of": "2026-11-18T11:55:29.405584+08:00",
+  "as_of": "2026-11-18T12:05:25.276603+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-11-19T09:58:21.546588+08:00",
-  "hours_left": 22.0,
+  "hours_left": 21.9,
   "accounts": 4,
-  "traded": 3,
+  "traded": 4,
   "profitable": 0,
   "starved": 0,
   "alive": 4,
-  "median_pnl": -2.48,
-  "attempts": 13,
-  "rejects": 8,
-  "fill_rate": 38.5,
-  "avg_slip": -0.00833,
+  "median_pnl": -10.85,
+  "attempts": 20,
+  "rejects": 14,
+  "fill_rate": 30.0,
+  "avg_slip": -0.0015,
   "fill_model": {
    "latency_seconds": 0.35,
    "requote": "fresh l2Book per outcome",
@@ -2396,43 +2396,43 @@ const EMBEDDED_SNAPSHOT = {
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 336,
-  "fills": 5,
-  "settlements": 2,
+  "scans": 364,
+  "fills": 6,
+  "settlements": 6,
   "rows": [
    {
-    "sid": "short_fixed_time.px55_60",
+    "sid": "short_fixed_time.px50_55",
     "fam": "固定时窗",
-    "eq": 97.8,
-    "pnl": -2.2,
-    "ret": -2.2,
-    "n": 0,
-    "wr": null,
-    "yes": 0,
+    "eq": 89.2,
+    "pnl": -10.8,
+    "ret": -10.8,
+    "n": 1,
+    "wr": 0.0,
+    "yes": 1,
     "no": 0,
-    "open": 2,
+    "open": 0,
     "fees": 0.0,
-    "att": 6,
-    "rej": 4,
+    "att": 3,
+    "rej": 2,
     "fr": 33.3,
-    "slip": -0.02,
+    "slip": 0.019,
     "starved": false
    },
    {
     "sid": "short_fixed_time.px35_40",
     "fam": "固定时窗",
-    "eq": 97.52,
-    "pnl": -2.48,
-    "ret": -2.48,
-    "n": 0,
-    "wr": null,
-    "yes": 0,
+    "eq": 89.15,
+    "pnl": -10.85,
+    "ret": -10.85,
+    "n": 1,
+    "wr": 0.0,
+    "yes": 1,
     "no": 0,
-    "open": 1,
+    "open": 0,
     "fees": 0.0,
-    "att": 3,
-    "rej": 2,
-    "fr": 33.3,
+    "att": 5,
+    "rej": 4,
+    "fr": 20.0,
     "slip": 0.0,
     "starved": false
    },
@@ -2448,20 +2448,38 @@ const EMBEDDED_SNAPSHOT = {
     "no": 2,
     "open": 0,
     "fees": 0.0,
-    "att": 4,
-    "rej": 2,
-    "fr": 50.0,
+    "att": 6,
+    "rej": 4,
+    "fr": 33.3,
     "slip": -0.005,
+    "starved": false
+   },
+   {
+    "sid": "short_fixed_time.px55_60",
+    "fam": "固定时窗",
+    "eq": 78.42,
+    "pnl": -21.58,
+    "ret": -21.58,
+    "n": 2,
+    "wr": 0.0,
+    "yes": 2,
+    "no": 0,
+    "open": 0,
+    "fees": 0.0,
+    "att": 6,
+    "rej": 4,
+    "fr": 33.3,
+    "slip": -0.02,
     "starved": false
    }
   ],
   "events": {
-   "events": 2,
-   "settled": 2,
-   "per_event": 1.0,
+   "events": 5,
+   "settled": 6,
+   "per_event": 1.2,
    "win": 0,
    "wr": 0.0,
-   "pnl": -21.34,
+   "pnl": -64.57,
    "thick": false
   }
  },
@@ -2679,7 +2697,7 @@ const EMBEDDED_SNAPSHOT = {
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "11:54:58",
+  "ledger_mtime": "12:03:50",
   "last_repair": "2026-11-18 11:48:06"
  }
 };
