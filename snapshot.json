@@ -1,6 +1,6 @@
 {
- "as_of": "2026-11-18 14:35",
- "_pushed_at": 1794983734,
+ "as_of": "2026-11-18 14:46",
+ "_pushed_at": 1794984377,
  "m15": {
   "pnl": -51704.37,
   "n": 104213,
@@ -115,7 +115,7 @@
    "equity": 125.23,
    "status": "空仓停手",
    "source": "https://api.hyperliquid.xyz/info userFills",
-   "as_of": "2026-11-18 14:35:49"
+   "as_of": "2026-11-18 14:46:25"
   }
  ],
  "gate": {
@@ -674,7 +674,7 @@
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T14:34:41.998441+08:00",
+  "as_of": "2026-11-18T14:43:42.831238+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 39,
@@ -682,11 +682,11 @@
   "profitable": 13,
   "median_pnl": -24.31,
   "base_median": -20.65,
-  "attempts": 414,
+  "attempts": 415,
   "rejects": 14,
   "fill_rate": 96.6,
-  "avg_slip": 0.00049,
-  "cycles": 1072,
+  "avg_slip": 0.00048,
+  "cycles": 1074,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
@@ -1146,7 +1146,7 @@
    }
   ],
   "gap": {
-   "n": 414,
+   "n": 415,
    "median": 0.0,
    "p90": 0.0035,
    "pos_share": 4.3
@@ -1162,7 +1162,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-18T14:35:20.559559+08:00",
+  "as_of": "2026-11-18T14:46:38.187765+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1650,7 +1650,7 @@
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T14:35:48.410434+08:00",
+  "as_of": "2026-11-18T14:47:02.385278+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2143,21 +2143,21 @@
   }
  },
  "forward100": {
-  "as_of": "2026-11-18T14:35:39.415199+08:00",
+  "as_of": "2026-11-18T14:47:07.215287+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-11-19T09:58:21.546588+08:00",
-  "hours_left": 19.4,
+  "hours_left": 19.2,
   "accounts": 4,
   "traded": 4,
   "profitable": 1,
   "starved": 0,
   "alive": 4,
   "median_pnl": -10.85,
-  "attempts": 59,
-  "rejects": 43,
-  "fill_rate": 27.1,
-  "avg_slip": 0.00338,
+  "attempts": 66,
+  "rejects": 48,
+  "fill_rate": 27.3,
+  "avg_slip": 0.00418,
   "fill_model": {
    "latency_seconds": 0.35,
    "requote": "fresh l2Book per outcome",
@@ -2168,9 +2168,9 @@
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 779,
-  "fills": 16,
-  "settlements": 16,
+  "scans": 811,
+  "fills": 18,
+  "settlements": 18,
   "rows": [
    {
     "sid": "short_favored_follow.v36",
@@ -2184,9 +2184,9 @@
     "no": 5,
     "open": 0,
     "fees": 0.09,
-    "att": 24,
-    "rej": 18,
-    "fr": 25.0,
+    "att": 26,
+    "rej": 20,
+    "fr": 23.1,
     "slip": 0.00319,
     "starved": false
    },
@@ -2211,47 +2211,47 @@
    {
     "sid": "short_fixed_time.px50_55",
     "fam": "固定时窗",
-    "eq": 88.88,
-    "pnl": -11.12,
-    "ret": -11.12,
-    "n": 3,
-    "wr": 33.3,
-    "yes": 2,
+    "eq": 78.08,
+    "pnl": -21.92,
+    "ret": -21.92,
+    "n": 4,
+    "wr": 25.0,
+    "yes": 3,
     "no": 1,
     "open": 0,
     "fees": 0.01,
-    "att": 5,
+    "att": 6,
     "rej": 2,
-    "fr": 60.0,
-    "slip": 0.01633,
+    "fr": 66.7,
+    "slip": 0.01725,
     "starved": false
    },
    {
     "sid": "short_fixed_time.px55_60",
     "fam": "固定时窗",
-    "eq": 71.85,
-    "pnl": -28.15,
-    "ret": -28.15,
-    "n": 6,
-    "wr": 33.3,
-    "yes": 4,
+    "eq": 61.23,
+    "pnl": -38.77,
+    "ret": -38.77,
+    "n": 7,
+    "wr": 28.6,
+    "yes": 5,
     "no": 2,
     "open": 0,
     "fees": 0.03,
-    "att": 19,
-    "rej": 13,
-    "fr": 31.6,
-    "slip": -0.00602,
+    "att": 23,
+    "rej": 16,
+    "fr": 30.4,
+    "slip": -0.00374,
     "starved": false
    }
   ],
   "events": {
-   "events": 14,
-   "settled": 16,
-   "per_event": 1.1,
+   "events": 15,
+   "settled": 18,
+   "per_event": 1.2,
    "win": 5,
-   "wr": 35.7,
-   "pnl": -48.24,
+   "wr": 33.3,
+   "pnl": -69.66,
    "thick": false
   }
  },
