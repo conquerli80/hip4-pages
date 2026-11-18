@@ -156,8 +156,8 @@ details.lg .wide{padding:6px 10px 10px}
 
 <script>
 const EMBEDDED_SNAPSHOT = {
- "as_of": "2026-11-18 23:00",
- "_pushed_at": 1795014026,
+ "as_of": "2026-11-18 23:05",
+ "_pushed_at": 1795014338,
  "m15": {
   "pnl": -54532.39,
   "n": 110447,
@@ -221,7 +221,7 @@ const EMBEDDED_SNAPSHOT = {
   "per_trade": 0.91,
   "span": "11-09 ~ 11-18",
   "cycle": "11-19 14:00",
-  "hours_left": 15.0,
+  "hours_left": 14.9,
   "top": [
    {
     "sid": "cross_follow.v1",
@@ -344,22 +344,22 @@ const EMBEDDED_SNAPSHOT = {
  },
  "real": [
   {
-   "name": "链上实盘(官方口径)",
-   "settles": 60,
-   "wins": 33,
-   "winrate": 55.0,
-   "pnl": -9.12,
+   "name": "链上实盘(官方口径·缓存)",
+   "settles": 52,
+   "wins": 30,
+   "winrate": 57.7,
+   "pnl": 3.61,
    "open": 0,
-   "equity": 142.1,
+   "equity": 154.87,
    "status": "空仓停手",
-   "source": "https://api.hyperliquid.xyz/info userFills",
-   "as_of": "2026-11-18 23:00:29"
+   "source": "api.hyperliquid.xyz/info userFills (official)",
+   "as_of": "2026-11-18 11:13:56"
   }
  ],
  "gate": {
   "sessions": "22/8",
   "sessions_ok": true,
-  "ev": "387/20",
+  "ev": "388/20",
   "ev_ok": true,
   "mature": "0/3",
   "mature_ok": false,
@@ -912,7 +912,7 @@ const EMBEDDED_SNAPSHOT = {
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T23:00:00.265518+08:00",
+  "as_of": "2026-11-18T23:05:30.419326+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 39,
@@ -924,7 +924,7 @@ const EMBEDDED_SNAPSHOT = {
   "rejects": 14,
   "fill_rate": 96.9,
   "avg_slip": 0.00049,
-  "cycles": 1183,
+  "cycles": 1184,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
@@ -1400,7 +1400,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band100": {
-  "as_of": "2026-11-18T23:00:22.384960+08:00",
+  "as_of": "2026-11-18T23:05:18.477242+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1888,7 +1888,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T23:00:09.664629+08:00",
+  "as_of": "2026-11-18T23:06:01.206199+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2381,21 +2381,21 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "forward100": {
-  "as_of": "2026-11-18T23:00:02.077235+08:00",
+  "as_of": "2026-11-18T23:05:23.090137+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-11-19T09:58:21.546588+08:00",
-  "hours_left": 11.0,
+  "hours_left": 10.9,
   "accounts": 4,
   "traded": 4,
   "profitable": 1,
   "starved": 0,
   "alive": 4,
   "median_pnl": -4.84,
-  "attempts": 50,
-  "rejects": 36,
-  "fill_rate": 28.0,
-  "avg_slip": -0.00509,
+  "attempts": 52,
+  "rejects": 37,
+  "fill_rate": 28.8,
+  "avg_slip": -0.00416,
   "fill_model": {
    "latency_seconds": 0.35,
    "requote": "fresh l2Book per outcome",
@@ -2406,9 +2406,9 @@ const EMBEDDED_SNAPSHOT = {
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 537,
-  "fills": 14,
-  "settlements": 12,
+  "scans": 553,
+  "fills": 15,
+  "settlements": 14,
   "rows": [
    {
     "sid": "short_fixed_time.px35_40",
@@ -2467,29 +2467,29 @@ const EMBEDDED_SNAPSHOT = {
    {
     "sid": "short_favored_follow.v36",
     "fam": "顺势跟随",
-    "eq": 58.85,
-    "pnl": -41.15,
-    "ret": -41.15,
-    "n": 6,
-    "wr": 16.7,
-    "yes": 5,
-    "no": 1,
-    "open": 2,
-    "fees": 0.03,
-    "att": 34,
-    "rej": 26,
-    "fr": 23.5,
-    "slip": 0.00156,
+    "eq": 56.01,
+    "pnl": -43.99,
+    "ret": -43.99,
+    "n": 8,
+    "wr": 25.0,
+    "yes": 6,
+    "no": 2,
+    "open": 1,
+    "fees": 0.06,
+    "att": 36,
+    "rej": 27,
+    "fr": 25.0,
+    "slip": 0.00527,
     "starved": false
    }
   ],
   "events": {
-   "events": 38,
-   "settled": 42,
+   "events": 40,
+   "settled": 44,
    "per_event": 1.1,
-   "win": 14,
-   "wr": 36.8,
-   "pnl": -136.97,
+   "win": 15,
+   "wr": 37.5,
+   "pnl": -135.39,
    "thick": false
   }
  },
@@ -2771,37 +2771,37 @@ const EMBEDDED_SNAPSHOT = {
   "note": "事后从已跑完的池子里筛出的头部，存在幸存者偏差；仅作候选，不等于已验证。真正前瞻验证看 FORWARD-100。"
  },
  "ledger": {
-  "rebuilt_at": "2026-11-18 23:00:09",
+  "rebuilt_at": "2026-11-18 23:05:15",
   "equity": 142.09967,
-  "total_pnl": 1.3035,
-  "n_settled": 59,
+  "total_pnl": -9.1153,
+  "n_settled": 60,
   "n_win": 33,
-  "n_loss": 26,
-  "winrate": 55.9,
+  "n_loss": 27,
+  "winrate": 55.0,
   "groups": [
    {
     "sid": "short_favored_follow.px60_65",
-    "n": 2,
-    "pnl": 13.6161,
+    "n": 3,
+    "pnl": 3.1973,
     "trades": [
      {
       "coin": "#396501",
       "oid": 39650,
       "side": "NO",
-      "perp": "BTC",
-      "expiry": "20261118-1500",
+      "perp": "",
+      "expiry": "",
       "sid": "short_favored_follow.px60_65",
       "open_ms": 1795013514323,
-      "settle_ms": null,
+      "settle_ms": 1795014017760,
       "fill_px": 0.61287,
       "qty": 17.0,
       "cost": 10.4188,
       "buy_fee": 0.0,
-      "settle_px": null,
-      "pnl": null,
-      "settle_fee": null,
-      "status": "open",
-      "result": "open"
+      "settle_px": 0.0,
+      "pnl": -10.4188,
+      "settle_fee": 0.0,
+      "status": "settled",
+      "result": "loss"
      },
      {
       "coin": "#396320",
@@ -3972,8 +3972,8 @@ const EMBEDDED_SNAPSHOT = {
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "22:58:08",
-  "last_repair": "2026-11-18 22:45:14"
+  "ledger_mtime": "23:05:09",
+  "last_repair": "2026-11-18 23:02:43"
  }
 };
 
