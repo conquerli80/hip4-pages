@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>优秀策略池 · 实时盘口</title>
+<style>
+:root{
+ --bg:#f7f6f2; --card:#fff; --ink:#242016; --body:#3B352C; --muted:#8A7F6A;
+ --line:#DFD4BC; --gold:#9A7A2E; --green:#1e8449; --red:#b02318; --blue:#1f5f99;
+ --th:#F5F1E7; --rule:#f1ede3; --bidbg:#eaf5ee; --askbg:#fbeeec;
+ --sans:'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',-apple-system,sans-serif;
+ --mono:Consolas,'SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+ -webkit-font-smoothing:antialiased;font-size:14px;line-height:1.6}
+.wrap{max-width:1240px;margin:0 auto;padding:24px 22px 48px}
+.head{border-bottom:2px solid var(--ink);padding-bottom:14px;display:flex;
+ align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.kicker{font-size:10.5px;letter-spacing:3px;color:var(--gold);font-weight:700}
+h1{font-size:23px;margin:7px 0 0;font-weight:700;letter-spacing:.5px;line-height:1.25}
+.headmeta{text-align:right;font-size:11.5px;color:var(--muted);line-height:1.85;white-space:nowrap}
+.live{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-weight:700}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);
+ box-shadow:0 0 0 3px rgba(30,132,73,.14);animation:pulse 2s infinite}
+.dot.stale{background:var(--red);box-shadow:0 0 0 3px rgba(176,35,24,.14)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.mono{font-family:var(--mono)}
+.notice{background:#fffdf6;border:1px solid var(--line);border-left:3px solid var(--gold);
+ padding:12px 16px;margin:16px 0;font-size:12px;color:var(--body);line-height:1.75}
+.notice b{color:var(--ink)}
+section{background:var(--card);border:1px solid var(--line);border-radius:2px;
+ padding:17px 19px;margin-bottom:14px}
+h2{font-size:15px;margin:0 0 13px;font-weight:700;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+h2 em{font-size:11px;color:var(--muted);font-style:normal;font-weight:400}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);white-space:nowrap}
+th{background:var(--th);color:var(--muted);font-weight:700;font-size:11px;letter-spacing:.4px;position:sticky;top:0}
+td.num,th.num{text-align:right;font-family:var(--mono)}
+.pos{color:var(--green)} .neg{color:var(--red)} .gold{color:var(--gold)}
+.badge{display:inline-block;font-size:10px;padding:1px 7px;border-radius:9px;
+ background:#eef2f7;color:var(--blue);font-weight:700;margin-left:6px}
+.badge.rep{background:#f6efe0;color:var(--gold)}
+.strat{background:var(--card);border:1px solid var(--line);border-radius:2px;margin-bottom:14px;padding:0;overflow:hidden}
+.strat .sh{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+ padding:13px 18px;background:#fbf9f3;border-bottom:1px solid var(--line)}
+.strat .sn{font-family:var(--mono);font-weight:700;font-size:14px}
+.strat .sp{font-size:11.5px;color:var(--muted);margin-top:3px}
+.strat .sk{font-size:11px;color:var(--body);display:flex;gap:14px;flex-wrap:wrap}
+.strat .sk b{color:var(--ink);font-family:var(--mono)}
+.sbody{padding:14px 18px}
+.mkt{border:1px solid var(--line);border-radius:3px;margin-bottom:11px;overflow:hidden}
+.mkt:last-child{margin-bottom:0}
+.mh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+ padding:7px 12px;background:#faf8f2;border-bottom:1px solid var(--rule);font-size:12px}
+.mh .mt{font-weight:700}
+.mh .mm{color:var(--muted);font-size:11px;font-family:var(--mono)}
+.books{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.side{padding:9px 12px}
+.side.yes{background:#fbfdfb;border-right:1px solid var(--rule)}
+.side.no{background:#fdfbfb}
+.sl{font-size:10.5px;font-weight:700;letter-spacing:.5px;color:var(--muted);margin-bottom:5px}
+.sl .hit{color:var(--green)}
+.bk{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11.5px;padding:1.5px 4px;border-radius:2px}
+.bk.bid{background:var(--bidbg)}
+.bk.ask{background:var(--askbg)}
+.bk .p{color:var(--ink)} .bk .q{color:var(--muted)}
+.bk.topbid .p{color:var(--green);font-weight:700}
+.bk.topask .p{color:var(--red);font-weight:700}
+.bk.inband{outline:1px solid var(--gold);font-weight:700}
+.empty{color:var(--muted);font-size:12px;padding:10px 0}
+.foot{font-size:11px;color:var(--muted);line-height:1.8;margin-top:8px}
+@media(max-width:720px){.books{grid-template-columns:1fr}.side.yes{border-right:0;border-bottom:1px solid var(--rule)}.headmeta{text-align:left}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="head">
+  <div>
+   <div class="kicker">HIP-4 · ELITE LIVE ORDER BOOK</div>
+   <h1>优秀策略池 · 实时盘口</h1>
+  </div>
+  <div class="headmeta">
+   <div><span class="live"><span class="dot" id="dot"></span></span> <span id="clock" class="mono">—</span></div>
+   <div>盘口：浏览器直连 Hyperliquid · <span id="feedstat">连接中…</span></div>
+   <div>更新 <span id="lastbook" class="mono">—</span> · 活跃市场 <span id="mcount" class="mono">—</span></div>
+  </div>
+ </div>
+
+ <div class="notice">
+  <b>这是什么</b>　上表是从三套已跑完的同构盘里，用统一口径（盈利为正 + 去掉最赚3笔仍为正 + 样本达标）筛出的头部策略。
+  下半部分是每个策略<b>当前参数所允许的活跃市场</b>与<b>真实买卖盘</b>，由你的浏览器直连交易所、每 15 秒自动刷新。<br>
+  <b>边界</b>　排行榜是事后挑出的头部，有幸存者偏差，只是"值得前瞻验证的候选"，不是已验证能用；盘口是实时监控视图，<b>不是下单信号</b>。真钱盘当前 STOP、空仓停手。
+ </div>
+
+ <section>
+  <h2>优秀策略排行榜 <em>三闸全过 · 按去前3后净利排序</em></h2>
+  <div class="tw"><table id="ranktab">
+   <thead><tr>
+    <th>策略</th><th>家族 / 来源盘</th><th class="num">样本</th><th class="num">净盈亏</th>
+    <th class="num">去前3</th><th class="num">胜率</th><th class="num">跨盘</th>
+   </tr></thead><tbody id="rankbody"></tbody>
+  </table></div>
+ </section>
+
+ <div id="strats"></div>
+
+ <div class="foot" id="foot"></div>
+</div>
+
+<script>
+/* ===== 内嵌数据（快照生成时写入，排行榜很少变） ===== */
+const DATA = {"rule":"盈利>0 且 去掉最赚3笔后仍>0 且 样本达标(15m>=40,低价盘>=10)","note":"事后从已跑完的池子里筛出的头部，存在幸存者偏差；仅作候选，不等于已验证。真正前瞻验证看 FORWARD-100。","as_of":"2026-11-18 12:57","strats":[{"sid":"short_favored_follow.px60_65","fam":"short_favored_follow","board":"parity100","n":294,"pnl":180.9,"drop3":144.34,"wr":66.7,"repeat":2,"perps":["BTC","ETH","HYPE"],"slots":["15m","hourly","other_short"],"mmin":0.5,"mmax":90.0,"min_entry":0.6,"max_entry":0.65},{"sid":"short_favored_follow.v8","fam":"short_favored_follow","board":"parity100","n":175,"pnl":189.32,"drop3":125.96,"wr":54.3,"repeat":2,"perps":["BTC","ETH","HYPE"],"slots":["15m","hourly","other_short"],"mmin":5.0,"mmax":12.0,"min_entry":null,"max_entry":0.55},{"sid":"short_momentum.px60_65","fam":"short_momentum","board":"parity100","n":106,"pnl":105.47,"drop3":74.93,"wr":69.8,"repeat":1,"perps":["BTC","ETH","HYPE"],"slots":["15m","hourly","other_short"],"mmin":0.5,"mmax":90.0,"min_entry":0.6,"max_entry":0.65},{"sid":"short_favored_follow.v31","fam":"short_favored_follow","board":"parity100","n":84,"pnl":136.27,"drop3":73.88,"wr":56.0,"repeat":2,"perps":["BTC"],"slots":["15m","hourly","other_short"],"mmin":5.0,"mmax":12.0,"min_entry":null,"max_entry":0.55},{"sid":"short_favored_follow.px45_50","fam":"short_favored_follow","board":"parity100","n":165,"pnl":108.67,"drop3":41.46,"wr":50.9,"repeat":2,"perps":["BTC","ETH","HYPE"],"slots":["15m","hourly","other_short"],"mmin":0.5,"mmax":90.0,"min_entry":0.45,"max_entry":0.5},{"sid":"short_favored_follow.v27","fam":"short_favored_follow","board":"parity100","n":195,"pnl":73.4,"drop3":15.11,"wr":49.2,"repeat":2,"perps":["BTC","ETH","HYPE"],"slots":["15m","hourly","other_short"],"mmin":3.0,"mmax":14.0,"min_entry":0.4,"max_entry":0.5}]};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s==null?'—':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const num = (v,d=2)=> (v==null?'—':Number(v).toFixed(d));
+const sgn = (v,d=2)=> (v==null?'—':(v>=0?'+':'')+Number(v).toFixed(d));
+const clz = v => v==null?'':(v>=0?'pos':'neg');
+const px5 = v => Number(v).toFixed(5);
+
+/* ===== 市场解析（复刻 short_paper.parse_outcome / 候选筛选） ===== */
+const PERPS=['BTC','ETH','HYPE'], ISSUERS=['out','fox'];
+function parseKV(desc){
+  const o={}; String(desc||'').split('|').forEach(p=>{const i=p.indexOf(':'); if(i>0)o[p.slice(0,i).trim()]=p.slice(i+1).trim();}); return o;
+}
+function parseExpiry(raw){
+  if(!/^\d{8}-\d{4}$/.test(String(raw||''))) return null;
+  const s=String(raw);
+  return new Date(Date.UTC(+s.slice(0,4), +s.slice(4,6)-1, +s.slice(6,8), +s.slice(9,11), +s.slice(11,13)));
+}
+function classifySlot(exp){
+  const m=exp.getUTCMinutes();
+  if(m===0) return 'hourly';
+  if(m%15===0) return '15m';
+  if(m%5===0) return '5m';
+  return 'other_short';
+}
+function parseOutcome(raw){
+  const kv=parseKV(raw.description);
+  const exp=parseExpiry(kv.time);
+  return {
+    oid:raw.outcome, name:raw.name, venue:raw.venue, perp:kv.perp,
+    seconds:(kv.seconds!=null?+kv.seconds:null),
+    threshold:(kv.threshold!=null?+kv.threshold:null),
+    expiry:exp, slot:exp?classifySlot(exp):null
+  };
+}
+function isCandidate(m, now){
+  return m.name==='template:binaryPrice' && ISSUERS.includes(m.venue) &&
+         PERPS.includes(m.perp) && m.expiry && m.expiry.getTime()>now.getTime();
+}
+function minsLeft(m, now){ return (m.expiry.getTime()-now.getTime())/60000; }
+function coinFor(oid, yes){ return '#'+(10*oid+(yes?0:1)); }
+
+/* ===== 直连交易所 API ===== */
+async function post(payload){
+  const r=await fetch('https://api.hyperliquid.xyz/info',{
+    method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)});
+  if(!r.ok) throw new Error('HTTP '+r.status);
+  return r.json();
+}
+async function fetchBook(oid, yes){
+  const raw=await post({type:'l2Book', coin:coinFor(oid,yes)});
+  const lv=raw.levels||[[],[]];
+  const bids=(lv[0]||[]).slice(0,5), asks=(lv[1]||[]).slice(0,5);
+  return {bids, asks, ok:bids.length>0&&asks.length>0};
+}
+
+/* ===== 状态 ===== */
+let ALL=[], BOOKS={};  // BOOKS[oid] = {Y:{bids,asks,ok}, N:{...}}
+let timer=null;
+
+function statFor(strat, now){
+  const perps=strat.perps, slots=strat.slots, mmin=strat.mmin, mmax=strat.mmax;
+  return ALL.filter(m=>perps.includes(m.perp)&&slots.includes(m.slot))
+            .map(m=>({m, mins:minsLeft(m,now)}))
+            .filter(x=>x.mins>=mmin && x.mins<=mmax)
+            .sort((a,b)=>a.mins-b.mins);
+}
+
+function renderRank(){
+  const rows=DATA.strats.map(s=>`<tr>
+    <td class="mono"><b>${esc(s.sid)}</b></td>
+    <td>${esc(s.fam)} <span style="color:var(--muted)">· ${esc(s.board||'15m')}</span></td>
+    <td class="num">${s.n}</td>
+    <td class="num ${clz(s.pnl)}">${sgn(s.pnl)}</td>
+    <td class="num ${clz(s.drop3)}">${sgn(s.drop3)}</td>
+    <td class="num">${num(s.wr,1)}%</td>
+    <td class="num">${s.repeat>1?`<span class="badge rep">×${s.repeat}</span>`:'—'}</td>
+  </tr>`).join('');
+  $('#rankbody').innerHTML=rows;
+}
+
+function bandStr(s){
+  const lo=(s.min_entry!=null?num(s.min_entry,2):'0');
+  return lo+'–'+num(s.max_entry,2);
+}
+function sideHTML(bk, lo, hi){
+  if(!bk||!bk.ok) return '<div class="empty">盘口暂无双边报价</div>';
+  const inBand = px=>{const v=+px; return v>=lo&&v<=hi;};
+  const bidRows=bk.bids.map((l,i)=>`<div class="bk bid ${i===0?'topbid':''} ${inBand(l.px)?'inband':''}">
+      <span class="p">${px5(l.px)}</span><span class="q">${num(l.sz,0)}</span></div>`).join('');
+  const askRows=bk.asks.map((l,i)=>`<div class="bk ask ${i===0?'topask':''} ${inBand(l.px)?'inband':''}">
+      <span class="p">${px5(l.px)}</span><span class="q">${num(l.sz,0)}</span></div>`).join('');
+  return `<div class="sl">买盘 BID <span style="color:var(--muted)">价 / 量</span></div>${bidRows}
+          <div class="sl" style="margin-top:6px">卖盘 ASK ${(()=>{const a=+bk.asks[0].px;return inBand(a)?'<span class="hit">· 落在入场段 ✓</span>':'';})()}</div>${askRows}`;
+}
+function renderStrats(now){
+  const lo_hi=s=>[ (s.min_entry!=null?s.min_entry:0), s.max_entry ];
+  const html=DATA.strats.map(s=>{
+    const hit=statFor(s, now);
+    const [lo,hi]=lo_hi(s);
+    let bodies;
+    if(!hit.length){
+      bodies='<div class="empty">当前无符合该策略参数（标的/时段/到期窗口）的活跃市场。</div>';
+    } else {
+      bodies=hit.map(x=>{
+        const m=x.m, bk=BOOKS[m.oid];
+        const yBest=(bk&&bk.Y&&bk.Y.ok)?+bk.Y.asks[0].px:null;
+        const nBest=(bk&&bk.N&&bk.N.ok)?+bk.N.asks[0].px:null;
+        const buyY=yBest!=null&&yBest>=lo&&yBest<=hi;
+        const buyN=nBest!=null&&nBest>=lo&&nBest<=hi;
+        const hitSide=buyY?'买 YES':(buyN?'买 NO':'—');
+        return `<div class="mkt">
+          <div class="mh">
+            <span class="mt">${esc(m.perp)} · ${esc(m.slot)} <span class="badge">oid ${m.oid}</span></span>
+            <span class="mm">剩余 ${num(x.mins,1)} 分 · 行权线 ${num(m.threshold,3)} · 入场段 ${bandStr(s)} · 可买侧 <b style="color:var(--gold)">${hitSide}</b></span>
+          </div>
+          <div class="books">
+            <div class="side yes"><div class="sl">YES <span style="font-weight:400;color:var(--muted)">#${10*m.oid}</span></div>${sideHTML(bk&&bk.Y,lo,hi)}</div>
+            <div class="side no"><div class="sl">NO <span style="font-weight:400;color:var(--muted)">#${10*m.oid+1}</span></div>${sideHTML(bk&&bk.N,lo,hi)}</div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+    return `<div class="strat">
+      <div class="sh">
+        <div><div class="sn">${esc(s.sid)}</div>
+          <div class="sp">${esc(s.fam)} · 来源 ${esc(s.board||'parity100')} · 样本 ${s.n} 笔 · 净 ${sgn(s.pnl)} · 去前3 ${sgn(s.drop3)}</div></div>
+        <div class="sk">
+          <span>标的 <b>${esc((s.perps||[]).join('/'))}</b></span>
+          <span>时段 <b>${esc((s.slots||[]).join('/'))}</b></span>
+          <span>到期 <b>${num(s.mmin,1)}–${num(s.mmax,1)}分</b></span>
+          <span>入场价 <b>${bandStr(s)}</b></span>
+          <span>命中 <b>${hit.length}</b></span>
+        </div>
+      </div>
+      <div class="sbody">${bodies}</div>
+    </div>`;
+  }).join('');
+  $('#strats').innerHTML=html;
+}
+
+async function refresh(){
+  const dot=$('#dot');
+  try{
+    const now=new Date();
+    const meta=await post({type:'outcomeMeta'});
+    ALL=(meta.outcomes||[]).map(parseOutcome).filter(m=>isCandidate(m,now));
+    $('#mcount').textContent=ALL.length;
+    // 收集所有策略需要显示的市场 oid（每策略最多前3个，就近到期），去重
+    const need=new Set();
+    DATA.strats.forEach(s=>statFor(s,now).slice(0,3).forEach(x=>need.add(x.m.oid)));
+    const ids=[...need];
+    await Promise.allSettled(ids.flatMap(oid=>[
+      fetchBook(oid,true).then(bk=>{BOOKS[oid]=BOOKS[oid]||{};BOOKS[oid].Y=bk;}),
+      fetchBook(oid,false).then(bk=>{BOOKS[oid]=BOOKS[oid]||{};BOOKS[oid].N=bk;})
+    ]));
+    renderStrats(new Date());
+    $('#feedstat').textContent='已连接';
+    $('#lastbook').textContent=new Date().toLocaleTimeString('zh-CN',{hour12:false});
+    dot.classList.remove('stale');
+  }catch(e){
+    $('#feedstat').textContent='连接失败：'+esc(e.message);
+    dot.classList.add('stale');
+  }
+}
+
+function tickClock(){
+  $('#clock').textContent=new Date().toLocaleString('zh-CN',{hour12:false});
+}
+
+/* ===== 启动 ===== */
+$('#foot').innerHTML=DATA.rule?('筛选口径：'+esc(DATA.rule)):'';
+renderRank();
+tickClock();
+refresh();
+timer=setInterval(()=>{tickClock();refresh();}, 15000);
+</script>
+</body>
+</html>
