@@ -145,8 +145,8 @@ tr:last-child td{border-bottom:0}
 
 <script>
 const EMBEDDED_SNAPSHOT = {
- "as_of": "2026-11-18 11:05",
- "_pushed_at": 1794971154,
+ "as_of": "2026-11-18 11:14",
+ "_pushed_at": 1794971695,
  "m15": {
   "pnl": -54050.12,
   "n": 101184,
@@ -210,7 +210,7 @@ const EMBEDDED_SNAPSHOT = {
   "per_trade": 1.53,
   "span": "11-09 ~ 11-18",
   "cycle": "11-18 14:00",
-  "hours_left": 2.9,
+  "hours_left": 2.8,
   "top": [
    {
     "sid": "cheap_fade.v1",
@@ -333,22 +333,16 @@ const EMBEDDED_SNAPSHOT = {
  },
  "real": [
   {
-   "name": "日盘实盘",
-   "settles": 4,
-   "wins": 3,
-   "winrate": 75.0,
-   "pnl": 47.12,
+   "name": "链上实盘(官方口径)",
+   "settles": 52,
+   "wins": 30,
+   "winrate": 57.7,
+   "pnl": 3.61,
    "open": 0,
-   "status": "停止新开仓"
-  },
-  {
-   "name": "历史短周期实盘",
-   "settles": 26,
-   "wins": 16,
-   "winrate": 61.5,
-   "pnl": -45.28,
-   "open": 0,
-   "status": "运行中"
+   "equity": 154.87,
+   "status": "空仓停手",
+   "source": "api.hyperliquid.xyz/info userFills (official)",
+   "as_of": "2026-11-18 11:13:56"
   }
  ],
  "gate": {
@@ -907,7 +901,7 @@ const EMBEDDED_SNAPSHOT = {
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T11:06:10.689955+08:00",
+  "as_of": "2026-11-18T11:13:26.100960+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 38,
@@ -919,7 +913,7 @@ const EMBEDDED_SNAPSHOT = {
   "rejects": 8,
   "fill_rate": 97.7,
   "avg_slip": 0.00041,
-  "cycles": 1018,
+  "cycles": 1020,
   "rows": [
    {
     "sid": "daily_timed.open_control",
@@ -1395,7 +1389,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band100": {
-  "as_of": "2026-11-18T11:06:16.628952+08:00",
+  "as_of": "2026-11-18T11:14:51.332512+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1883,7 +1877,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T11:06:47.172924+08:00",
+  "as_of": "2026-11-18T11:14:42.393835+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2376,11 +2370,11 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "forward100": {
-  "as_of": "2026-11-18T11:06:52.143060+08:00",
+  "as_of": "2026-11-18T11:14:54.739710+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-11-19T09:58:21.546588+08:00",
-  "hours_left": 22.9,
+  "hours_left": 22.7,
   "accounts": 4,
   "traded": 1,
   "profitable": 0,
@@ -2401,7 +2395,7 @@ const EMBEDDED_SNAPSHOT = {
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 198,
+  "scans": 222,
   "fills": 2,
   "settlements": 2,
   "rows": [
@@ -2436,7 +2430,7 @@ const EMBEDDED_SNAPSHOT = {
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "11:04:42",
+  "ledger_mtime": "11:13:26",
   "last_repair": "2026-11-18 10:35:14"
  }
 };
@@ -2507,9 +2501,11 @@ function panelDaily(){
 function panelReal(){
  const r=S.real||[], g=S.gate||{};
  const rows=table(
-  [{t:'账户'},{t:'结算',num:1},{t:'胜',num:1},{t:'胜率',num:1},{t:'已实现',num:1,cls:v=>cls(parseFloat(v))},{t:'持仓',num:1},{t:'状态'}],
-  r.map(x=>[esc(x.name),n(x.settles),n(x.wins),n(x.winrate,1)+'%',`<span class="${cls(x.pnl)}">${sign(x.pnl)}</span>`,n(x.open),esc(x.status||'—')]),
+  [{t:'账户'},{t:'结算',num:1},{t:'胜',num:1},{t:'胜率',num:1},{t:'已实现',num:1,cls:v=>cls(parseFloat(v))},{t:'权益',num:1},{t:'持仓',num:1},{t:'状态'}],
+  r.map(x=>[esc(x.name),n(x.settles),n(x.wins),n(x.winrate,1)+'%',`<span class="${cls(x.pnl)}">${sign(x.pnl)}</span>`,x.equity==null?'—':n(x.equity,2),n(x.open),esc(x.status||'—')]),
   '实盘账暂无数据');
+ const live=r[0]||{};
+ const recon=(live.source)?`<div class="rule"><b>对账口径</b>　实盘数字来自 ${esc(live.source)}，盈亏为官方净额（已扣结算费），与模拟盘 0.07%×(scale+max(scale,1)) 公式逐笔一致。此前两本旧账（日盘/历史短周期）已停用，不再显示。账本重建 ${esc(live.as_of||'—')}。<br><b>账本完整性</b>　本地 auto_state.json 曾只记 7 笔、漏记 45 笔；已改用链上全量流水为准。</div>`:'';
  const gi=[
   {k:'行情时段覆盖',v:esc(g.sessions||'—'),ok:g.sessions_ok},
   {k:'ev_gate 最大到期',v:esc(g.ev||'—'),ok:g.ev_ok},
@@ -2519,8 +2515,8 @@ function panelReal(){
  const gate='<div class="gate">'+gi.map(x=>
   `<div class="gi"><div class="k">${x.k}</div><div class="v ${x.ok===false?'no':'ok'}">${x.v}</div></div>`).join('')+'</div>';
  const rule=`<div class="rule"><b>实盘门槛</b>　四项校验全部通过后，才从候选池挑 1~2 个（最多 5 个）版本上实盘。
-  当前结论：<b>${esc(g.conclusion||'不能上实盘')}</b>。历史短周期实盘已停止新开仓，日盘实盘亦已停止新开仓，两本账单列，不与模拟盘合计。</div>`;
- return section('两本实盘账','日盘 / 历史短周期，单列',rows)+
+  当前结论：<b>${esc(g.conclusion||'不能上实盘')}</b>。真钱盘当前权益 ${live.equity==null?'—':n(live.equity,2)} USDC，扣除单笔最坏 11U 后低于 150 止损线，维持空仓停手。</div>`;
+ return section('实盘账（链上官方口径）','userFills.closedPnl 净额，单列',rows)+recon+
    section('距实盘还差','模拟盘筛选门槛',gate+`<div style="margin-top:12px"></div>`)+rule;
 }
 
