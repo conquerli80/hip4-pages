@@ -1,6 +1,6 @@
 {
- "as_of": "2026-11-18 10:35",
- "_pushed_at": 1794969340,
+ "as_of": "2026-11-18 10:39",
+ "_pushed_at": 1794969546,
  "m15": {
   "pnl": -54790.96,
   "n": 100926,
@@ -761,7 +761,7 @@
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T10:35:32.920428+08:00",
+  "as_of": "2026-11-18T10:36:51.805083+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 38,
@@ -773,7 +773,7 @@
   "rejects": 8,
   "fill_rate": 97.7,
   "avg_slip": 0.00041,
-  "cycles": 1010,
+  "cycles": 1011,
   "rows": [
    {
     "sid": "daily_timed.open_control",
@@ -1249,7 +1249,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-18T10:35:25.804802+08:00",
+  "as_of": "2026-11-18T10:39:00.518072+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1737,7 +1737,7 @@
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T10:35:23.846191+08:00",
+  "as_of": "2026-11-18T10:38:57.349317+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2229,9 +2229,68 @@
    "thick": false
   }
  },
+ "forward100": {
+  "as_of": "2026-11-18T10:39:01.673937+08:00",
+  "campaign": "FORWARD-100-20261118",
+  "start_at": "2026-11-18T09:58:21.546588+08:00",
+  "end_at": "2026-11-19T09:58:21.546588+08:00",
+  "hours_left": 23.3,
+  "accounts": 4,
+  "traded": 1,
+  "profitable": 0,
+  "starved": 0,
+  "alive": 4,
+  "median_pnl": -21.34,
+  "attempts": 6,
+  "rejects": 4,
+  "fill_rate": 33.3,
+  "avg_slip": -0.005,
+  "fill_model": {
+   "latency_seconds": 0.35,
+   "requote": "fresh l2Book per outcome",
+   "depth_walk": "whole-share VWAP, min 10 max 11 USDC",
+   "limit": "decision px + 0.02 (IOC)",
+   "max_quote_age_seconds": 2.5,
+   "open_fee": 0.0,
+   "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
+  },
+  "phase": "running",
+  "scans": 118,
+  "fills": 2,
+  "settlements": 2,
+  "rows": [
+   {
+    "sid": "short_favored_follow.v36",
+    "fam": "顺势跟随",
+    "eq": 78.66,
+    "pnl": -21.34,
+    "ret": -21.34,
+    "n": 2,
+    "wr": 0.0,
+    "yes": 0,
+    "no": 2,
+    "open": 0,
+    "fees": 0.0,
+    "att": 2,
+    "rej": 0,
+    "fr": 100.0,
+    "slip": -0.005,
+    "starved": false
+   }
+  ],
+  "events": {
+   "events": 2,
+   "settled": 2,
+   "per_event": 1.0,
+   "win": 0,
+   "wr": 0.0,
+   "pnl": -21.34,
+   "thick": false
+  }
+ },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "10:34:49",
-  "last_repair": "2026-11-18 10:10:11"
+  "ledger_mtime": "10:38:33",
+  "last_repair": "2026-11-18 10:35:14"
  }
 }

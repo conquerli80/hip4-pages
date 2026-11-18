@@ -135,6 +135,7 @@ tr:last-child td{border-bottom:0}
   <button class="tab" data-p="daily_parity" id="tabdpar" style="display:none">日盘同构 · 各 100 元</button>
   <button class="tab" data-p="band100" id="tabband" style="display:none">区间专盘 · 0.30-0.50</button>
   <button class="tab" data-p="band_v2" id="tabband2" style="display:none">V2 验证盘 · 0.25-0.35</button>
+  <button class="tab" data-p="forward100" id="tabforward" style="display:none">FORWARD · 前瞻验证</button>
  </div>
 
  <div id="content"><div class="loading">正在读取快照…</div></div>
@@ -144,8 +145,8 @@ tr:last-child td{border-bottom:0}
 
 <script>
 const EMBEDDED_SNAPSHOT = {
- "as_of": "2026-11-18 10:35",
- "_pushed_at": 1794969340,
+ "as_of": "2026-11-18 10:39",
+ "_pushed_at": 1794969546,
  "m15": {
   "pnl": -54790.96,
   "n": 100926,
@@ -906,7 +907,7 @@ const EMBEDDED_SNAPSHOT = {
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T10:35:32.920428+08:00",
+  "as_of": "2026-11-18T10:36:51.805083+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 38,
@@ -918,7 +919,7 @@ const EMBEDDED_SNAPSHOT = {
   "rejects": 8,
   "fill_rate": 97.7,
   "avg_slip": 0.00041,
-  "cycles": 1010,
+  "cycles": 1011,
   "rows": [
    {
     "sid": "daily_timed.open_control",
@@ -1394,7 +1395,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band100": {
-  "as_of": "2026-11-18T10:35:25.804802+08:00",
+  "as_of": "2026-11-18T10:39:00.518072+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1882,7 +1883,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T10:35:23.846191+08:00",
+  "as_of": "2026-11-18T10:38:57.349317+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2374,10 +2375,69 @@ const EMBEDDED_SNAPSHOT = {
    "thick": false
   }
  },
+ "forward100": {
+  "as_of": "2026-11-18T10:39:01.673937+08:00",
+  "campaign": "FORWARD-100-20261118",
+  "start_at": "2026-11-18T09:58:21.546588+08:00",
+  "end_at": "2026-11-19T09:58:21.546588+08:00",
+  "hours_left": 23.3,
+  "accounts": 4,
+  "traded": 1,
+  "profitable": 0,
+  "starved": 0,
+  "alive": 4,
+  "median_pnl": -21.34,
+  "attempts": 6,
+  "rejects": 4,
+  "fill_rate": 33.3,
+  "avg_slip": -0.005,
+  "fill_model": {
+   "latency_seconds": 0.35,
+   "requote": "fresh l2Book per outcome",
+   "depth_walk": "whole-share VWAP, min 10 max 11 USDC",
+   "limit": "decision px + 0.02 (IOC)",
+   "max_quote_age_seconds": 2.5,
+   "open_fee": 0.0,
+   "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
+  },
+  "phase": "running",
+  "scans": 118,
+  "fills": 2,
+  "settlements": 2,
+  "rows": [
+   {
+    "sid": "short_favored_follow.v36",
+    "fam": "顺势跟随",
+    "eq": 78.66,
+    "pnl": -21.34,
+    "ret": -21.34,
+    "n": 2,
+    "wr": 0.0,
+    "yes": 0,
+    "no": 2,
+    "open": 0,
+    "fees": 0.0,
+    "att": 2,
+    "rej": 0,
+    "fr": 100.0,
+    "slip": -0.005,
+    "starved": false
+   }
+  ],
+  "events": {
+   "events": 2,
+   "settled": 2,
+   "per_event": 1.0,
+   "win": 0,
+   "wr": 0.0,
+   "pnl": -21.34,
+   "thick": false
+  }
+ },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "10:34:49",
-  "last_repair": "2026-11-18 10:10:11"
+  "ledger_mtime": "10:38:33",
+  "last_repair": "2026-11-18 10:35:14"
  }
 };
 
@@ -2689,6 +2749,39 @@ const rule=`<div class="rule"><b>为什么开这一盘</b>　band100 和 parity1
  return cards(c)+rule+section('V2 验证盘 · 前 24','按账户权益排序',`<div class="wide">${rank}</div>`);
 }
 
+function panelForward100(){
+ const d=S.forward100;
+ if(!d) return section('FORWARD 前瞻验证','等待数据',`<div class="loading">FORWARD-100 数据尚未生成</div>`);
+ const e=d.events||{};
+ const fm=d.fill_model||{};
+ const left=d.hours_left==null?'—':n(d.hours_left,1)+' 小时';
+ const c=[
+  {l:'前瞻验证盘',v:esc(d.campaign||'FORWARD-100'),c:'gold',s:`冻结选股 · 4 策略各 100 USDC · 24 小时`},
+  {l:'剩余时间',v:left,s:`${esc((d.start_at||'').slice(5,16))} → ${esc((d.end_at||'').slice(5,16))} · 阶段 ${esc(d.phase||'—')}`},
+  {l:'尝试下单',v:n(d.attempts)+' <span style="font-size:12px;font-weight:400">次</span>',s:`废单 ${n(d.rejects)} · 成交 ${n(d.fills)} · 结算 ${n(d.settlements)}`},
+  {l:'成交率',v:d.fill_rate==null?'—':n(d.fill_rate,1)+'%',s:`滑点 ${sign(d.avg_slip,4)} · 扫描 ${n(d.scans)} 次`},
+  {l:'中位盈亏',v:sign(d.median_pnl,2)+' <span style="font-size:12px;font-weight:400">USDC</span>',c:cls(d.median_pnl),s:`有单 ${n(d.traded)} 户 · 盈利 ${n(d.profitable)} 户 / ${n(d.accounts)}`},
+  {l:'独立赌局',v:(e.events==null?'—':n(e.events)+' 个'),c:e.thick?'':'red',
+   s:e.events==null?'尚无结算':'结算 '+n(e.settled)+' 笔铺在 '+n(e.events)+' 个市场 · 事件级胜率 '+n(e.wr,1)+'%'},
+ ];
+ const rows=(d.rows||[]).map((r,i)=>[
+   `<span class="rk">${i+1}</span>`,`<span class="sid">${esc(r.sid)}</span>`,esc(r.fam||'—'),
+   `<span class="${cls(r.pnl)}">${sign(r.pnl)}</span>`,
+   r.att==null?'—':n(r.att), r.rej==null?'—':n(r.rej),
+   r.fr==null?'—':n(r.fr,1)+'%', r.slip==null?'—':sign(r.slip,4),
+   r.wr==null?'—':n(r.wr,1)+'%', n(r.n), n(r.open),
+   r.starved?'停手':'在跑']);
+ const rank=table(
+  [{t:'#'},{t:'策略'},{t:'类型'},{t:'盈亏',num:1,cls:v=>cls(parseFloat(v))},
+   {t:'尝试',num:1},{t:'废单',num:1},{t:'成交率',num:1},{t:'滑点',num:1},
+   {t:'胜率',num:1},{t:'结算',num:1},{t:'持仓',num:1},{t:'状态'}],
+  rows,'暂无成交账户');
+const rule=`<div class="rule"><b>这一盘是什么</b>　前面所有盘都在回答"过去的样本里什么行不行"。FORWARD-100 换一种问法：把 4 条被选中的策略冻住（选股、参数、哈希全部锁死，跑完不许改），从 ${esc((d.start_at||'').slice(0,16).replace('T',' '))} 起真刀真枪往前跑 24 小时，用还没发生过的新行情来验。它不看历史回放，数据只从开跑这一刻往后算。
+ <b>和实盘同构</b>　延迟 ${esc(fm.latency_seconds==null?'—':fm.latency_seconds+'s')} · ${esc(fm.requote||'重新抓盘口')} · ${esc(fm.depth_walk||'逐档吃单')} · 限价 ${esc(fm.limit||'决策价+0.02 IOC')} · 报价年龄上限 ${esc(fm.max_quote_age_seconds==null?'—':fm.max_quote_age_seconds+'s')} · 开仓费 ${esc(fm.open_fee==null?'—':fm.open_fee)} · 结算费 ${esc(fm.settle_fee||'0.07%')}。cash 跌破 10 锁死，本金不补。
+ <br><b>上实盘的前置条件</b>　① 24 小时跑满，攒够跨不同行情的新样本；② 独立赌局层面不能是靠一两笔撑起来的假盈利；③ 记账口径要和真钱盘交叉核对一致。三条没齐之前，真钱盘维持空仓停手。</div>`;
+ return cards(c)+rule+section('FORWARD-100 · 冻结前瞻','按账户权益排序',`<div class="wide">${rank}</div>`);
+}
+
 function render(){
  if(!S) return;
  const has100=!!S.single100;
@@ -2698,6 +2791,7 @@ function render(){
  const hasdpar=!!S.daily_parity;
  const hasband=!!S.band100;
  const hasband2=!!S.band_v2;
+ const hasforward=!!S.forward100;
  const t=$('#tab100'); if(t) t.style.display=has100?'':'none';
  const tm=$('#tabmulti'); if(tm) tm.style.display=hasmulti?'':'none';
  const td=$('#tabdaily100'); if(td) td.style.display=hasd100?'':'none';
@@ -2705,6 +2799,7 @@ function render(){
  const tdp=$('#tabdpar'); if(tdp) tdp.style.display=hasdpar?'':'none';
  const tb=$('#tabband'); if(tb) tb.style.display=hasband?'':'none';
  const tb2=$('#tabband2'); if(tb2) tb2.style.display=hasband2?'':'none';
+ const tf=$('#tabforward'); if(tf) tf.style.display=hasforward?'':'none';
  if(PANEL==='single100'&&!has100) PANEL='m15';
  if(PANEL==='multi100'&&!hasmulti) PANEL='m15';
  if(PANEL==='daily100'&&!hasd100) PANEL='m15';
@@ -2712,22 +2807,25 @@ function render(){
  if(PANEL==='daily_parity'&&!hasdpar) PANEL='m15';
  if(PANEL==='band100'&&!hasband) PANEL='m15';
  if(PANEL==='band_v2'&&!hasband2) PANEL='m15';
+ if(PANEL==='forward100'&&!hasforward) PANEL='m15';
  $('#h1').textContent = PANEL==='single100' ? '100 元独立单仓 · 24 小时验证'
    : PANEL==='multi100' ? '全部策略 · 各 100 USDC 平行仓'
    : PANEL==='parity100' ? '实盘同构 · 各 100 USDC 探真盘'
    : PANEL==='daily_parity' ? '日盘同构 · 各 100 USDC 探真盘'
    : PANEL==='band100' ? '区间专盘 · 只买 0.30-0.50，每日限次'
    : PANEL==='band_v2' ? 'V2 验证盘 · BTC 15m · 0.25-0.35 · 到期前 2-6 分钟'
+   : PANEL==='forward100' ? 'FORWARD-100 · 冻结策略 · 24 小时前瞻验证'
    : PANEL==='daily100' ? '日盘 · 各 100 USDC 独立平行仓' : '模拟盘实时看板 · 15 分钟与日盘';
  $('#asof').textContent=S.as_of||'—';
  $('#content').innerHTML = PANEL==='m15'?panelM15():PANEL==='daily'?panelDaily():
    PANEL==='single100'?panelSingle100():PANEL==='multi100'?panelMulti100():
    PANEL==='parity100'?panelParity100():PANEL==='daily_parity'?panelDailyParity():
    PANEL==='band100'?panelBand100():PANEL==='band_v2'?panelBandV2():
+   PANEL==='forward100'?panelForward100():
    PANEL==='daily100'?panelDaily100():panelReal();
  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.p===PANEL));
  $('#foot').innerHTML=`<b>数据源</b>　本地模拟盘账本（data/short_paper、data/challengers）与官方结算结果，全部为模拟资金；实盘单列。
-  <b>100 元盘</b>　只跑实盘同频的三套：data/parity100（15 分钟全策略）、data/daily_parity（日盘）、data/band100（只用 0.30-0.50 区间 + 每日限次），都是延迟 + 重新报价 + 逐档吃单；data/band_v2 是收官后的低价侧新市场验证盘（BTC 15m、0.25-0.35、到期前 2-6 分钟、72 小时）；理想成交、日盘 100、单仓 100 已停跑归档到 data/archive_100，只作对照基线。
+  <b>100 元盘</b>　只跑实盘同频的三套：data/parity100（15 分钟全策略）、data/daily_parity（日盘）、data/band100（只用 0.30-0.50 区间 + 每日限次），都是延迟 + 重新报价 + 逐档吃单；data/band_v2 是收官后的低价侧新市场验证盘（BTC 15m、0.25-0.35、到期前 2-6 分钟、72 小时）；data/forward100_20261118 是冻结 4 条策略往后跑 24 小时的前瞻验证盘；理想成交、日盘 100、单仓 100 已停跑归档到 data/archive_100，只作对照基线。
   本页由本机定时推送快照，每 10 秒拉取一次。<br><b>系统</b>　看门狗 ${esc(S.system&&S.system.guardian||'—')} ·
   账本更新 ${esc(S.system&&S.system.ledger_mtime||'—')} · 上次自愈 ${esc(S.system&&S.system.last_repair||'—')}。
   快照生成 ${esc(S.as_of||'—')}。`;
