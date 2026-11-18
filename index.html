@@ -498,17 +498,21 @@ function render(){
 const QS = location.search || '';
 async function tick(){
  try{
-  // 纯静态数据源：优先读同目录的 snapshot.json（本机与 GitHub Pages 通用），带时间戳绕缓存
+  // 多数据源，任一可达即可：
+  //  1) 同目录静态 snapshot.json（带上当前 sharecode，WorkBuddy 域名也能读）
+  //  2) jsDelivr 公网 CDN（国内可访问，GitHub Pages 源）
+  //  3) 旧 API 兜底
   let S2=null;
-  try{
-   const r=await fetch('snapshot.json?t='+Date.now(),{cache:'no-store'});
-   if(r.ok) S2=await r.json();
-  }catch(_){}
-  if(!S2){
-   const r=await fetch('/api/snapshot'+QS,{cache:'no-store'});
-   if(!r.ok) throw new Error('HTTP '+r.status);
-   S2=await r.json();
+  const bust='t='+Date.now();
+  const localUrl='snapshot.json?'+(QS?QS.slice(1)+'&':'')+bust;
+  const cdnUrl='https://cdn.jsdelivr.net/gh/conquerli80/hip4-pages@main/snapshot.json?'+bust;
+  for(const url of [localUrl,cdnUrl,'/api/snapshot'+QS]){
+   try{
+    const r=await fetch(url,{cache:'no-store'});
+    if(r.ok){ const j=await r.json(); if(j&&j.as_of){ S2=j; break; } }
+   }catch(_){}
   }
+  if(!S2) throw new Error('所有数据源均不可达');
   S=S2;
   $('#errbox').innerHTML='';
   const age=S._pushed_at?Math.floor(Date.now()/1000-S._pushed_at):0;
