@@ -1,11 +1,11 @@
 {
- "as_of": "2026-11-19 06:26",
- "_pushed_at": 1795040763,
+ "as_of": "2026-11-19 06:35",
+ "_pushed_at": 1795041345,
  "m15": {
-  "pnl": -56098.46,
-  "n": 117057,
-  "settles": 117057,
-  "exps": 2138,
+  "pnl": -55773.86,
+  "n": 117254,
+  "settles": 117254,
+  "exps": 2144,
   "sids": 238,
   "win": 60.9,
   "pos_sid": 26,
@@ -16,31 +16,31 @@
   "top": [
    {
     "sid": "fixed_time.v14",
-    "pnl": 314.28,
-    "ind": 274,
-    "win": 42.4,
-    "t": 1.32
+    "pnl": 304.28,
+    "ind": 275,
+    "win": 42.3,
+    "t": 1.28
    },
    {
     "sid": "fixed_time.v7",
-    "pnl": 270.55,
-    "ind": 395,
-    "win": 45.1,
-    "t": 1.05
+    "pnl": 260.55,
+    "ind": 396,
+    "win": 45.0,
+    "t": 1.01
    },
    {
     "sid": "fixed_time.v8",
-    "pnl": 228.55,
-    "ind": 322,
-    "win": 41.0,
-    "t": 0.9
+    "pnl": 218.55,
+    "ind": 323,
+    "win": 40.9,
+    "t": 0.86
    },
    {
     "sid": "fixed_time.v13",
-    "pnl": 220.47,
-    "ind": 864,
-    "win": 69.4,
-    "t": 0.89
+    "pnl": 210.47,
+    "ind": 865,
+    "win": 69.3,
+    "t": 0.85
    },
    {
     "sid": "favored_follow.v36",
@@ -64,7 +64,7 @@
   "per_trade": 0.91,
   "span": "11-09 ~ 11-18",
   "cycle": "11-19 14:00",
-  "hours_left": 7.6,
+  "hours_left": 7.4,
   "top": [
    {
     "sid": "cross_follow.v1",
@@ -106,39 +106,39 @@
    {
     "code": "cross_follow.v1",
     "rank": 1,
-    "equity": 277.96,
+    "equity": 332.88,
     "realized": 218.7286,
     "winrate": 61.8,
     "pf": 2.43
    },
    {
-    "code": "cheap_fade.v1",
-    "rank": 2,
-    "equity": 270.39,
-    "realized": 210.6899,
-    "winrate": 50.0,
-    "pf": 3.08
-   },
-   {
     "code": "favored_side_follow.v1",
-    "rank": 3,
-    "equity": 257.17,
+    "rank": 2,
+    "equity": 312.09,
     "realized": 197.9349,
     "winrate": 61.8,
     "pf": 2.3
    },
    {
     "code": "favored_side_follow.v2",
-    "rank": 4,
-    "equity": 239.35,
+    "rank": 3,
+    "equity": 294.26,
     "realized": 180.113,
     "winrate": 59.4,
     "pf": 2.2
    },
    {
+    "code": "cheap_fade.v1",
+    "rank": 4,
+    "equity": 276.73,
+    "realized": 210.6899,
+    "winrate": 50.0,
+    "pf": 3.08
+   },
+   {
     "code": "favored_side_follow.v3",
     "rank": 5,
-    "equity": 186.27,
+    "equity": 241.19,
     "realized": 127.0389,
     "winrate": 53.6,
     "pf": 1.89
@@ -152,16 +152,24 @@
     "pf": 5.52
    },
    {
-    "code": "daily_timed.h12_16_d05_2",
+    "code": "daily_timed.h16_20_p60_75",
     "rank": 7,
-    "equity": 528.43,
+    "equity": 541.01,
+    "realized": 19.772,
+    "winrate": 73.3,
+    "pf": 1.48
+   },
+   {
+    "code": "daily_timed.h12_16_d05_2",
+    "rank": 8,
+    "equity": 528.45,
     "realized": 26.7692,
     "winrate": 83.3,
     "pf": 2.28
    },
    {
     "code": "daily_timed.h12_16_p65_80",
-    "rank": 8,
+    "rank": 9,
     "equity": 521.82,
     "realized": 21.8205,
     "winrate": 81.8,
@@ -169,19 +177,11 @@
    },
    {
     "code": "daily_timed.h12_16_p60_75",
-    "rank": 9,
+    "rank": 10,
     "equity": 520.5,
     "realized": 20.4999,
     "winrate": 80.0,
     "pf": 2.01
-   },
-   {
-    "code": "daily_timed.h12_16_agree4_p60_80",
-    "rank": 10,
-    "equity": 518.19,
-    "realized": 18.1892,
-    "winrate": 80.0,
-    "pf": 1.9
    }
   ]
  },
@@ -196,13 +196,13 @@
    "equity": 139.61,
    "status": "空仓停手",
    "source": "https://api.hyperliquid.xyz/info userFills",
-   "as_of": "2026-11-19 06:26:06"
+   "as_of": "2026-11-19 06:35:54"
   }
  ],
  "gate": {
   "sessions": "23/8",
   "sessions_ok": true,
-  "ev": "417/20",
+  "ev": "418/20",
   "ev_ok": true,
   "mature": "1/3",
   "mature_ok": false,
@@ -755,7 +755,7 @@
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-19T06:23:22.479383+08:00",
+  "as_of": "2026-11-19T06:34:57.065568+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 39,
@@ -767,7 +767,7 @@
   "rejects": 14,
   "fill_rate": 96.9,
   "avg_slip": 0.00051,
-  "cycles": 1301,
+  "cycles": 1304,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
@@ -1243,7 +1243,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-19T06:26:37.413786+08:00",
+  "as_of": "2026-11-19T06:35:50.910616+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1731,7 +1731,7 @@
   }
  },
  "band_v2": {
-  "as_of": "2026-11-19T06:26:41.634935+08:00",
+  "as_of": "2026-11-19T06:35:55.569902+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -1778,14 +1778,14 @@
    {
     "sid": "short_fixed_time.px30_35",
     "fam": "固定时窗",
-    "eq": 97.77,
-    "pnl": -2.23,
-    "ret": -2.23,
-    "n": 3,
-    "wr": 33.3,
+    "eq": 91.69,
+    "pnl": -8.31,
+    "ret": -8.31,
+    "n": 4,
+    "wr": 25.0,
     "yes": 3,
-    "no": 0,
-    "open": 1,
+    "no": 1,
+    "open": 0,
     "fees": 0.02,
     "att": 29,
     "rej": 25,
@@ -2042,44 +2042,6 @@
     "starved": false
    },
    {
-    "sid": "short_fixed_time.v8",
-    "fam": "固定时窗",
-    "eq": 69.2,
-    "pnl": -30.8,
-    "ret": -30.8,
-    "n": 9,
-    "wr": 22.2,
-    "yes": 8,
-    "no": 1,
-    "open": 1,
-    "fees": 0.05,
-    "att": 57,
-    "rej": 47,
-    "fr": 17.5,
-    "slip": 0.00483,
-    "brej": 30,
-    "starved": false
-   },
-   {
-    "sid": "short_favored_follow.px30_35",
-    "fam": "顺势跟随",
-    "eq": 68.78,
-    "pnl": -31.22,
-    "ret": -31.22,
-    "n": 9,
-    "wr": 22.2,
-    "yes": 8,
-    "no": 1,
-    "open": 1,
-    "fees": 0.05,
-    "att": 45,
-    "rej": 35,
-    "fr": 22.2,
-    "slip": -0.00732,
-    "brej": 20,
-    "starved": false
-   },
-   {
     "sid": "short_fixed_time.v13",
     "fam": "固定时窗",
     "eq": 67.68,
@@ -2099,40 +2061,21 @@
     "starved": false
    },
    {
-    "sid": "short_fixed_time.v9",
+    "sid": "short_fixed_time.v8",
     "fam": "固定时窗",
-    "eq": 67.36,
-    "pnl": -32.64,
-    "ret": -32.64,
-    "n": 9,
-    "wr": 22.2,
+    "eq": 63.28,
+    "pnl": -36.72,
+    "ret": -36.72,
+    "n": 10,
+    "wr": 20.0,
     "yes": 8,
-    "no": 1,
-    "open": 1,
+    "no": 2,
+    "open": 0,
     "fees": 0.05,
     "att": 57,
     "rej": 47,
     "fr": 17.5,
-    "slip": 0.01005,
-    "brej": 30,
-    "starved": false
-   },
-   {
-    "sid": "short_fixed_time.v7",
-    "fam": "固定时窗",
-    "eq": 64.15,
-    "pnl": -35.85,
-    "ret": -35.85,
-    "n": 10,
-    "wr": 20.0,
-    "yes": 9,
-    "no": 1,
-    "open": 1,
-    "fees": 0.05,
-    "att": 57,
-    "rej": 46,
-    "fr": 19.3,
-    "slip": -0.00705,
+    "slip": 0.00483,
     "brej": 30,
     "starved": false
    },
@@ -2153,6 +2096,63 @@
     "fr": 11.8,
     "slip": 0.01976,
     "brej": 45,
+    "starved": false
+   },
+   {
+    "sid": "short_favored_follow.px30_35",
+    "fam": "顺势跟随",
+    "eq": 62.54,
+    "pnl": -37.46,
+    "ret": -37.46,
+    "n": 10,
+    "wr": 20.0,
+    "yes": 8,
+    "no": 2,
+    "open": 0,
+    "fees": 0.05,
+    "att": 45,
+    "rej": 35,
+    "fr": 22.2,
+    "slip": -0.00732,
+    "brej": 20,
+    "starved": false
+   },
+   {
+    "sid": "short_fixed_time.v9",
+    "fam": "固定时窗",
+    "eq": 61.6,
+    "pnl": -38.4,
+    "ret": -38.4,
+    "n": 10,
+    "wr": 20.0,
+    "yes": 8,
+    "no": 2,
+    "open": 0,
+    "fees": 0.05,
+    "att": 57,
+    "rej": 47,
+    "fr": 17.5,
+    "slip": 0.01005,
+    "brej": 30,
+    "starved": false
+   },
+   {
+    "sid": "short_fixed_time.v7",
+    "fam": "固定时窗",
+    "eq": 57.75,
+    "pnl": -42.25,
+    "ret": -42.25,
+    "n": 11,
+    "wr": 18.2,
+    "yes": 9,
+    "no": 2,
+    "open": 0,
+    "fees": 0.05,
+    "att": 57,
+    "rej": 46,
+    "fr": 19.3,
+    "slip": -0.00705,
+    "brej": 30,
     "starved": false
    },
    {
@@ -2177,14 +2177,14 @@
    {
     "sid": "short_fixed_time.v2",
     "fam": "固定时窗",
-    "eq": 54.31,
-    "pnl": -45.69,
-    "ret": -45.69,
-    "n": 13,
-    "wr": 23.1,
+    "eq": 49.19,
+    "pnl": -50.81,
+    "ret": -50.81,
+    "n": 14,
+    "wr": 21.4,
     "yes": 11,
-    "no": 2,
-    "open": 1,
+    "no": 3,
+    "open": 0,
     "fees": 0.07,
     "att": 43,
     "rej": 29,
@@ -2196,14 +2196,14 @@
    {
     "sid": "short_favored_follow.v2",
     "fam": "顺势跟随",
-    "eq": 50.66,
-    "pnl": -49.34,
-    "ret": -49.34,
-    "n": 21,
-    "wr": 23.8,
+    "eq": 45.38,
+    "pnl": -54.62,
+    "ret": -54.62,
+    "n": 22,
+    "wr": 22.7,
     "yes": 18,
-    "no": 3,
-    "open": 1,
+    "no": 4,
+    "open": 0,
     "fees": 0.16,
     "att": 64,
     "rej": 42,
@@ -2214,30 +2214,30 @@
    }
   ],
   "events": {
-   "events": 22,
-   "settled": 251,
-   "per_event": 11.4,
+   "events": 23,
+   "settled": 264,
+   "per_event": 11.5,
    "win": 5,
-   "wr": 22.7,
-   "pnl": -834.81,
+   "wr": 21.7,
+   "pnl": -976.22,
    "thick": false
   }
  },
  "forward100": {
-  "as_of": "2026-11-19T06:26:36.681041+08:00",
+  "as_of": "2026-11-19T06:35:58.828281+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-11-19T09:58:21.546588+08:00",
-  "hours_left": 3.5,
+  "hours_left": 3.4,
   "accounts": 4,
   "traded": 4,
   "profitable": 1,
   "starved": 0,
   "alive": 4,
   "median_pnl": -10.16,
-  "attempts": 183,
-  "rejects": 140,
-  "fill_rate": 23.5,
+  "attempts": 185,
+  "rejects": 142,
+  "fill_rate": 23.2,
   "avg_slip": 0.00085,
   "fill_model": {
    "latency_seconds": 0.35,
@@ -2249,7 +2249,7 @@
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 1829,
+  "scans": 1857,
   "fills": 43,
   "settlements": 43,
   "rows": [
@@ -2319,9 +2319,9 @@
     "no": 5,
     "open": 0,
     "fees": 0.19,
-    "att": 105,
-    "rej": 84,
-    "fr": 20.0,
+    "att": 107,
+    "rej": 86,
+    "fr": 19.6,
     "slip": -0.00062,
     "starved": false
    }
@@ -2614,7 +2614,7 @@
   "note": "事后从已跑完的池子里筛出的头部，存在幸存者偏差；仅作候选，不等于已验证。真正前瞻验证看 FORWARD-100。"
  },
  "ledger": {
-  "rebuilt_at": "2026-11-19 06:25:15",
+  "rebuilt_at": "2026-11-19 06:35:19",
   "equity": 139.60539,
   "total_pnl": -11.5977,
   "n_settled": 62,
@@ -3860,7 +3860,7 @@
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "06:24:29",
+  "ledger_mtime": "06:35:02",
   "last_repair": "2026-11-19 05:52:20"
  }
 }
