@@ -1,6 +1,6 @@
 {
- "as_of": "2026-11-18 15:46",
- "_pushed_at": 1794988002,
+ "as_of": "2026-11-18 15:57",
+ "_pushed_at": 1794988635,
  "m15": {
   "pnl": -51232.5,
   "n": 104809,
@@ -115,7 +115,7 @@
    "equity": 125.23,
    "status": "空仓停手",
    "source": "https://api.hyperliquid.xyz/info userFills",
-   "as_of": "2026-11-18 15:46:46"
+   "as_of": "2026-11-18 15:57:20"
   }
  ],
  "gate": {
@@ -674,57 +674,57 @@
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T15:44:35.134220+08:00",
+  "as_of": "2026-11-18T15:57:17.409279+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 39,
   "traded": 33,
-  "profitable": 13,
+  "profitable": 12,
   "median_pnl": -24.31,
   "base_median": -20.65,
-  "attempts": 419,
+  "attempts": 423,
   "rejects": 14,
   "fill_rate": 96.7,
-  "avg_slip": 0.00047,
-  "cycles": 1084,
+  "avg_slip": 0.00052,
+  "cycles": 1087,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
     "fam": "fixed_vol_vs_executable_ask",
-    "eq": 160.04,
-    "pnl": 60.04,
-    "ret": 60.04,
+    "eq": 149.31,
+    "pnl": 49.31,
+    "ret": 49.31,
     "n": 10,
     "wr": 90.0,
     "yes": 0,
     "no": 10,
-    "open": 2,
+    "open": 3,
     "fees": 0.133,
-    "att": 12,
+    "att": 13,
     "rej": 0,
     "fr": 100.0,
-    "slip": 0.00016,
+    "slip": 0.00015,
     "base_pnl": 0.0,
-    "diff": 60.04
+    "diff": 49.31
    },
    {
     "sid": "fixed_vol_edge.v1",
     "fam": "fixed_vol_vs_executable_ask",
-    "eq": 149.22,
-    "pnl": 49.22,
-    "ret": 49.22,
+    "eq": 138.44,
+    "pnl": 38.44,
+    "ret": 38.44,
     "n": 8,
     "wr": 75.0,
     "yes": 0,
     "no": 8,
-    "open": 0,
+    "open": 1,
     "fees": 0.095,
-    "att": 8,
+    "att": 9,
     "rej": 0,
     "fr": 100.0,
-    "slip": -0.00369,
+    "slip": -0.00273,
     "base_pnl": 0.0,
-    "diff": 49.22
+    "diff": 38.44
    },
    {
     "sid": "spot_distance.v1",
@@ -763,25 +763,6 @@
     "slip": -0.00287,
     "base_pnl": 0.0,
     "diff": 20.18
-   },
-   {
-    "sid": "rolling_vol_mapped.v1",
-    "fam": "rolling_vol_correct_bucket_map",
-    "eq": 117.61,
-    "pnl": 17.61,
-    "ret": 17.61,
-    "n": 12,
-    "wr": 75.0,
-    "yes": 0,
-    "no": 12,
-    "open": 0,
-    "fees": 0.102,
-    "att": 12,
-    "rej": 0,
-    "fr": 100.0,
-    "slip": -0.00479,
-    "base_pnl": -20.7,
-    "diff": 38.31
    },
    {
     "sid": "daily_timed.h6_9_p75_88",
@@ -879,23 +860,23 @@
     "diff": 40.39
    },
    {
-    "sid": "rolling_vol_mapped.v1_fast",
+    "sid": "rolling_vol_mapped.v1",
     "fam": "rolling_vol_correct_bucket_map",
-    "eq": 104.95,
-    "pnl": 4.95,
-    "ret": 4.95,
+    "eq": 106.83,
+    "pnl": 6.83,
+    "ret": 6.83,
     "n": 12,
     "wr": 75.0,
     "yes": 0,
     "no": 12,
-    "open": 2,
-    "fees": 0.108,
-    "att": 14,
+    "open": 1,
+    "fees": 0.102,
+    "att": 13,
     "rej": 0,
     "fr": 100.0,
-    "slip": -0.00154,
-    "base_pnl": -41.12,
-    "diff": 46.07
+    "slip": -0.00404,
+    "base_pnl": -20.7,
+    "diff": 27.53
    },
    {
     "sid": "daily_timed.h4_z05_p90",
@@ -953,6 +934,25 @@
     "slip": 0.00036,
     "base_pnl": 0.0,
     "diff": -0.28
+   },
+   {
+    "sid": "rolling_vol_mapped.v1_fast",
+    "fam": "rolling_vol_correct_bucket_map",
+    "eq": 94.22,
+    "pnl": -5.78,
+    "ret": -5.78,
+    "n": 12,
+    "wr": 75.0,
+    "yes": 0,
+    "no": 12,
+    "open": 3,
+    "fees": 0.108,
+    "att": 15,
+    "rej": 0,
+    "fr": 100.0,
+    "slip": -0.00144,
+    "base_pnl": -41.12,
+    "diff": 35.34
    },
    {
     "sid": "daily_timed.h12_16_agree4_p60_80",
@@ -1146,7 +1146,7 @@
    }
   ],
   "gap": {
-   "n": 419,
+   "n": 423,
    "median": 0.0,
    "p90": 0.0035,
    "pos_share": 4.3
@@ -1162,7 +1162,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-18T15:44:51.522451+08:00",
+  "as_of": "2026-11-18T15:57:43.669302+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1650,7 +1650,7 @@
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T15:44:43.077273+08:00",
+  "as_of": "2026-11-18T15:57:44.374880+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2143,11 +2143,11 @@
   }
  },
  "forward100": {
-  "as_of": "2026-11-18T15:44:28.285433+08:00",
+  "as_of": "2026-11-18T15:57:41.597358+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-11-19T09:58:21.546588+08:00",
-  "hours_left": 18.2,
+  "hours_left": 18.0,
   "accounts": 4,
   "traded": 4,
   "profitable": 1,
@@ -2168,7 +2168,7 @@
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 939,
+  "scans": 967,
   "fills": 20,
   "settlements": 20,
   "rows": [
@@ -2533,7 +2533,7 @@
   "note": "事后从已跑完的池子里筛出的头部，存在幸存者偏差；仅作候选，不等于已验证。真正前瞻验证看 FORWARD-100。"
  },
  "ledger": {
-  "rebuilt_at": "2026-11-18 15:35:54",
+  "rebuilt_at": "2026-11-18 15:47:15",
   "equity": 125.23051,
   "total_pnl": -26.0313,
   "n_settled": 55,
