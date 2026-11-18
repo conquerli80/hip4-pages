@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>HIP-4 · 模拟盘实时看板</title>
+<style>
+:root{
+ --bg:#f7f6f2; --card:#fff; --ink:#242016; --body:#3B352C; --muted:#8A7F6A;
+ --line:#DFD4BC; --gold:#9A7A2E; --green:#1e8449; --red:#b02318;
+ --th:#F5F1E7; --rule:#f1ede3;
+ --sans:'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',-apple-system,sans-serif;
+ --mono:Consolas,'SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+ -webkit-font-smoothing:antialiased;font-size:14px;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:24px 22px 40px}
+
+/* header */
+.head{border-bottom:2px solid var(--ink);padding-bottom:14px;display:flex;
+ align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.kicker{font-size:10.5px;letter-spacing:3px;color:var(--gold);font-weight:700}
+h1{font-size:23px;margin:7px 0 0;font-weight:700;letter-spacing:.5px;line-height:1.25}
+.headmeta{text-align:right;font-size:11.5px;color:var(--muted);line-height:1.85;white-space:nowrap}
+.live{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-weight:700}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);
+ box-shadow:0 0 0 3px rgba(30,132,73,.14);animation:pulse 2s infinite}
+.dot.stale{background:var(--red);box-shadow:0 0 0 3px rgba(176,35,24,.14)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* tabs */
+.tabs{display:flex;gap:8px;margin:18px 0 16px;border-bottom:1px solid var(--line)}
+.tab{border:0;background:none;font-family:inherit;font-size:13.5px;font-weight:700;
+ color:var(--muted);padding:9px 18px 11px;cursor:pointer;border-bottom:2px solid transparent;
+ margin-bottom:-1px;letter-spacing:.5px}
+.tab.on{color:var(--ink);border-bottom-color:var(--gold)}
+
+/* summary cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:2px;padding:15px 17px}
+.lbl{font-size:11px;color:var(--muted);letter-spacing:.6px}
+.big{font-family:var(--mono);font-size:25px;font-weight:700;line-height:1.15;margin:7px 0 3px}
+.big.red{color:var(--red)} .big.green{color:var(--green)} .big.gold{color:var(--gold)}
+.sub{font-size:10.5px;color:var(--muted);line-height:1.5}
+
+/* sections */
+section{background:var(--card);border:1px solid var(--line);border-radius:2px;
+ padding:17px 19px;margin-bottom:14px}
+h2{font-size:14px;margin:0 0 12px;font-weight:700;letter-spacing:.5px;
+ display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+h2 em{font-style:normal;font-size:10.5px;color:var(--muted);font-weight:400}
+.rule{background:var(--rule);border-left:3px solid var(--gold);padding:11px 15px;
+ font-size:12px;line-height:1.9;color:var(--body);margin-bottom:14px}
+.rule b{color:var(--ink)}
+
+/* tables */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:520px}
+.wide table{min-width:880px}
+th{text-align:left;color:var(--muted);font-weight:500;background:var(--th);
+ border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:7px 9px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid #f0ede6;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.sid{font-family:var(--mono);font-size:11.5px;color:var(--ink)}
+.num{text-align:right;font-family:var(--mono)}
+.pos{color:var(--green);font-weight:700} .neg{color:var(--red)}
+.rk{font-family:var(--mono);color:var(--muted);width:28px}
+
+/* gate */
+.gate{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gi{border:1px solid var(--line);border-radius:2px;padding:11px 13px;background:#fdfcf9}
+.gi .k{font-size:10.5px;color:var(--muted)}
+.gi .v{font-family:var(--mono);font-size:17px;font-weight:700;margin-top:4px}
+.ok{color:var(--green)} .no{color:var(--red)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.err{background:#fdf3f1;border:1px solid #e8c9c2;color:var(--red);
+ padding:12px 15px;font-size:12.5px;border-radius:2px;margin-bottom:14px}
+.foot{border-top:1px solid var(--line);padding-top:12px;margin-top:16px;
+ font-size:10.5px;color:var(--muted);line-height:1.85}
+.loading{color:var(--muted);font-size:12.5px;padding:20px 0}
+
+/* single-100 campaign */
+.bar{height:6px;background:#EFEADI;border:1px solid var(--line);position:relative;overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--gold)}
+.barlbl{display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted);margin:6px 0 2px}
+.spark{background:#FCFAF4;border:1px solid var(--line);padding:8px 10px 4px;margin-top:4px}
+.strat{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.si{border:1px solid var(--line);background:#fdfcf9;padding:10px 12px}
+.si .k{font-size:10px;color:var(--muted)}
+.si .v{font-size:12px;font-weight:700;margin-top:4px;font-family:var(--mono)}
+
+@media(max-width:760px){
+ .wrap{padding:16px 13px 30px}
+ h1{font-size:19px}
+ .headmeta{text-align:left;white-space:normal;font-size:11px}
+ .head{align-items:flex-start;flex-direction:column;gap:8px}
+ .cards{grid-template-columns:repeat(2,1fr);gap:9px}
+ .big{font-size:21px}
+ .card{padding:12px 13px}
+ section{padding:14px 13px}
+ .grid2{grid-template-columns:1fr}
+ .gate{grid-template-columns:repeat(2,1fr)}
+ .tab{padding:9px 12px;font-size:12.5px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+ <div class="head">
+  <div>
+   <div class="kicker">HIP-4 · SIMULATED PAPER LEDGER</div>
+   <h1 id="h1">模拟盘实时看板 · 15 分钟与日盘</h1>
+  </div>
+  <div class="headmeta">
+   <div><span class="live"><span class="dot" id="dot"></span><span id="livetxt">连接中</span></span></div>
+   <div>数据时间 <b id="asof" style="font-family:var(--mono);color:var(--ink)">—</b></div>
+   <div>每 10 秒自动刷新 · <span id="clock">—</span></div>
+  </div>
+ </div>
+
+ <div id="errbox"></div>
+
+ <div class="tabs">
+  <button class="tab on" data-p="m15">15 分钟到期合约</button>
+  <button class="tab" data-p="daily">24 小时日盘</button>
+  <button class="tab" data-p="real">实盘与门槛</button>
+  <button class="tab" data-p="single100" id="tab100" style="display:none">100 元单仓</button>
+  <button class="tab" data-p="multi100" id="tabmulti" style="display:none">全部策略 · 各 100 元</button>
+  <button class="tab" data-p="daily100" id="tabdaily100" style="display:none">日盘 · 各 100 元</button>
+  <button class="tab" data-p="parity100" id="tabparity" style="display:none">实盘同构 · 各 100 元</button>
+  <button class="tab" data-p="daily_parity" id="tabdpar" style="display:none">日盘同构 · 各 100 元</button>
+  <button class="tab" data-p="band100" id="tabband" style="display:none">区间专盘 · 0.30-0.50</button>
+  <button class="tab" data-p="band_v2" id="tabband2" style="display:none">V2 验证盘 · 0.25-0.35</button>
+ </div>
+
+ <div id="content"><div class="loading">正在读取快照…</div></div>
+
+ <div class="foot" id="foot"></div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s==null?'—':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const n = (v,d=0) => (v==null?'—':Number(v).toFixed(d));
+const sign = (v,d=2) => (v==null?'—':(v>=0?'+':'')+Number(v).toFixed(d));
+const cls = v => v==null?'':(v>=0?'pos':'neg');
+let S=null, PANEL=(new URLSearchParams(location.search)).get('p')||'m15';
+
+function cards(items){
+ return '<div class="cards">'+items.map(i=>
+  `<div class="card"><div class="lbl">${esc(i.l)}</div>
+   <div class="big ${i.c||''}">${i.v}</div><div class="sub">${esc(i.s||'')}</div></div>`).join('')+'</div>';
+}
+function table(cols,rows,empty){
+ if(!rows||!rows.length) return `<div class="loading">${esc(empty||'暂无数据')}</div>`;
+ return `<div class="tw"><table><thead><tr>${cols.map(c=>`<th class="${c.num?'num':''}">${esc(c.t)}</th>`).join('')}</tr></thead>
+  <tbody>${rows.map(r=>`<tr>${r.map((v,i)=>`<td class="${cols[i].num?'num':''} ${cols[i].cls&&cols[i].cls(v)}">${v}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+}
+function section(title,em,body){return `<section><h2>${esc(title)}<em>${esc(em||'')}</em></h2>${body}</section>`;}
+
+function panelM15(){
+ const d=S.m15, c=[
+  {l:'全场合计已实现盈亏',v:sign(d.pnl,2)+' <span style="font-size:12px;font-weight:400">USDC</span>',c:cls(d.pnl),s:'含全部参数穷举账户，非主推组合'},
+  {l:'独立到期合约',v:n(d.exps),c:'gold',s:`结算 ${n(d.settles)} 笔 · 约 ${n(d.mult)} 倍重复押注`},
+  {l:'胜率',v:n(d.win,1)+'%',s:`盈利策略 ${n(d.pos_sid)} / 亏损 ${n(d.neg_sid)}`},
+  {l:'样本跨度',v:n(d.hours)+' 小时',s:`参与策略 ${n(d.sids)} 个 · 笔均 ${sign(d.per_trade,2)}`},
+ ];
+ const top=table(
+  [{t:'策略版本'},{t:'已实现盈亏',num:1,cls:v=>cls(parseFloat(v))},{t:'独立到期',num:1},{t:'胜率',num:1},{t:'t 值',num:1}],
+  (d.top||[]).map(r=>[`<span class="sid">${esc(r.sid)}</span>`,`<span class="${cls(r.pnl)}">${sign(r.pnl)}</span>`,n(r.ind),n(r.win,1)+'%',n(r.t,2)]),
+  '盈利榜暂无数据');
+ const cand=table(
+  [{t:'策略版本'},{t:'独立到期',num:1},{t:'跨小时',num:1},{t:'模拟盈亏',num:1,cls:v=>cls(parseFloat(v))},{t:'t 值',num:1}],
+  (d.candidates||[]).map(r=>[`<span class="sid">${esc(r.sid)}</span>`,n(r.ind),n(r.hours),`<span class="${cls(r.pnl)}">${sign(r.pnl)}</span>`,n(r.t,2)]),
+  '当前无满足门槛的候选');
+ const rule=`<div class="rule"><b>口径</b>　结算笔数含同一到期结果被多账户重复押注的部分，判定以独立到期数为准。
+  15 分钟盘全场为负源于参数穷举账户占多数，评估主推版本应参照盈利榜。候选仅为观察名单，不构成上实盘结论。</div>`;
+ return cards(c)+rule+
+   section('盈利榜 · 前 5','按已实现盈亏排序',top)+
+   section('当前候选池','独立到期 ≥100 且 t ≥1.65',cand);
+}
+
+function panelDaily(){
+ const d=S.daily, c=[
+  {l:'账户合计已实现盈亏',v:sign(d.pnl,2)+' <span style="font-size:12px;font-weight:400">USDC</span>',c:cls(d.pnl),s:`${n(d.accounts)} 个模拟账户 · 起始资金各 100`},
+  {l:'独立标的批次',v:n(d.batches),c:'gold',s:`成交 ${n(d.trades)} 笔 · 官方结算 ${n(d.settles)} 笔`},
+  {l:'胜率',v:n(d.win,1)+'%',s:`盈利账户 ${n(d.pos)} / 亏损 ${n(d.neg)} · 笔均 ${sign(d.per_trade,2)}`},
+  {l:'当期结算',v:esc(d.cycle||'—'),c:'',s:`剩余 ${n(d.hours_left,1)} 小时 · 样本区间 ${esc(d.span)}`},
+ ];
+ const top=table(
+  [{t:'策略版本'},{t:'已实现盈亏',num:1,cls:v=>cls(parseFloat(v))},{t:'结算笔数',num:1},{t:'胜率',num:1},{t:'批次',num:1}],
+  (d.top||[]).map(r=>[`<span class="sid">${esc(r.sid)}</span>`,`<span class="${cls(r.pnl)}">${sign(r.pnl)}</span>`,n(r.n),n(r.win,1)+'%',n(r.batch)]),
+  '盈利榜暂无数据');
+ const rank=table(
+  [{t:'#'},{t:'账户'},{t:'账户权益',num:1},{t:'已实现',num:1,cls:v=>cls(parseFloat(v.replace('+','')))},{t:'胜率',num:1},{t:'盈亏比',num:1}],
+  (d.rank||[]).slice(0,10).map(r=>[`<span class="rk">${n(r.rank)}</span>`,`<span class="sid">${esc(r.code)}</span>`,n(r.equity,2),`<span class="${cls(r.realized)}">${sign(r.realized)}</span>`,n(r.winrate,1)+'%',n(r.pf,2)]),
+  '权益榜暂无数据');
+ const rule=`<div class="rule"><b>口径</b>　日盘一天一期，北京时间 14:00 官方结算，同一期可分多笔建仓，成交笔数与结算笔数不相等属正常。
+  仅 ${n(d.batches)} 个结算批次，样本量不足以支撑统计推断。日盘与 15 分钟盘在合约周期、起始资金与报价机制上均不同，盈亏不可加总。</div>`;
+ return cards(c)+rule+
+   section('盈利榜 · 前 5','按已实现盈亏排序',top)+
+   section('账户权益榜 · 前 10','含未结算持仓浮动',rank);
+}
+
+function panelReal(){
+ const r=S.real||[], g=S.gate||{};
+ const rows=table(
+  [{t:'账户'},{t:'结算',num:1},{t:'胜',num:1},{t:'胜率',num:1},{t:'已实现',num:1,cls:v=>cls(parseFloat(v))},{t:'持仓',num:1},{t:'状态'}],
+  r.map(x=>[esc(x.name),n(x.settles),n(x.wins),n(x.winrate,1)+'%',`<span class="${cls(x.pnl)}">${sign(x.pnl)}</span>`,n(x.open),esc(x.status||'—')]),
+  '实盘账暂无数据');
+ const gi=[
+  {k:'行情时段覆盖',v:esc(g.sessions||'—'),ok:g.sessions_ok},
+  {k:'ev_gate 最大到期',v:esc(g.ev||'—'),ok:g.ev_ok},
+  {k:'两半都赚成熟户',v:esc(g.mature||'—'),ok:g.mature_ok},
+  {k:'行情切换检验',v:esc(g.regime||'—'),ok:g.regime_ok},
+ ];
+ const gate='<div class="gate">'+gi.map(x=>
+  `<div class="gi"><div class="k">${x.k}</div><div class="v ${x.ok===false?'no':'ok'}">${x.v}</div></div>`).join('')+'</div>';
+ const rule=`<div class="rule"><b>实盘门槛</b>　四项校验全部通过后，才从候选池挑 1~2 个（最多 5 个）版本上实盘。
+  当前结论：<b>${esc(g.conclusion||'不能上实盘')}</b>。历史短周期实盘已停止新开仓，日盘实盘亦已停止新开仓，两本账单列，不与模拟盘合计。</div>`;
+ return section('两本实盘账','日盘 / 历史短周期，单列',rows)+
+   section('距实盘还差','模拟盘筛选门槛',gate+`<div style="margin-top:12px"></div>`)+rule;
+}
+
+function spark(pts,base){
+ if(!pts||pts.length<2) return `<div class="loading">权益曲线采集中，稍后刷新</div>`;
+ const vs=pts.map(p=>Number(p[1]||0)), lo=Math.min(base,...vs)-2, hi=Math.max(base,...vs)+2;
+ const W=1000,H=170,L=44,R=10,T=10,B=20;
+ const xy=(i,v)=>[L+(W-L-R)*i/Math.max(1,vs.length-1), T+(H-T-B)*(1-(v-lo)/(hi-lo))];
+ const line=vs.map((v,i)=>xy(i,v).map(x=>x.toFixed(1)).join(',')).join(' ');
+ const area=`${L},${H-B} ${line} ${xy(vs.length-1,vs[vs.length-1])[0].toFixed(1)},${H-B}`;
+ const col=vs[vs.length-1]>=base?'var(--red)':'var(--green)';
+ const by=xy(0,base)[1].toFixed(1);
+ let g='';for(let k=0;k<4;k++){g+=`<text x="${L-6}" y="${(T+(H-T-B)*k/3+4).toFixed(0)}" text-anchor="end" font-size="9" fill="var(--muted)" font-family="var(--mono)">${(hi-(hi-lo)*k/3).toFixed(0)}</text>`}
+ return `<svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+  <rect x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="#FCFAF4"/>
+  ${g}<line x1="${L}" y1="${by}" x2="${W-R}" y2="${by}" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4,4" opacity=".7"/>
+  <polygon points="${area}" fill="${col}" opacity=".08"/>
+  <polyline points="${line}" fill="none" stroke="${col}" stroke-width="2" stroke-linejoin="round"/>
+  <text x="${L}" y="${H-5}" font-size="9" fill="var(--muted)" font-family="var(--mono)">${esc((pts[0][0]||'').slice(5,16))}</text>
+  <text x="${W-R}" y="${H-5}" text-anchor="end" font-size="9" fill="var(--muted)" font-family="var(--mono)">${esc((pts[pts.length-1][0]||'').slice(5,16))}</text></svg>`;
+}
+
+function panelSingle100(){
+ const d=S.single100;
+ if(!d) return section('100 元单仓','独立账本',`<div class="loading">单仓状态尚未生成</div>`);
+ const eq=Number(d.equity||100), ret=Number(d.ret||0), col=ret>=0?'red':'green';
+ const ph=d.phase==='locked'?'余仓已结清':d.phase==='settling'?'整点已锁账，等待余仓结算':'运行中';
+ const c=[
+  {l:'账户权益',v:n(eq,2)+' <span style="font-size:12px;font-weight:400">USDC</span>',c:col,s:'期初 100.00 · 全程不补钱'},
+  {l:'收益率',v:sign(ret,2)+'%',c:col,s:`已实现 ${sign(d.realized,2)} · 现金 ${n(d.cash,2)}`},
+  {l:'成交 / 结算',v:n(d.trades)+' / '+n(d.settled),c:'gold',s:`胜 ${n(d.wins)} · 负 ${n(d.losses)} · 在仓 ${n(d.open)}`},
+  {l:'还剩',v:n(d.hours_left,2)+' <span style="font-size:12px;font-weight:400">小时</span>',s:`${esc(ph)} · 扫描 ${n(d.scans)} 次`},
+ ];
+ const bar=`<div class="barlbl"><span>起 ${esc(String(d.start_at||'').slice(5,16).replace('T',' '))}</span>
+  <span>进度 ${n(d.progress,1)}%</span><span>止 ${esc(String(d.end_at||'').slice(5,16).replace('T',' '))}</span></div>
+  <div class="bar"><i style="width:${Math.max(0,Math.min(100,Number(d.progress||0)))}%"></i></div>`;
+ const si=`<div class="strat">
+  <div class="si"><div class="k">策略</div><div class="v">${esc(d.strategy||'—')}</div></div>
+  <div class="si"><div class="k">单笔下注</div><div class="v">≈10 USDC</div></div>
+  <div class="si"><div class="k">最低现金</div><div class="v">${n(d.min_cash,2)}</div></div></div>`;
+ const rule=`<div class="rule"><b>规则</b>　${esc(d.rule||'—')}。
+  这一仓与 15 分钟盘、日盘、实盘完全隔离，盈亏不加总；现有 250 个样本照常跑，不删、不停、不合并。
+  <br><b>交付</b>　满 24 小时整点锁账出结果卡并推送；未平仓按盘口估值计入权益，余仓结清后另出终版。</div>`;
+ return cards(c)+section('24 小时进度','起止时间写死，不重启不重置',bar+si)+
+  section('权益曲线','虚线 = 期初 100',`<div class="spark">${spark(d.curve,100)}</div>`)+rule;
+}
+
+function panelMulti100(){
+ const d=S.multi100;
+ if(!d) return section('全部策略 · 各 100 元','平行仓',`<div class="loading">多仓数据尚未生成</div>`);
+ const c=[
+  {l:'参赛策略',v:n(d.accounts)+' <span style="font-size:12px;font-weight:400">个</span>',s:`已成交 ${n(d.traded)} 个 · 每户期初 100`},
+  {l:'现金还够一笔',v:n(d.alive)+' <span style="font-size:12px;font-weight:400">个</span>',c:'gold',s:`打光停手 ${n(d.starved)} 个（现金 < 10）`},
+  {l:'当前浮盈户',v:n(d.profitable)+' <span style="font-size:12px;font-weight:400">个</span>',s:`中位盈亏 ${sign(d.median_pnl,2)} USDC`},
+  {l:'还剩',v:n(d.hours_left,1)+' <span style="font-size:12px;font-weight:400">小时</span>',s:`起 ${esc(String(d.start_at||'').slice(5,16).replace('T',' '))} · 止 ${esc(String(d.end_at||'').slice(5,16).replace('T',' '))}`},
+ ];
+ const rank=table(
+  [{t:'#'},{t:'策略'},{t:'类型'},{t:'账户权益',num:1},{t:'盈亏',num:1,cls:v=>cls(parseFloat(v))},{t:'胜率',num:1},{t:'结算',num:1},{t:'手续费',num:1},{t:'涨/跌',num:1},{t:'在仓',num:1}],
+  (d.rows||[]).map((r,i)=>[`<span class="rk">${i+1}</span>`,`<span class="sid">${esc(r.sid)}</span>`,esc(r.fam||'—'),n(r.eq,2),
+    `<span class="${cls(r.pnl)}">${sign(r.pnl)}</span>`,r.wr==null?'—':n(r.wr,1)+'%',n(r.n),n(r.fees,2),
+    n(r.yes)+'/'+n(r.no),r.open?`<span class="neg">${n(r.open)}</span>`:n(0)]),
+  '暂无已成交账户');
+ const rule=`<div class="rule"><b>平台规则</b>　单笔名义额必须 ≥10 USDC（MinTradeSpotNtl），低于 10 平台直接拒单；现金不够一笔就算停手，不补钱。
+  <b>手续费</b>　开仓 0；平仓/结算按赔付额收：out 0.14%、fox 0.07%（平台 deployerFeeScale 换算），与账户 spot taker 档位一致。
+  <br><b>读法</b>　权益含未结算持仓的盘口估值，会来回跳；看 <b>现金</b>、<b>停手户数</b> 和 <b>手续费累计</b> 才准。样本满 24 小时再下结论。</div>`;
+ return cards(c)+rule+section('全部策略排行 · 前 24','按当前账户权益排序，含浮动',rank);
+}
+
+function panelDaily100(){
+ const d=S.daily100;
+ if(!d) return section('日盘 · 各 100 元','独立平行仓',`<div class="loading">日盘 100 元平行仓数据尚未生成</div>`);
+ const c=[
+  {l:'参赛策略',v:n(d.accounts)+' <span style="font-size:12px;font-weight:400">个</span>',s:`已建仓 ${n(d.traded)} 个 · 每户期初 100`},
+  {l:'现金还够一笔',v:n(d.alive)+' <span style="font-size:12px;font-weight:400">个</span>',c:'gold',s:`打光停手 ${n(d.starved)} 个（现金 < 10）`},
+  {l:'当前浮盈户',v:n(d.profitable)+' <span style="font-size:12px;font-weight:400">个</span>',s:`中位盈亏 ${sign(d.median_pnl,2)} USDC`},
+  {l:'起跑',v:esc(String(d.start_at||'').slice(5,16).replace('T',' ')),s:'日盘按 24 小时到期合约滚动，无固定收盘'},
+ ];
+ const rank=table(
+  [{t:'#'},{t:'策略'},{t:'账户权益',num:1},{t:'盈亏',num:1,cls:v=>cls(parseFloat(v))},{t:'现金',num:1},{t:'胜率',num:1},{t:'结算',num:1},{t:'手续费',num:1},{t:'涨/跌',num:1},{t:'在仓',num:1}],
+  (d.rows||[]).map((r,i)=>[`<span class="rk">${i+1}</span>`,`<span class="sid">${esc(r.sid)}</span>`,n(r.eq,2),
+    `<span class="${cls(r.pnl)}">${sign(r.pnl)}</span>`,n(r.cash,2),r.wr==null?'—':n(r.wr,1)+'%',n(r.n),n(r.fees,2),
+    n(r.yes)+'/'+n(r.no),r.open?`<span class="neg">${n(r.open)}</span>`:n(0)]),
+  '暂无建仓账户');
+ const rule=`<div class="rule"><b>独立性</b>　这套日盘账本单独放在 data/daily100，和上面 15 分钟盘、原日盘实验账本互不读写，各自 100 USDC 起算，谁也不影响谁。
+  <b>平台规则</b>　单笔 ≥10 USDC，现金不足一笔即停手，不补钱；开仓不收手续费，结算按赔付额 0.14%（out）/0.07%（fox）。
+  <br><b>读法</b>　日盘到期窗口长，建仓慢是正常的；未结算持仓按成本计入权益，浮动要在结算后才体现，所以先看 <b>现金</b> 和 <b>停手户数</b>。</div>`;
+ return cards(c)+rule+section('日盘策略排行 · 前 24','按当前账户权益排序，含浮动',rank);
+}
+
+function panelParity100(){
+ const d=S.parity100;
+ if(!d) return section('实盘同构 · 各 100 元','延迟 + 重新报价 + 逐档吃单',`<div class="loading">同构盘数据尚未生成</div>`);
+ const g=d.gap||{};
+ const e=d.events||{};
+ const c=[
+  {l:'尝试下单',v:n(d.attempts)+' <span style="font-size:12px;font-weight:400">次</span>',s:`真成交 ${n(d.traded)} 个账户 · 废单 ${n(d.rejects)} 次`},
+  {l:'成交率',v:n(d.fill_rate,1)+'%',c:'gold',s:`按策略自己限价挂单，够不够吃得到量`},
+  {l:'平均滑点',v:sign(d.avg_slip,4),s:`正数=买贵了；决策价与实际成交价之差`},
+  {l:'中位盈亏',v:sign(d.median_pnl,2)+' <span style="font-size:12px;font-weight:400">USDC</span>',c:cls(d.median_pnl),s:`对比理想成交盘中位 ${sign(d.base_median!=null?d.base_median:(S.multi100||{}).median_pnl,2)}`},
+  {l:'独立赌局',v:(e.events==null?'—':n(e.events)+' 个'),c:e.thick?'':'red',
+   s:e.events==null?'—':`结算 ${n(e.settled)} 笔，每局重复 ${n(e.per_event,1)} 次 · 事件级胜率 ${n(e.wr,1)}%`},
+ ];
+ const gapBlock=`<div class="rule"><b>决策价 vs 真实盘口</b>　最近 ${n(g.n)} 次下单里，决策价与发单那一刻的真实最优卖价，中位差 ${sign(g.median,4)}、90 分位 ${sign(g.p90,4)}；其中 ${n(g.pos_share,1)}% 的单子真实价已经比决策价高出 1 分以上。
+  只肯在决策价 +2 分内成交的话，这些单里只有 ${n(d.tight_hit_rate,1)}% 能吃得到。<b>这说明理想盘的盈利有多少来自"根本吃不到的价"。</b></div>`;
+ const multi={};((S.multi100||{}).rows||[]).forEach(r=>multi[r.sid]=r);
+ const rows=(d.rows||[]).map((r,i)=>{
+  const m=multi[r.sid]||{};
+  const mp=(r.multi_pnl!=null?r.multi_pnl:m.pnl);
+  const gapP=(r.diff!=null?r.diff:(mp!=null&&r.pnl!=null?r.pnl-mp:null));
+  return [`<span class="rk">${i+1}</span>`,`<span class="sid">${esc(r.sid)}</span>`,esc(r.fam||'—'),
+   mp==null?'—':`<span class="${cls(mp)}">${sign(mp)}</span>`,
+   `<span class="${cls(r.pnl)}">${sign(r.pnl)}</span>`,
+   gapP==null?'—':`<span class="${cls(gapP)}">${sign(gapP)}</span>`,
+   r.att==null?'—':n(r.att), r.fr==null?'—':n(r.fr,1)+'%',
+   r.slip==null?'—':sign(r.slip,4), r.wr==null?'—':n(r.wr,1)+'%', n(r.n)];
+ });
+ const rank=table(
+  [{t:'#'},{t:'策略'},{t:'类型'},{t:'理想盘盈亏',num:1,cls:v=>cls(parseFloat(v))},{t:'同构盘盈亏',num:1,cls:v=>cls(parseFloat(v))},
+   {t:'差额',num:1,cls:v=>cls(parseFloat(v))},{t:'尝试',num:1},{t:'成交率',num:1},{t:'滑点',num:1},{t:'胜率',num:1},{t:'结算',num:1}],
+  rows,'暂无成交账户');
+ const rule=`<div class="rule"><b>成交规则</b>　每笔意向单先过 0.35 秒往返延迟，再重新抓真实 l2Book（买涨用 #oid*10、买跌用 #oid*10+1 自己的簿子），
+  按档位逐档吃挂单、整股取整，吃到 10 USDC 才算成交，上限 11；限价单量按策略自己的最高买价挂，成交价是吃到的加权均价。
+  报价时间戳超 2.5 秒、盘口被抽走、深度不够 10 USDC 都算废单，和实盘被拒一样留痕。
+  <b>其余完全一致</b>　同样 247 个策略、各 100 USDC、不补钱、官方 settledOutcome 结算、结算收 0.14%/0.07%。
+  <br><b>怎么读</b>　理想盘（左）是停跑前的冻结基线，同构盘（右）是现在唯一在跑的 100 元盘；差额就是"纸面价与真实成交"的差，差额越大，理想盘的收益越不可信。
+  <br><b>独立赌局</b>　结算笔数不等于样本量：几十个策略同时咬同一个盘口，一个市场到期就结算几十笔。按市场去重后的数量才是能用来判断的样本，不到 50 个只算观察。</div>`;
+ return cards(c)+gapBlock+rule+section('策略对照 · 前 24','左侧理想价成交，右侧实盘同构成交',`<div class="wide">${rank}</div>`);
+}
+
+function panelDailyParity(){
+ const d=S.daily_parity;
+ if(!d) return section('日盘同构 · 各 100 元','延迟 + 重新报价 + 逐档吃单',`<div class="loading">日盘同构数据尚未生成</div>`);
+ const g=d.gap||{};
+ const e=d.events||{};
+ const c=[
+  {l:'尝试下单',v:n(d.attempts)+' <span style="font-size:12px;font-weight:400">次</span>',s:`有单账户 ${n(d.traded)} 个 · 废单 ${n(d.rejects)} 次`},
+  {l:'成交率',v:n(d.fill_rate,1)+'%',c:'gold',s:`按策略自己限价挂单，够不够 10 USDC 的量`},
+  {l:'平均滑点',v:sign(d.avg_slip,4),s:`决策价与实际成交价之差，正数=买贵了`},
+  {l:'中位盈亏',v:sign(d.median_pnl,2)+' <span style="font-size:12px;font-weight:400">USDC</span>',c:cls(d.median_pnl),s:`同口径理想成交基线 ${sign(d.base_median,2)}`},
+  {l:'独立赌局',v:(e.events==null?'—':n(e.events)+' 个'),c:e.thick?'':'red',
+   s:e.events==null?'—':`结算 ${n(e.settled)} 笔，每局重复 ${n(e.per_event,1)} 次 · 事件级胜率 ${n(e.wr,1)}%`},
+ ];
+ const gapBlock=`<div class="rule"><b>决策价 vs 真实盘口</b>　最近 ${n(g.n)} 次下单里，决策价与发单那刻真实最优卖价，中位差 ${sign(g.median,4)}、90 分位 ${sign(g.p90,4)}；
+  ${n(g.pos_share,1)}% 的单子真实价高出决策价 1 分以上。日盘盘口挂得久、跳得慢，所以滑点本来就比 15 分钟盘小，这一栏看的是"有没有被抽走"。</div>`;
+ const rows=(d.rows||[]).map((r,i)=>[
+   `<span class="rk">${i+1}</span>`,`<span class="sid">${esc(r.sid)}</span>`,esc(r.fam||'—'),
+   r.base_pnl==null?'—':`<span class="${cls(r.base_pnl)}">${sign(r.base_pnl)}</span>`,
+   `<span class="${cls(r.pnl)}">${sign(r.pnl)}</span>`,
+   r.diff==null?'—':`<span class="${cls(r.diff)}">${sign(r.diff)}</span>`,
+   r.att==null?'—':n(r.att), r.fr==null?'—':n(r.fr,1)+'%',
+   r.slip==null?'—':sign(r.slip,4), r.wr==null?'—':n(r.wr,1)+'%', n(r.n)]);
+ const rank=table(
+  [{t:'#'},{t:'策略'},{t:'类型'},{t:'理想盘基线',num:1,cls:v=>cls(parseFloat(v))},{t:'同构盘盈亏',num:1,cls:v=>cls(parseFloat(v))},
+   {t:'差额',num:1,cls:v=>cls(parseFloat(v))},{t:'尝试',num:1},{t:'成交率',num:1},{t:'滑点',num:1},{t:'胜率',num:1},{t:'结算',num:1}],
+  rows,'暂无建仓账户');
+ const rule=`<div class="rule"><b>成交规则</b>　决策用 T 时刻盘口，成交前先过 0.35 秒往返延迟，再重新抓真实 l2Book（买涨 #oid*10、买跌 #oid*10+1），
+  逐档吃挂单、整股取整，吃到 10 USDC 才算成交、上限 11；报价超 2.5 秒或深度不够一律废单留痕。
+  <b>其余完全一致</b>　同一批日盘策略与冻结参数、各 100 USDC、不补钱、开仓 0 费、官方 settledOutcome 结算收 0.14%/0.07%。
+  <br><b>怎么读</b>　左列是已停跑的日盘理想盘（冻结在同一时刻）的盈亏，右列是现在这套同构成交；差额越大，说明纸面高估越多。
+  日盘到期窗口长，早期权益主要被买卖价差压着、多为负，要看结算后的胜率和差额，不要看前几小时的浮动。</div>`;
+ return cards(c)+gapBlock+rule+section('日盘策略对照 · 前 24','左侧理想价成交，右侧实盘同构成交',`<div class="wide">${rank}</div>`);
+}
+
+function panelBand100(){
+ const d=S.band100;
+ if(!d) return section('区间专盘 · 0.30-0.50','只买便宜区间 + 每日限次',`<div class="loading">区间专盘数据尚未生成</div>`);
+ const band=(d.band||[0.3,0.5]).map(x=>x.toFixed(2)).join(' - ');
+ const e=d.events||{};
+ const c=[
+  {l:'入场区间',v:band,c:'gold',s:`每户每日最多 ${n(d.max_bets)} 笔`},
+  {l:'尝试下单',v:n(d.attempts)+' <span style="font-size:12px;font-weight:400">次</span>',s:`区间外废单 ${n(d.band_rejects)} 次 · 有单账户 ${n(d.traded)}`},
+  {l:'成交率',v:d.fill_rate==null?'—':n(d.fill_rate,1)+'%',s:`区间内才发单，价格跑出区间就废掉`},
+  {l:'中位盈亏',v:sign(d.median_pnl,2)+' <span style="font-size:12px;font-weight:400">USDC</span>',c:cls(d.median_pnl),s:`有单 ${n(d.traded)} 户 · 盈利 ${n(d.profitable)} 户`},
+  {l:'独立赌局',v:(e.events==null?'—':n(e.events)+' 个'),c:e.thick?'':'red',
+   s:e.events==null?'—':`结算 ${n(e.settled)} 笔铺在 ${n(e.events)} 个市场上 · 事件级胜率 ${n(e.wr,1)}%`},
+ ];
+ const rows=(d.rows||[]).map((r,i)=>[
+   `<span class="rk">${i+1}</span>`,`<span class="sid">${esc(r.sid)}</span>`,esc(r.fam||'—'),
+   `<span class="${cls(r.pnl)}">${sign(r.pnl)}</span>`,
+   r.att==null?'—':n(r.att), r.brej==null?'—':n(r.brej),
+   r.fr==null?'—':n(r.fr,1)+'%', r.slip==null?'—':sign(r.slip,4),
+   r.wr==null?'—':n(r.wr,1)+'%', n(r.n), n(r.open),
+   r.starved?'停手':'在跑']);
+ const rank=table(
+  [{t:'#'},{t:'策略'},{t:'类型'},{t:'盈亏',num:1,cls:v=>cls(parseFloat(v))},
+   {t:'尝试',num:1},{t:'区间废单',num:1},{t:'成交率',num:1},{t:'滑点',num:1},
+   {t:'胜率',num:1},{t:'结算',num:1},{t:'持仓',num:1},{t:'状态'}],
+  rows,'暂无成交账户');
+const rule=`<div class="rule"><b>为什么是这个区间</b>　8712 笔真实结算按入场价分组后，0.30 附近是唯一每投 1 元为正（+0.128）的桶，0.40 转负（-0.202）、0.90 最惨（-0.132）；按户看，入场价中位低于 0.5 的账户存活率 70%，而 0.5-0.6 只有 31%。原先想的 0.45-0.60 反倒落在硬币区、期望为负，所以改成 0.30-0.50。
+ <b>两道闸</b>　真实最优卖价必须落在区间内（区间外直接废单），每户每个自然日最多 6 笔。其余规则和实盘同构盘完全一致：0.35 秒延迟、重新抓盘口、逐档吃单、10-11 USDC、官方结算、真实费率。
+ <br><b>独立赌局怎么算</b>　几十个策略会同时咬同一个盘口，一个市场到期就结算几十笔，这些不是几十个样本，只是同一个赌局被重复计数。按市场去重后的数量才是能用来做判断的样本量，不到 50 个的盘只算观察、不算结论。
+ <br><b>怎么读</b>　这套是"复盘结论能不能变成可执行方案"的验证：如果低价 + 限次还亏，说明这套玩法本身没有边际；也能活过 24 小时、攒够独立赌局并赚钱，才值得谈实盘。</div>`;
+ return cards(c)+rule+section('区间专盘 · 前 24','按账户权益排序',`<div class="wide">${rank}</div>`);
+}
+
+function panelBandV2(){
+ const d=S.band_v2;
+ if(!d) return section('V2 验证盘 · 0.25-0.35','低价侧新市场验证，72 小时',`<div class="loading">V2 数据尚未生成（14:33 开跑）</div>`);
+ const band=(d.band||[0.25,0.35]).map(x=>x.toFixed(2)).join(' - ');
+ const win=(d.window||[2,6]).join(' - ');
+ const e=d.events||{};
+ const c=[
+  {l:'验证假设',v:'BTC 15m · 0.25-0.35',c:'gold',s:`到期前 ${win} 分钟入场 · 不限日次数`},
+  {l:'尝试下单',v:n(d.attempts)+' <span style="font-size:12px;font-weight:400">次</span>',s:`区间外废单 ${n(d.band_rejects)} 次 · 有单账户 ${n(d.traded)}`},
+  {l:'成交率',v:d.fill_rate==null?'—':n(d.fill_rate,1)+'%',s:`区间内才发单，价格跑出 0.25-0.35 就废掉`},
+  {l:'中位盈亏',v:sign(d.median_pnl,2)+' <span style="font-size:12px;font-weight:400">USDC</span>',c:cls(d.median_pnl),s:`有单 ${n(d.traded)} 户 · 盈利 ${n(d.profitable)} 户`},
+  {l:'独立赌局',v:(e.events==null?'—':n(e.events)+' 个'),c:e.thick?'':'red',
+   s:e.events==null?'目标 ≥250 个新市场':'结算 '+n(e.settled)+' 笔铺在 '+n(e.events)+' 个市场上 · 事件级胜率 '+n(e.wr,1)+'%'},
+ ];
+ const rows=(d.rows||[]).map((r,i)=>[
+   `<span class="rk">${i+1}</span>`,`<span class="sid">${esc(r.sid)}</span>`,esc(r.fam||'—'),
+   `<span class="${cls(r.pnl)}">${sign(r.pnl)}</span>`,
+   r.att==null?'—':n(r.att), r.brej==null?'—':n(r.brej),
+   r.fr==null?'—':n(r.fr,1)+'%', r.slip==null?'—':sign(r.slip,4),
+   r.wr==null?'—':n(r.wr,1)+'%', n(r.n), n(r.open),
+   r.starved?'停手':'在跑']);
+ const rank=table(
+  [{t:'#'},{t:'策略'},{t:'类型'},{t:'盈亏',num:1,cls:v=>cls(parseFloat(v))},
+   {t:'尝试',num:1},{t:'区间废单',num:1},{t:'成交率',num:1},{t:'滑点',num:1},
+   {t:'胜率',num:1},{t:'结算',num:1},{t:'持仓',num:1},{t:'状态'}],
+  rows,'暂无成交账户');
+const rule=`<div class="rule"><b>为什么开这一盘</b>　band100 和 parity100 切出来的同一条线：只有 0.35 以下的便宜侧是正期望，0.35 以上一律亏。但旧样本只有 60 多个独立市场、全部来自同样三天，已被现有策略吃干净。V2 只统计 2026-11-17 14:33 之后产生的市场，旧数据一概不并入。
+ <b>四道闸</b>　①品种：只做 BTC 15 分钟（ETH/HYPE 样本不足）；②价格：真实最优卖价必须落在 0.25-0.35，否则废单；③时点：到期前 2-6 分钟才入场（0-2 分钟盘口最脏，实测负期望）；④不限日次数（原每日 6 笔上限会人为压扁样本）。成交模型与实盘同构：0.35 秒延迟、重新抓盘口、逐档吃单、10-11 USDC、官方结算、真实费率。cash 跌破 10 锁死。
+ <br><b>验收标准（开跑前写死，跑完不许改）</b>　①市场级胜率 ≥38%（0.30 入场盈亏平衡 33%，留 5 个点缓冲）；②去掉利润前 3 的市场后总收益仍为正；③目标 250 个以上新独立市场。三条全过才谈实盘（本金 300-500、单笔 10、每日 2 笔小仓验证滑点），任何一条不过即否掉这条线，到此为止。
+ <br><b>怎么读</b>　这是最后一块拼图：前面所有盘都在证明“什么不行”，这一盘验证的是唯一露头的信号是不是真的。五五开的事，用数据定生死。</div>`;
+ return cards(c)+rule+section('V2 验证盘 · 前 24','按账户权益排序',`<div class="wide">${rank}</div>`);
+}
+
+function render(){
+ if(!S) return;
+ const has100=!!S.single100;
+ const hasmulti=!!S.multi100;
+ const hasd100=!!S.daily100;
+ const haspar=!!S.parity100;
+ const hasdpar=!!S.daily_parity;
+ const hasband=!!S.band100;
+ const hasband2=!!S.band_v2;
+ const t=$('#tab100'); if(t) t.style.display=has100?'':'none';
+ const tm=$('#tabmulti'); if(tm) tm.style.display=hasmulti?'':'none';
+ const td=$('#tabdaily100'); if(td) td.style.display=hasd100?'':'none';
+ const tp=$('#tabparity'); if(tp) tp.style.display=haspar?'':'none';
+ const tdp=$('#tabdpar'); if(tdp) tdp.style.display=hasdpar?'':'none';
+ const tb=$('#tabband'); if(tb) tb.style.display=hasband?'':'none';
+ const tb2=$('#tabband2'); if(tb2) tb2.style.display=hasband2?'':'none';
+ if(PANEL==='single100'&&!has100) PANEL='m15';
+ if(PANEL==='multi100'&&!hasmulti) PANEL='m15';
+ if(PANEL==='daily100'&&!hasd100) PANEL='m15';
+ if(PANEL==='parity100'&&!haspar) PANEL='m15';
+ if(PANEL==='daily_parity'&&!hasdpar) PANEL='m15';
+ if(PANEL==='band100'&&!hasband) PANEL='m15';
+ if(PANEL==='band_v2'&&!hasband2) PANEL='m15';
+ $('#h1').textContent = PANEL==='single100' ? '100 元独立单仓 · 24 小时验证'
+   : PANEL==='multi100' ? '全部策略 · 各 100 USDC 平行仓'
+   : PANEL==='parity100' ? '实盘同构 · 各 100 USDC 探真盘'
+   : PANEL==='daily_parity' ? '日盘同构 · 各 100 USDC 探真盘'
+   : PANEL==='band100' ? '区间专盘 · 只买 0.30-0.50，每日限次'
+   : PANEL==='band_v2' ? 'V2 验证盘 · BTC 15m · 0.25-0.35 · 到期前 2-6 分钟'
+   : PANEL==='daily100' ? '日盘 · 各 100 USDC 独立平行仓' : '模拟盘实时看板 · 15 分钟与日盘';
+ $('#asof').textContent=S.as_of||'—';
+ $('#content').innerHTML = PANEL==='m15'?panelM15():PANEL==='daily'?panelDaily():
+   PANEL==='single100'?panelSingle100():PANEL==='multi100'?panelMulti100():
+   PANEL==='parity100'?panelParity100():PANEL==='daily_parity'?panelDailyParity():
+   PANEL==='band100'?panelBand100():PANEL==='band_v2'?panelBandV2():
+   PANEL==='daily100'?panelDaily100():panelReal();
+ document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.p===PANEL));
+ $('#foot').innerHTML=`<b>数据源</b>　本地模拟盘账本（data/short_paper、data/challengers）与官方结算结果，全部为模拟资金；实盘单列。
+  <b>100 元盘</b>　只跑实盘同频的三套：data/parity100（15 分钟全策略）、data/daily_parity（日盘）、data/band100（只用 0.30-0.50 区间 + 每日限次），都是延迟 + 重新报价 + 逐档吃单；data/band_v2 是收官后的低价侧新市场验证盘（BTC 15m、0.25-0.35、到期前 2-6 分钟、72 小时）；理想成交、日盘 100、单仓 100 已停跑归档到 data/archive_100，只作对照基线。
+  本页由本机定时推送快照，每 10 秒拉取一次。<br><b>系统</b>　看门狗 ${esc(S.system&&S.system.guardian||'—')} ·
+  账本更新 ${esc(S.system&&S.system.ledger_mtime||'—')} · 上次自愈 ${esc(S.system&&S.system.last_repair||'—')}。
+  快照生成 ${esc(S.as_of||'—')}。`;
+}
+
+const QS = location.search || '';
+async function tick(){
+ try{
+  // 纯静态数据源：优先读同目录的 snapshot.json（本机与 GitHub Pages 通用），带时间戳绕缓存
+  let S2=null;
+  try{
+   const r=await fetch('snapshot.json?t='+Date.now(),{cache:'no-store'});
+   if(r.ok) S2=await r.json();
+  }catch(_){}
+  if(!S2){
+   const r=await fetch('/api/snapshot'+QS,{cache:'no-store'});
+   if(!r.ok) throw new Error('HTTP '+r.status);
+   S2=await r.json();
+  }
+  S=S2;
+  $('#errbox').innerHTML='';
+  const age=S._pushed_at?Math.floor(Date.now()/1000-S._pushed_at):0;
+  const stale=age>1800;
+  $('#dot').className='dot'+(stale?' stale':'');
+  $('#livetxt').textContent=stale?'数据延迟':'实时';
+  $('#livetxt').style.color=stale?'var(--red)':'var(--green)';
+  render();
+ }catch(e){
+  $('#errbox').innerHTML=`<div class="err">快照读取失败：${esc(e.message)}。页面保留上一次数据。</div>`;
+  $('#dot').className='dot stale';$('#livetxt').textContent='连接异常';
+  $('#livetxt').style.color='var(--red)';
+ }
+}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+ b.classList.add('on');PANEL=b.dataset.p;render();
+});
+setInterval(()=>{$('#clock').textContent=new Date().toLocaleTimeString('zh-CN',{hour12:false});},1000);
+tick();setInterval(tick,10000);
+</script>
+</body>
+</html>
