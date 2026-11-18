@@ -1,6 +1,6 @@
 {
- "as_of": "2026-11-19 07:41",
- "_pushed_at": 1795045312,
+ "as_of": "2026-11-19 07:45",
+ "_pushed_at": 1795045552,
  "m15": {
   "pnl": -56904.94,
   "n": 117861,
@@ -64,7 +64,7 @@
   "per_trade": 0.91,
   "span": "11-09 ~ 11-18",
   "cycle": "11-19 14:00",
-  "hours_left": 6.3,
+  "hours_left": 6.2,
   "top": [
    {
     "sid": "cross_follow.v1",
@@ -106,7 +106,7 @@
    {
     "code": "cross_follow.v1",
     "rank": 1,
-    "equity": 332.47,
+    "equity": 332.46,
     "realized": 218.7286,
     "winrate": 61.8,
     "pf": 2.43
@@ -114,7 +114,7 @@
    {
     "code": "favored_side_follow.v1",
     "rank": 2,
-    "equity": 311.67,
+    "equity": 311.66,
     "realized": 197.9349,
     "winrate": 61.8,
     "pf": 2.3
@@ -122,7 +122,7 @@
    {
     "code": "cheap_fade.v1",
     "rank": 3,
-    "equity": 295.2,
+    "equity": 296.4,
     "realized": 210.6899,
     "winrate": 50.0,
     "pf": 3.08
@@ -130,7 +130,7 @@
    {
     "code": "favored_side_follow.v2",
     "rank": 4,
-    "equity": 293.85,
+    "equity": 293.84,
     "realized": 180.113,
     "winrate": 59.4,
     "pf": 2.2
@@ -138,7 +138,7 @@
    {
     "code": "favored_side_follow.v3",
     "rank": 5,
-    "equity": 240.78,
+    "equity": 240.77,
     "realized": 127.0389,
     "winrate": 53.6,
     "pf": 1.89
@@ -154,7 +154,7 @@
    {
     "code": "daily_timed.h16_20_p60_75",
     "rank": 7,
-    "equity": 539.34,
+    "equity": 539.15,
     "realized": 19.772,
     "winrate": 73.3,
     "pf": 1.48
@@ -196,13 +196,13 @@
    "equity": 139.61,
    "status": "空仓停手",
    "source": "https://api.hyperliquid.xyz/info userFills",
-   "as_of": "2026-11-19 07:41:55"
+   "as_of": "2026-11-19 07:46:00"
   }
  ],
  "gate": {
   "sessions": "23/8",
   "sessions_ok": true,
-  "ev": "422/20",
+  "ev": "423/20",
   "ev_ok": true,
   "mature": "1/3",
   "mature_ok": false,
@@ -755,7 +755,7 @@
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-19T07:39:21.520342+08:00",
+  "as_of": "2026-11-19T07:42:40.718762+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 39,
@@ -767,7 +767,7 @@
   "rejects": 14,
   "fill_rate": 96.9,
   "avg_slip": 0.00051,
-  "cycles": 1323,
+  "cycles": 1324,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
@@ -1243,7 +1243,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-19T07:41:41.589721+08:00",
+  "as_of": "2026-11-19T07:47:02.498086+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1731,7 +1731,7 @@
   }
  },
  "band_v2": {
-  "as_of": "2026-11-19T07:41:46.848719+08:00",
+  "as_of": "2026-11-19T07:47:23.113778+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2224,20 +2224,20 @@
   }
  },
  "forward100": {
-  "as_of": "2026-11-19T07:41:52.588654+08:00",
+  "as_of": "2026-11-19T07:47:03.594114+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-11-19T09:58:21.546588+08:00",
-  "hours_left": 2.3,
+  "hours_left": 2.2,
   "accounts": 4,
   "traded": 4,
   "profitable": 1,
   "starved": 0,
   "alive": 4,
   "median_pnl": -10.16,
-  "attempts": 189,
-  "rejects": 146,
-  "fill_rate": 22.8,
+  "attempts": 193,
+  "rejects": 150,
+  "fill_rate": 22.3,
   "avg_slip": 0.00085,
   "fill_model": {
    "latency_seconds": 0.35,
@@ -2249,7 +2249,7 @@
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 2052,
+  "scans": 2067,
   "fills": 43,
   "settlements": 43,
   "rows": [
@@ -2319,9 +2319,9 @@
     "no": 5,
     "open": 0,
     "fees": 0.19,
-    "att": 109,
-    "rej": 88,
-    "fr": 19.3,
+    "att": 113,
+    "rej": 92,
+    "fr": 18.6,
     "slip": -0.00062,
     "starved": false
    }
@@ -2614,7 +2614,7 @@
   "note": "事后从已跑完的池子里筛出的头部，存在幸存者偏差；仅作候选，不等于已验证。真正前瞻验证看 FORWARD-100。"
  },
  "ledger": {
-  "rebuilt_at": "2026-11-19 07:41:32",
+  "rebuilt_at": "2026-11-19 07:45:17",
   "equity": 139.60539,
   "total_pnl": -11.5977,
   "n_settled": 62,
@@ -3860,7 +3860,7 @@
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "07:41:21",
+  "ledger_mtime": "07:42:46",
   "last_repair": "2026-11-19 06:57:44"
  }
 }
