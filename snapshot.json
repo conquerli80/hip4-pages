@@ -1,53 +1,53 @@
 {
- "as_of": "2026-11-19 05:15",
- "_pushed_at": 1795036541,
+ "as_of": "2026-11-19 05:25",
+ "_pushed_at": 1795037157,
  "m15": {
-  "pnl": -54647.97,
-  "n": 115786,
-  "settles": 115786,
-  "exps": 2114,
+  "pnl": -54685.97,
+  "n": 116086,
+  "settles": 116086,
+  "exps": 2120,
   "sids": 238,
   "win": 60.9,
-  "pos_sid": 25,
-  "neg_sid": 213,
-  "hours": 129,
+  "pos_sid": 26,
+  "neg_sid": 212,
+  "hours": 130,
   "per_trade": -0.47,
   "mult": 54,
   "top": [
    {
     "sid": "fixed_time.v14",
-    "pnl": 322.19,
-    "ind": 271,
-    "win": 42.5,
-    "t": 1.36
+    "pnl": 334.82,
+    "ind": 272,
+    "win": 42.7,
+    "t": 1.41
    },
    {
     "sid": "fixed_time.v7",
-    "pnl": 278.46,
-    "ind": 392,
-    "win": 45.2,
-    "t": 1.08
+    "pnl": 291.09,
+    "ind": 393,
+    "win": 45.4,
+    "t": 1.13
    },
    {
     "sid": "fixed_time.v8",
-    "pnl": 236.45,
-    "ind": 319,
-    "win": 41.0,
-    "t": 0.93
+    "pnl": 249.09,
+    "ind": 320,
+    "win": 41.2,
+    "t": 0.98
    },
    {
     "sid": "fixed_time.v13",
-    "pnl": 219.24,
-    "ind": 851,
-    "win": 69.4,
-    "t": 0.89
+    "pnl": 239.37,
+    "ind": 854,
+    "win": 69.5,
+    "t": 0.97
    },
    {
     "sid": "fixed_time.v2",
-    "pnl": 206.85,
-    "ind": 615,
-    "win": 55.5,
-    "t": 0.79
+    "pnl": 224.26,
+    "ind": 617,
+    "win": 55.7,
+    "t": 0.86
    }
   ],
   "candidates": []
@@ -64,7 +64,7 @@
   "per_trade": 0.91,
   "span": "11-09 ~ 11-18",
   "cycle": "11-19 14:00",
-  "hours_left": 8.7,
+  "hours_left": 8.6,
   "top": [
    {
     "sid": "cross_follow.v1",
@@ -196,7 +196,7 @@
    "equity": 139.61,
    "status": "空仓停手",
    "source": "https://api.hyperliquid.xyz/info userFills",
-   "as_of": "2026-11-19 05:15:48"
+   "as_of": "2026-11-19 05:26:00"
   }
  ],
  "gate": {
@@ -755,7 +755,7 @@
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-19T05:15:24.443310+08:00",
+  "as_of": "2026-11-19T05:24:13.326658+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 39,
@@ -767,7 +767,7 @@
   "rejects": 14,
   "fill_rate": 96.9,
   "avg_slip": 0.00051,
-  "cycles": 1283,
+  "cycles": 1285,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
@@ -1243,7 +1243,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-19T05:15:57.695148+08:00",
+  "as_of": "2026-11-19T05:26:13.346964+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1731,7 +1731,7 @@
   }
  },
  "band_v2": {
-  "as_of": "2026-11-19T05:15:56.331875+08:00",
+  "as_of": "2026-11-19T05:26:08.772115+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2224,20 +2224,20 @@
   }
  },
  "forward100": {
-  "as_of": "2026-11-19T05:15:59.352492+08:00",
+  "as_of": "2026-11-19T05:26:09.614409+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-11-19T09:58:21.546588+08:00",
-  "hours_left": 4.7,
+  "hours_left": 4.5,
   "accounts": 4,
   "traded": 4,
   "profitable": 1,
   "starved": 0,
   "alive": 4,
   "median_pnl": -10.16,
-  "attempts": 164,
-  "rejects": 122,
-  "fill_rate": 25.6,
+  "attempts": 168,
+  "rejects": 126,
+  "fill_rate": 25.0,
   "avg_slip": 0.00016,
   "fill_model": {
    "latency_seconds": 0.35,
@@ -2249,7 +2249,7 @@
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 1620,
+  "scans": 1650,
   "fills": 42,
   "settlements": 42,
   "rows": [
@@ -2301,9 +2301,9 @@
     "no": 3,
     "open": 0,
     "fees": 0.03,
-    "att": 14,
-    "rej": 8,
-    "fr": 42.9,
+    "att": 16,
+    "rej": 10,
+    "fr": 37.5,
     "slip": 0.00739,
     "starved": false
    },
@@ -2319,9 +2319,9 @@
     "no": 5,
     "open": 0,
     "fees": 0.19,
-    "att": 97,
-    "rej": 76,
-    "fr": 21.6,
+    "att": 99,
+    "rej": 78,
+    "fr": 21.2,
     "slip": -0.00062,
     "starved": false
    }
@@ -2614,7 +2614,7 @@
   "note": "事后从已跑完的池子里筛出的头部，存在幸存者偏差；仅作候选，不等于已验证。真正前瞻验证看 FORWARD-100。"
  },
  "ledger": {
-  "rebuilt_at": "2026-11-19 05:15:11",
+  "rebuilt_at": "2026-11-19 05:25:22",
   "equity": 139.60539,
   "total_pnl": -11.5977,
   "n_settled": 62,
@@ -3860,7 +3860,7 @@
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "05:14:33",
+  "ledger_mtime": "05:25:15",
   "last_repair": "2026-11-19 04:37:46"
  }
 }
