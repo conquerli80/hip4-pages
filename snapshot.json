@@ -1,26 +1,19 @@
 {
- "as_of": "2026-11-18 09:27",
- "_pushed_at": 1794965250,
+ "as_of": "2026-11-18 09:35",
+ "_pushed_at": 1794965740,
  "m15": {
-  "pnl": -49577.7,
-  "n": 99527,
-  "settles": 99527,
-  "exps": 1788,
+  "pnl": -51535.45,
+  "n": 99873,
+  "settles": 99873,
+  "exps": 1794,
   "sids": 238,
-  "win": 60.5,
+  "win": 60.4,
   "pos_sid": 35,
   "neg_sid": 203,
   "hours": 110,
-  "per_trade": -0.5,
+  "per_trade": -0.52,
   "mult": 55,
   "top": [
-   {
-    "sid": "favored_follow.v36",
-    "pnl": 174.9,
-    "ind": 270,
-    "win": 50.5,
-    "t": 0.98
-   },
    {
     "sid": "fixed_time.px55_60",
     "pnl": 167.2,
@@ -29,11 +22,11 @@
     "t": 1.65
    },
    {
-    "sid": "fixed_time.v13",
-    "pnl": 122.5,
-    "ind": 722,
-    "win": 68.8,
-    "t": 0.54
+    "sid": "favored_follow.v36",
+    "pnl": 154.22,
+    "ind": 272,
+    "win": 50.2,
+    "t": 0.86
    },
    {
     "sid": "fixed_time.px50_55",
@@ -43,11 +36,18 @@
     "t": 1.01
    },
    {
-    "sid": "fixed_time.v2",
-    "pnl": 100.85,
-    "ind": 531,
-    "win": 55.0,
-    "t": 0.42
+    "sid": "fixed_time.v13",
+    "pnl": 112.18,
+    "ind": 723,
+    "win": 68.7,
+    "t": 0.49
+   },
+   {
+    "sid": "fixed_time.px60_65",
+    "pnl": 96.47,
+    "ind": 156,
+    "win": 66.0,
+    "t": 0.98
    }
   ],
   "candidates": []
@@ -108,9 +108,9 @@
  "gate": {
   "sessions": "20/8",
   "sessions_ok": true,
-  "ev": "336/20",
+  "ev": "337/20",
   "ev_ok": true,
-  "mature": "4/3",
+  "mature": "5/3",
   "mature_ok": true,
   "regime": "PASS",
   "regime_ok": true,
@@ -661,7 +661,7 @@
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T09:24:35.375101+08:00",
+  "as_of": "2026-11-18T09:32:25.924347+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 38,
@@ -673,7 +673,7 @@
   "rejects": 8,
   "fill_rate": 97.7,
   "avg_slip": 0.00039,
-  "cycles": 993,
+  "cycles": 995,
   "rows": [
    {
     "sid": "daily_timed.h4_z05_p90",
@@ -1149,7 +1149,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-18T09:27:27.144170+08:00",
+  "as_of": "2026-11-18T09:35:37.660546+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1637,7 +1637,7 @@
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T09:27:19.653082+08:00",
+  "as_of": "2026-11-18T09:35:39.872701+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -1653,7 +1653,7 @@
   "accounts": 127,
   "traded": 29,
   "profitable": 7,
-  "median_pnl": -16.53,
+  "median_pnl": -18.32,
   "attempts": 515,
   "rejects": 356,
   "band_rejects": 173,
@@ -1815,25 +1815,6 @@
     "starved": false
    },
    {
-    "sid": "short_favored_follow.v7",
-    "fam": "顺势跟随",
-    "eq": 91.91,
-    "pnl": -8.09,
-    "ret": -8.09,
-    "n": 11,
-    "wr": 27.3,
-    "yes": 10,
-    "no": 1,
-    "open": 1,
-    "fees": 0.1,
-    "att": 29,
-    "rej": 17,
-    "fr": 41.4,
-    "slip": 0.00781,
-    "brej": 9,
-    "starved": false
-   },
-   {
     "sid": "short_fixed_time.v6",
     "fam": "固定时窗",
     "eq": 89.21,
@@ -1929,44 +1910,6 @@
     "starved": false
    },
    {
-    "sid": "short_favored_follow.v2",
-    "fam": "顺势跟随",
-    "eq": 83.47,
-    "pnl": -16.53,
-    "ret": -16.53,
-    "n": 12,
-    "wr": 25.0,
-    "yes": 11,
-    "no": 1,
-    "open": 1,
-    "fees": 0.11,
-    "att": 23,
-    "rej": 10,
-    "fr": 56.5,
-    "slip": -0.00114,
-    "brej": 8,
-    "starved": false
-   },
-   {
-    "sid": "short_favored_follow.v1",
-    "fam": "顺势跟随",
-    "eq": 83.22,
-    "pnl": -16.78,
-    "ret": -16.78,
-    "n": 12,
-    "wr": 25.0,
-    "yes": 11,
-    "no": 1,
-    "open": 1,
-    "fees": 0.11,
-    "att": 21,
-    "rej": 8,
-    "fr": 61.9,
-    "slip": -0.0018,
-    "brej": 8,
-    "starved": false
-   },
-   {
     "sid": "short_favored_follow.px25_30",
     "fam": "顺势跟随",
     "eq": 82.88,
@@ -1986,22 +1929,22 @@
     "starved": false
    },
    {
-    "sid": "short_favored_follow.v4",
+    "sid": "short_favored_follow.v7",
     "fam": "顺势跟随",
-    "eq": 80.96,
-    "pnl": -19.04,
-    "ret": -19.04,
+    "eq": 81.68,
+    "pnl": -18.32,
+    "ret": -18.32,
     "n": 12,
     "wr": 25.0,
-    "yes": 11,
-    "no": 1,
-    "open": 1,
-    "fees": 0.11,
-    "att": 23,
-    "rej": 10,
-    "fr": 56.5,
-    "slip": 0.00918,
-    "brej": 8,
+    "yes": 10,
+    "no": 2,
+    "open": 0,
+    "fees": 0.1,
+    "att": 29,
+    "rej": 17,
+    "fr": 41.4,
+    "slip": 0.00781,
+    "brej": 9,
     "starved": false
    },
    {
@@ -2024,6 +1967,25 @@
     "starved": false
    },
    {
+    "sid": "short_favored_follow.v1",
+    "fam": "顺势跟随",
+    "eq": 73.3,
+    "pnl": -26.7,
+    "ret": -26.7,
+    "n": 13,
+    "wr": 23.1,
+    "yes": 11,
+    "no": 2,
+    "open": 0,
+    "fees": 0.11,
+    "att": 21,
+    "rej": 8,
+    "fr": 61.9,
+    "slip": -0.0018,
+    "brej": 8,
+    "starved": false
+   },
+   {
     "sid": "short_fixed_time.v7",
     "fam": "固定时窗",
     "eq": 72.1,
@@ -2040,6 +2002,44 @@
     "fr": 30.0,
     "slip": -0.00267,
     "brej": 7,
+    "starved": false
+   },
+   {
+    "sid": "short_favored_follow.v2",
+    "fam": "顺势跟随",
+    "eq": 72.0,
+    "pnl": -28.0,
+    "ret": -28.0,
+    "n": 13,
+    "wr": 23.1,
+    "yes": 11,
+    "no": 2,
+    "open": 0,
+    "fees": 0.11,
+    "att": 23,
+    "rej": 10,
+    "fr": 56.5,
+    "slip": -0.00114,
+    "brej": 8,
+    "starved": false
+   },
+   {
+    "sid": "short_favored_follow.v4",
+    "fam": "顺势跟随",
+    "eq": 70.11,
+    "pnl": -29.89,
+    "ret": -29.89,
+    "n": 13,
+    "wr": 23.1,
+    "yes": 11,
+    "no": 2,
+    "open": 0,
+    "fees": 0.11,
+    "att": 23,
+    "rej": 10,
+    "fr": 56.5,
+    "slip": 0.00918,
+    "brej": 8,
     "starved": false
    },
    {
@@ -2120,12 +2120,12 @@
    }
   ],
   "events": {
-   "events": 12,
-   "settled": 151,
-   "per_event": 12.6,
+   "events": 13,
+   "settled": 159,
+   "per_event": 12.2,
    "win": 3,
-   "wr": 25.0,
-   "pnl": -446.71,
+   "wr": 23.1,
+   "pnl": -533.34,
    "thick": false
   }
  },
