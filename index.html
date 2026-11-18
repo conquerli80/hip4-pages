@@ -144,8 +144,8 @@ tr:last-child td{border-bottom:0}
 
 <script>
 const EMBEDDED_SNAPSHOT = {
- "as_of": "2026-11-18 09:55",
- "_pushed_at": 1794966939,
+ "as_of": "2026-11-18 10:05",
+ "_pushed_at": 1794967544,
  "m15": {
   "pnl": -50339.93,
   "n": 100197,
@@ -208,8 +208,8 @@ const EMBEDDED_SNAPSHOT = {
   "neg": 16,
   "per_trade": 1.53,
   "span": "11-09 ~ 11-17",
-  "cycle": "—",
-  "hours_left": null,
+  "cycle": "11-18 14:00",
+  "hours_left": 3.9,
   "top": [
    {
     "sid": "cheap_fade.v1",
@@ -247,13 +247,113 @@ const EMBEDDED_SNAPSHOT = {
     "batch": 24
    }
   ],
-  "rank": []
+  "rank": [
+   {
+    "code": "cheap_fade.v1",
+    "rank": 1,
+    "equity": 333.24,
+    "realized": 251.1729,
+    "winrate": 62.5,
+    "pf": 5.13
+   },
+   {
+    "code": "cross_follow.v1",
+    "rank": 2,
+    "equity": 317.77,
+    "realized": 238.551,
+    "winrate": 66.7,
+    "pf": 2.95
+   },
+   {
+    "code": "favored_side_follow.v1",
+    "rank": 3,
+    "equity": 296.98,
+    "realized": 217.7573,
+    "winrate": 66.7,
+    "pf": 2.79
+   },
+   {
+    "code": "favored_side_follow.v2",
+    "rank": 4,
+    "equity": 279.15,
+    "realized": 199.9354,
+    "winrate": 64.3,
+    "pf": 2.67
+   },
+   {
+    "code": "favored_side_follow.v3",
+    "rank": 5,
+    "equity": 226.08,
+    "realized": 146.8613,
+    "winrate": 58.3,
+    "pf": 2.31
+   },
+   {
+    "code": "daily_timed.h12_16_p55_70",
+    "rank": 6,
+    "equity": 541.47,
+    "realized": 36.0477,
+    "winrate": 87.5,
+    "pf": 4.58
+   },
+   {
+    "code": "daily_timed.h12_16_d05_2",
+    "rank": 7,
+    "equity": 517.92,
+    "realized": 13.8492,
+    "winrate": 77.8,
+    "pf": 1.66
+   },
+   {
+    "code": "daily_timed.h12_16_p60_75",
+    "rank": 8,
+    "equity": 516.44,
+    "realized": 11.0239,
+    "winrate": 75.0,
+    "pf": 1.54
+   },
+   {
+    "code": "daily_timed.h12_16_agree4_p60_80",
+    "rank": 9,
+    "equity": 515.7,
+    "realized": 25.3994,
+    "winrate": 87.5,
+    "pf": 3.52
+   },
+   {
+    "code": "daily_timed.trend12_2pct_p90",
+    "rank": 10,
+    "equity": 514.5,
+    "realized": 9.5942,
+    "winrate": 100.0,
+    "pf": null
+   }
+  ]
  },
- "real": [],
+ "real": [
+  {
+   "name": "日盘实盘",
+   "settles": 4,
+   "wins": 3,
+   "winrate": 75.0,
+   "pnl": 47.12,
+   "open": 0,
+   "status": "停止新开仓"
+  },
+  {
+   "name": "历史短周期实盘",
+   "settles": 26,
+   "wins": 16,
+   "winrate": 61.5,
+   "pnl": -45.28,
+   "open": 0,
+   "status": "运行中"
+  }
+ ],
  "gate": {
   "sessions": "20/8",
   "sessions_ok": true,
-  "ev": "338/20",
+  "ev": "339/20",
   "ev_ok": true,
   "mature": "5/3",
   "mature_ok": true,
@@ -806,58 +906,20 @@ const EMBEDDED_SNAPSHOT = {
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T09:53:44.931970+08:00",
+  "as_of": "2026-11-18T10:05:12.468526+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 38,
   "traded": 32,
-  "profitable": 1,
+  "profitable": 0,
   "median_pnl": -27.26,
   "base_median": -20.65,
-  "attempts": 348,
+  "attempts": 350,
   "rejects": 8,
   "fill_rate": 97.7,
-  "avg_slip": 0.00039,
-  "cycles": 1000,
+  "avg_slip": 0.00041,
+  "cycles": 1003,
   "rows": [
-   {
-    "sid": "daily_timed.h4_z05_p90",
-    "fam": "daily_timed_backtest_20261114",
-    "eq": 103.27,
-    "pnl": 3.27,
-    "ret": 3.27,
-    "n": 7,
-    "wr": 85.7,
-    "yes": 0,
-    "no": 7,
-    "open": 0,
-    "fees": 0.054,
-    "att": 7,
-    "rej": 0,
-    "fr": 100.0,
-    "slip": -0.00306,
-    "base_pnl": 0.0,
-    "diff": 3.27
-   },
-   {
-    "sid": "daily_timed.h2_4_p85_92",
-    "fam": "daily_timed_backtest_20261114",
-    "eq": 97.52,
-    "pnl": -2.48,
-    "ret": -2.48,
-    "n": 7,
-    "wr": 85.7,
-    "yes": 0,
-    "no": 7,
-    "open": 0,
-    "fees": 0.05,
-    "att": 11,
-    "rej": 4,
-    "fr": 63.6,
-    "slip": 9e-05,
-    "base_pnl": 0.0,
-    "diff": -2.48
-   },
    {
     "sid": "daily_timed.open_control",
     "fam": "daily_timed_backtest_20261114",
@@ -1066,6 +1128,44 @@ const EMBEDDED_SNAPSHOT = {
     "slip": 0.00019,
     "base_pnl": 0.0,
     "diff": -5.08
+   },
+   {
+    "sid": "daily_timed.h4_z05_p90",
+    "fam": "daily_timed_backtest_20261114",
+    "eq": 92.52,
+    "pnl": -7.48,
+    "ret": -7.48,
+    "n": 7,
+    "wr": 85.7,
+    "yes": 0,
+    "no": 7,
+    "open": 1,
+    "fees": 0.054,
+    "att": 8,
+    "rej": 0,
+    "fr": 100.0,
+    "slip": -0.00268,
+    "base_pnl": 0.0,
+    "diff": -7.48
+   },
+   {
+    "sid": "daily_timed.h2_4_p85_92",
+    "fam": "daily_timed_backtest_20261114",
+    "eq": 86.76,
+    "pnl": -13.24,
+    "ret": -13.24,
+    "n": 7,
+    "wr": 85.7,
+    "yes": 0,
+    "no": 7,
+    "open": 1,
+    "fees": 0.05,
+    "att": 12,
+    "rej": 4,
+    "fr": 66.7,
+    "slip": 8e-05,
+    "base_pnl": 0.0,
+    "diff": -13.24
    },
    {
     "sid": "daily_timed.ev_gate_v1",
@@ -1278,10 +1378,10 @@ const EMBEDDED_SNAPSHOT = {
    }
   ],
   "gap": {
-   "n": 348,
+   "n": 350,
    "median": 0.0,
    "p90": 0.0035,
-   "pos_share": 5.2
+   "pos_share": 5.1
   },
   "events": {
    "events": 210,
@@ -1294,7 +1394,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band100": {
-  "as_of": "2026-11-18T09:55:54.174735+08:00",
+  "as_of": "2026-11-18T10:05:35.286042+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1782,7 +1882,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T09:55:38.270232+08:00",
+  "as_of": "2026-11-18T10:05:36.289738+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2275,9 +2375,9 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "system": {
-  "guardian": null,
-  "ledger_mtime": null,
-  "last_repair": null
+  "guardian": "运行中",
+  "ledger_mtime": "10:04:43",
+  "last_repair": "2026-11-18 10:05:10"
  }
 };
 
