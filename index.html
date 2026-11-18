@@ -125,7 +125,8 @@ tr:last-child td{border-bottom:0}
  <div id="errbox"></div>
 
  <div class="tabs">
-  <button class="tab on" data-p="m15">15 分钟到期合约</button>
+  <button class="tab on" data-p="elite" id="tabElite">优秀策略池</button>
+  <button class="tab" data-p="m15">15 分钟到期合约</button>
   <button class="tab" data-p="daily">24 小时日盘</button>
   <button class="tab" data-p="real">实盘与门槛</button>
   <button class="tab" data-p="single100" id="tab100" style="display:none">100 元单仓</button>
@@ -145,8 +146,8 @@ tr:last-child td{border-bottom:0}
 
 <script>
 const EMBEDDED_SNAPSHOT = {
- "as_of": "2026-11-18 11:35",
- "_pushed_at": 1794972936,
+ "as_of": "2026-11-18 11:43",
+ "_pushed_at": 1794973427,
  "m15": {
   "pnl": -52932.39,
   "n": 101659,
@@ -210,7 +211,7 @@ const EMBEDDED_SNAPSHOT = {
   "per_trade": 1.53,
   "span": "11-09 ~ 11-18",
   "cycle": "11-18 14:00",
-  "hours_left": 2.4,
+  "hours_left": 2.3,
   "top": [
    {
     "sid": "cheap_fade.v1",
@@ -342,7 +343,7 @@ const EMBEDDED_SNAPSHOT = {
    "equity": 154.87,
    "status": "空仓停手",
    "source": "https://api.hyperliquid.xyz/info userFills",
-   "as_of": "2026-11-18 11:35:40"
+   "as_of": "2026-11-18 11:43:49"
   }
  ],
  "gate": {
@@ -901,7 +902,7 @@ const EMBEDDED_SNAPSHOT = {
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T11:35:38.474403+08:00",
+  "as_of": "2026-11-18T11:43:02.524609+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 38,
@@ -913,7 +914,7 @@ const EMBEDDED_SNAPSHOT = {
   "rejects": 8,
   "fill_rate": 97.7,
   "avg_slip": 0.00041,
-  "cycles": 1026,
+  "cycles": 1027,
   "rows": [
    {
     "sid": "daily_timed.open_control",
@@ -1389,7 +1390,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band100": {
-  "as_of": "2026-11-18T11:35:30.389494+08:00",
+  "as_of": "2026-11-18T11:43:45.240489+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1877,7 +1878,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T11:35:47.938157+08:00",
+  "as_of": "2026-11-18T11:43:21.488795+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2370,11 +2371,11 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "forward100": {
-  "as_of": "2026-11-18T11:35:55.160740+08:00",
+  "as_of": "2026-11-18T11:43:46.696013+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-11-19T09:58:21.546588+08:00",
-  "hours_left": 22.4,
+  "hours_left": 22.2,
   "accounts": 4,
   "traded": 1,
   "profitable": 0,
@@ -2395,7 +2396,7 @@ const EMBEDDED_SNAPSHOT = {
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 282,
+  "scans": 304,
   "fills": 2,
   "settlements": 2,
   "rows": [
@@ -2428,9 +2429,221 @@ const EMBEDDED_SNAPSHOT = {
    "thick": false
   }
  },
+ "elite": {
+  "rule": "盈利>0 且 去掉最赚3笔后仍>0 且 样本达标(15m>=40,低价盘>=10)",
+  "boards": {
+   "parity100": [
+    {
+     "sid": "short_favored_follow.px60_65",
+     "fam": "short_favored_follow",
+     "slot": "15m",
+     "board": "parity100",
+     "n": 294,
+     "pnl": 180.9,
+     "drop3": 144.34,
+     "wr": 66.7,
+     "repeat": 2
+    },
+    {
+     "sid": "short_favored_follow.v8",
+     "fam": "short_favored_follow",
+     "slot": "15m",
+     "board": "parity100",
+     "n": 175,
+     "pnl": 189.32,
+     "drop3": 125.96,
+     "wr": 54.3,
+     "repeat": 2
+    },
+    {
+     "sid": "short_momentum.px60_65",
+     "fam": "short_momentum",
+     "slot": "15m",
+     "board": "parity100",
+     "n": 106,
+     "pnl": 105.47,
+     "drop3": 74.93,
+     "wr": 69.8,
+     "repeat": 1
+    },
+    {
+     "sid": "short_favored_follow.v31",
+     "fam": "short_favored_follow",
+     "slot": "15m",
+     "board": "parity100",
+     "n": 84,
+     "pnl": 136.27,
+     "drop3": 73.88,
+     "wr": 56.0,
+     "repeat": 2
+    },
+    {
+     "sid": "short_favored_follow.px45_50",
+     "fam": "short_favored_follow",
+     "slot": "15m",
+     "board": "parity100",
+     "n": 165,
+     "pnl": 108.67,
+     "drop3": 41.46,
+     "wr": 50.9,
+     "repeat": 2
+    },
+    {
+     "sid": "short_favored_follow.v27",
+     "fam": "short_favored_follow",
+     "slot": "15m",
+     "board": "parity100",
+     "n": 195,
+     "pnl": 73.4,
+     "drop3": 15.11,
+     "wr": 49.2,
+     "repeat": 2
+    }
+   ],
+   "band100": [
+    {
+     "sid": "short_favored_follow.px35_40",
+     "fam": "short_favored_follow",
+     "slot": "15m",
+     "board": "band100",
+     "n": 12,
+     "pnl": 102.04,
+     "drop3": 38.7,
+     "wr": 66.7,
+     "repeat": 2
+    },
+    {
+     "sid": "short_fixed_time.px35_40",
+     "fam": "short_fixed_time",
+     "slot": "15m",
+     "board": "band100",
+     "n": 10,
+     "pnl": 100.89,
+     "drop3": 35.58,
+     "wr": 70.0,
+     "repeat": 1
+    },
+    {
+     "sid": "short_fixed_time.v4",
+     "fam": "short_fixed_time",
+     "slot": "15m",
+     "board": "band100",
+     "n": 12,
+     "pnl": 70.76,
+     "drop3": 7.41,
+     "wr": 58.3,
+     "repeat": 1
+    },
+    {
+     "sid": "short_fixed_time.v5",
+     "fam": "short_fixed_time",
+     "slot": "15m",
+     "board": "band100",
+     "n": 12,
+     "pnl": 69.61,
+     "drop3": 7.16,
+     "wr": 58.3,
+     "repeat": 1
+    },
+    {
+     "sid": "short_favored_follow.v35",
+     "fam": "short_favored_follow",
+     "slot": "15m",
+     "board": "band100",
+     "n": 13,
+     "pnl": 50.41,
+     "drop3": 5.9,
+     "wr": 61.5,
+     "repeat": 2
+    }
+   ],
+   "daily_parity": []
+  },
+  "top": [
+   {
+    "sid": "short_favored_follow.px60_65",
+    "fam": "short_favored_follow",
+    "slot": "15m",
+    "board": "parity100",
+    "n": 294,
+    "pnl": 180.9,
+    "drop3": 144.34,
+    "wr": 66.7,
+    "repeat": 2
+   },
+   {
+    "sid": "short_favored_follow.v8",
+    "fam": "short_favored_follow",
+    "slot": "15m",
+    "board": "parity100",
+    "n": 175,
+    "pnl": 189.32,
+    "drop3": 125.96,
+    "wr": 54.3,
+    "repeat": 2
+   },
+   {
+    "sid": "short_momentum.px60_65",
+    "fam": "short_momentum",
+    "slot": "15m",
+    "board": "parity100",
+    "n": 106,
+    "pnl": 105.47,
+    "drop3": 74.93,
+    "wr": 69.8,
+    "repeat": 1
+   },
+   {
+    "sid": "short_favored_follow.v31",
+    "fam": "short_favored_follow",
+    "slot": "15m",
+    "board": "parity100",
+    "n": 84,
+    "pnl": 136.27,
+    "drop3": 73.88,
+    "wr": 56.0,
+    "repeat": 2
+   },
+   {
+    "sid": "short_favored_follow.px45_50",
+    "fam": "short_favored_follow",
+    "slot": "15m",
+    "board": "parity100",
+    "n": 165,
+    "pnl": 108.67,
+    "drop3": 41.46,
+    "wr": 50.9,
+    "repeat": 2
+   },
+   {
+    "sid": "short_favored_follow.v27",
+    "fam": "short_favored_follow",
+    "slot": "15m",
+    "board": "parity100",
+    "n": 195,
+    "pnl": 73.4,
+    "drop3": 15.11,
+    "wr": 49.2,
+    "repeat": 2
+   }
+  ],
+  "fam_repeat": {
+   "short_favored_follow": [
+    "band100",
+    "parity100"
+   ],
+   "short_momentum": [
+    "parity100"
+   ],
+   "short_fixed_time": [
+    "band100"
+   ]
+  },
+  "note": "事后从已跑完的池子里筛出的头部，存在幸存者偏差；仅作候选，不等于已验证。真正前瞻验证看 FORWARD-100。"
+ },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "11:34:19",
+  "ledger_mtime": "11:41:48",
   "last_repair": "2026-11-18 11:17:43"
  }
 };
@@ -2440,7 +2653,7 @@ const esc = s => String(s==null?'—':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':
 const n = (v,d=0) => (v==null?'—':Number(v).toFixed(d));
 const sign = (v,d=2) => (v==null?'—':(v>=0?'+':'')+Number(v).toFixed(d));
 const cls = v => v==null?'':(v>=0?'pos':'neg');
-let S=null, PANEL=(new URLSearchParams(location.search)).get('p')||'m15';
+let S=null, PANEL=(new URLSearchParams(location.search)).get('p')||'elite';
 
 function cards(items){
  return '<div class="cards">'+items.map(i=>
@@ -2778,6 +2991,34 @@ const rule=`<div class="rule"><b>这一盘是什么</b>　前面所有盘都在�
  return cards(c)+rule+section('FORWARD-100 · 冻结前瞻','按账户权益排序',`<div class="wide">${rank}</div>`);
 }
 
+function panelElite(){
+ const d=S.elite;
+ if(!d) return section('优秀策略池','等待数据',`<div class="loading">优秀池数据尚未生成</div>`);
+ const top=d.top||[];
+ const bd=d.boards||{};
+ const rep=d.fam_repeat||{};
+ const n15=(bd.parity100||[]).length, nb=(bd.band100||[]).length, nd=(bd.daily_parity||[]).length;
+ const c=[
+  {l:'入选策略',v:n(top)+' <span style="font-size:12px;font-weight:400">条</span>',c:'gold',s:`15分钟全池 ${n15} · 低价区间 ${nb} · 日盘 ${nd}`},
+  {l:'筛选用尺',v:'三闸同时过',s:'盈利>0 · 去掉最赚3笔仍>0 · 样本达标'},
+  {l:'最强一条',v:top.length?esc(top[0].sid):'—',s:top.length?`去前3仍 ${sign(top[0].drop3)} · ${n(top[0].n)} 笔 · 胜率 ${n(top[0].wr,1)}%`:'—'},
+  {l:'家族重复',v:n(Object.keys(rep).filter(k=>rep[k].length>1))+' <span style="font-size:12px;font-weight:400">个</span>',s:'同一家族在多套盘同时入选，信号更强'},
+ ];
+ const rows=top.map((r,i)=>[
+   `<span class="rk">${i+1}</span>`,`<span class="sid">${esc(r.sid)}</span>`,esc(r.fam||'—'),
+   n(r.n),`<span class="${cls(r.pnl)}">${sign(r.pnl)}</span>`,
+   `<span class="${cls(r.drop3)}">${sign(r.drop3)}</span>`,n(r.wr,1)+'%',
+   r.repeat>1?`<span class="gold">${esc((rep[r.fam]||[]).join(' / '))}</span>`:'—']);
+ const rank=table(
+  [{t:'#'},{t:'策略'},{t:'家族'},{t:'笔数',num:1},{t:'净盈亏',num:1,cls:v=>cls(parseFloat(v))},
+   {t:'去前3后',num:1,cls:v=>cls(parseFloat(v))},{t:'胜率',num:1},{t:'跨盘重复'}],
+  rows,'暂无达标策略');
+ const rule=`<div class="rule"><b>这张表是怎么来的</b>　把 15 分钟全池、低价区间盘、日盘同构三套已跑满 24 小时的盘放在同一把尺子下量：只留<b>盈利为正、且去掉最赚的 3 笔之后仍然为正、且样本够</b>的策略。垫底和靠一两笔撑起来的，全部清掉，不在这张表里。
+ <br><b>怎么读</b>　"去前3后"是关键——它剔除了运气成分，还为正说明是持续在赚，不是靠某几笔蒙的。"跨盘重复"指同一家族在多套独立盘里都进了优秀池，这种重复出现的信号比单盘冠军更可信。
+ <br><b>必须说清的边界</b>　这张表是<b>事后从已跑完的池子里挑出来的头部</b>，天然有幸存者偏差——247 个策略里总有几个会赢。<b>它不是"已验证能用"，只是"值得下一步用新行情前瞻验证的候选"</b>。真正的验证盘是 FORWARD-100：它冻结的 4 条里就有这里的 short_favored_follow.px45_50。前瞻跑满、继续为正，才算过关。</div>`;
+ return cards(c)+`<div class="rule"><b>口径（固定，不再每日改）</b>　${esc(d.rule||'—')}</div>`+section('优秀策略池 · 头部','淘汰的已清掉，只留三闸全过的',`<div class="wide">${rank}</div>`)+rule;
+}
+
 function render(){
  if(!S) return;
  const has100=!!S.single100;
@@ -2788,6 +3029,8 @@ function render(){
  const hasband=!!S.band100;
  const hasband2=!!S.band_v2;
  const hasforward=!!S.forward100;
+ const haselite=!!S.elite;
+ const tel=$('#tabElite'); if(tel) tel.style.display=haselite?'':'none';
  const t=$('#tab100'); if(t) t.style.display=has100?'':'none';
  const tm=$('#tabmulti'); if(tm) tm.style.display=hasmulti?'':'none';
  const td=$('#tabdaily100'); if(td) td.style.display=hasd100?'':'none';
@@ -2803,8 +3046,10 @@ function render(){
  if(PANEL==='daily_parity'&&!hasdpar) PANEL='m15';
  if(PANEL==='band100'&&!hasband) PANEL='m15';
  if(PANEL==='band_v2'&&!hasband2) PANEL='m15';
- if(PANEL==='forward100'&&!hasforward) PANEL='m15';
- $('#h1').textContent = PANEL==='single100' ? '100 元独立单仓 · 24 小时验证'
+ if(PANEL==='forward100'&&!hasforward) PANEL='elite';
+ if(PANEL==='elite'&&!haselite) PANEL='m15';
+ $('#h1').textContent = PANEL==='elite' ? '优秀策略池 · 三闸全过的头部'
+   : PANEL==='single100' ? '100 元独立单仓 · 24 小时验证'
    : PANEL==='multi100' ? '全部策略 · 各 100 USDC 平行仓'
    : PANEL==='parity100' ? '实盘同构 · 各 100 USDC 探真盘'
    : PANEL==='daily_parity' ? '日盘同构 · 各 100 USDC 探真盘'
@@ -2813,7 +3058,7 @@ function render(){
    : PANEL==='forward100' ? 'FORWARD-100 · 冻结策略 · 24 小时前瞻验证'
    : PANEL==='daily100' ? '日盘 · 各 100 USDC 独立平行仓' : '模拟盘实时看板 · 15 分钟与日盘';
  $('#asof').textContent=S.as_of||'—';
- $('#content').innerHTML = PANEL==='m15'?panelM15():PANEL==='daily'?panelDaily():
+ $('#content').innerHTML = PANEL==='elite'?panelElite():PANEL==='m15'?panelM15():PANEL==='daily'?panelDaily():
    PANEL==='single100'?panelSingle100():PANEL==='multi100'?panelMulti100():
    PANEL==='parity100'?panelParity100():PANEL==='daily_parity'?panelDailyParity():
    PANEL==='band100'?panelBand100():PANEL==='band_v2'?panelBandV2():
