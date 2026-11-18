@@ -156,8 +156,8 @@ details.lg .wide{padding:6px 10px 10px}
 
 <script>
 const EMBEDDED_SNAPSHOT = {
- "as_of": "2026-11-18 22:49",
- "_pushed_at": 1795013358,
+ "as_of": "2026-11-18 22:51",
+ "_pushed_at": 1795013494,
  "m15": {
   "pnl": -54532.39,
   "n": 110447,
@@ -221,7 +221,7 @@ const EMBEDDED_SNAPSHOT = {
   "per_trade": 0.91,
   "span": "11-09 ~ 11-18",
   "cycle": "11-19 14:00",
-  "hours_left": 15.2,
+  "hours_left": 15.1,
   "top": [
    {
     "sid": "cross_follow.v1",
@@ -353,7 +353,7 @@ const EMBEDDED_SNAPSHOT = {
    "equity": 152.52,
    "status": "空仓停手",
    "source": "https://api.hyperliquid.xyz/info userFills",
-   "as_of": "2026-11-18 22:49:21"
+   "as_of": "2026-11-18 22:51:37"
   }
  ],
  "gate": {
@@ -912,7 +912,7 @@ const EMBEDDED_SNAPSHOT = {
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T22:46:41.202850+08:00",
+  "as_of": "2026-11-18T22:51:25.092126+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 39,
@@ -924,7 +924,7 @@ const EMBEDDED_SNAPSHOT = {
   "rejects": 14,
   "fill_rate": 96.9,
   "avg_slip": 0.00049,
-  "cycles": 1181,
+  "cycles": 1182,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
@@ -1400,7 +1400,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band100": {
-  "as_of": "2026-11-18T22:49:03.746045+08:00",
+  "as_of": "2026-11-18T22:51:05.517647+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1888,7 +1888,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T22:49:25.448582+08:00",
+  "as_of": "2026-11-18T22:51:30.957689+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2381,7 +2381,7 @@ const EMBEDDED_SNAPSHOT = {
   }
  },
  "forward100": {
-  "as_of": "2026-11-18T22:48:57.808192+08:00",
+  "as_of": "2026-11-18T22:51:37.846785+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-11-19T09:58:21.546588+08:00",
@@ -2406,7 +2406,7 @@ const EMBEDDED_SNAPSHOT = {
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 515,
+  "scans": 523,
   "fills": 14,
   "settlements": 12,
   "rows": [
@@ -2467,9 +2467,9 @@ const EMBEDDED_SNAPSHOT = {
    {
     "sid": "short_favored_follow.v36",
     "fam": "顺势跟随",
-    "eq": 60.18,
-    "pnl": -39.82,
-    "ret": -39.82,
+    "eq": 58.85,
+    "pnl": -41.15,
+    "ret": -41.15,
     "n": 6,
     "wr": 16.7,
     "yes": 5,
@@ -2771,13 +2771,13 @@ const EMBEDDED_SNAPSHOT = {
   "note": "事后从已跑完的池子里筛出的头部，存在幸存者偏差；仅作候选，不等于已验证。真正前瞻验证看 FORWARD-100。"
  },
  "ledger": {
-  "rebuilt_at": "2026-11-18 19:26:33",
-  "equity": 148.96741,
-  "total_pnl": -2.2713,
-  "n_settled": 56,
-  "n_win": 31,
-  "n_loss": 25,
-  "winrate": 55.4,
+  "rebuilt_at": "2026-11-18 22:51:17",
+  "equity": 152.51846,
+  "total_pnl": 1.3035,
+  "n_settled": 59,
+  "n_win": 33,
+  "n_loss": 26,
+  "winrate": 55.9,
   "groups": [
    {
     "sid": "short_fixed_time.px35_40",
@@ -3687,10 +3687,100 @@ const EMBEDDED_SNAPSHOT = {
     ]
    },
    {
-    "sid": "short_fixed_time.px55_60",
-    "n": 4,
-    "pnl": -3.2994,
+    "sid": "short_favored_follow.px60_65",
+    "n": 2,
+    "pnl": 13.6161,
     "trades": [
+     {
+      "coin": "#396320",
+      "oid": 39632,
+      "side": "YES",
+      "perp": "",
+      "expiry": "",
+      "sid": "short_favored_follow.px60_65",
+      "open_ms": 1795011977372,
+      "settle_ms": 1795012210774,
+      "fill_px": 0.60905,
+      "qty": 17.0,
+      "cost": 10.3538,
+      "buy_fee": 0.0,
+      "settle_px": 1.0,
+      "pnl": 6.6461,
+      "settle_fee": 0.0119,
+      "status": "settled",
+      "result": "win"
+     },
+     {
+      "coin": "#396191",
+      "oid": 39619,
+      "side": "NO",
+      "perp": "",
+      "expiry": "",
+      "sid": "short_favored_follow.px60_65",
+      "open_ms": 1795010129307,
+      "settle_ms": 1795010419580,
+      "fill_px": 0.59,
+      "qty": 17.0,
+      "cost": 10.03,
+      "buy_fee": 0.0,
+      "settle_px": 1.0,
+      "pnl": 6.97,
+      "settle_fee": 0.0119,
+      "status": "settled",
+      "result": "win"
+     }
+    ]
+   },
+   {
+    "sid": "short_fixed_time.px50_55",
+    "n": 1,
+    "pnl": -9.8314,
+    "trades": [
+     {
+      "coin": "#389671",
+      "oid": 38967,
+      "side": "NO",
+      "perp": "",
+      "expiry": "",
+      "sid": "short_fixed_time.px50_55",
+      "open_ms": 1794954319700,
+      "settle_ms": 1794954610103,
+      "fill_px": 0.54619,
+      "qty": 18.0,
+      "cost": 9.8314,
+      "buy_fee": 0.0,
+      "settle_px": 0.0,
+      "pnl": -9.8314,
+      "settle_fee": 0.0,
+      "status": "settled",
+      "result": "loss"
+     }
+    ]
+   },
+   {
+    "sid": "short_fixed_time.px55_60",
+    "n": 5,
+    "pnl": -13.3407,
+    "trades": [
+     {
+      "coin": "#396030",
+      "oid": 39603,
+      "side": "YES",
+      "perp": "",
+      "expiry": "",
+      "sid": "short_fixed_time.px55_60",
+      "open_ms": 1795009202056,
+      "settle_ms": 1795009513295,
+      "fill_px": 0.55785,
+      "qty": 18.0,
+      "cost": 10.0413,
+      "buy_fee": 0.0,
+      "settle_px": 0.0,
+      "pnl": -10.0413,
+      "settle_fee": 0.0,
+      "status": "settled",
+      "result": "loss"
+     },
      {
       "coin": "#392931",
       "oid": 39293,
@@ -3766,32 +3856,6 @@ const EMBEDDED_SNAPSHOT = {
       "settle_fee": 0.0252,
       "status": "settled",
       "result": "win"
-     }
-    ]
-   },
-   {
-    "sid": "short_fixed_time.px50_55",
-    "n": 1,
-    "pnl": -9.8314,
-    "trades": [
-     {
-      "coin": "#389671",
-      "oid": 38967,
-      "side": "NO",
-      "perp": "",
-      "expiry": "",
-      "sid": "short_fixed_time.px50_55",
-      "open_ms": 1794954319700,
-      "settle_ms": 1794954610103,
-      "fill_px": 0.54619,
-      "qty": 18.0,
-      "cost": 9.8314,
-      "buy_fee": 0.0,
-      "settle_px": 0.0,
-      "pnl": -9.8314,
-      "settle_fee": 0.0,
-      "status": "settled",
-      "result": "loss"
      }
     ]
    },
@@ -3889,7 +3953,7 @@ const EMBEDDED_SNAPSHOT = {
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "22:48:03",
+  "ledger_mtime": "22:51:17",
   "last_repair": "2026-11-18 22:45:14"
  }
 };
