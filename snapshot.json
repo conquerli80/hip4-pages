@@ -1,6 +1,6 @@
 {
- "as_of": "2026-11-18 23:05",
- "_pushed_at": 1795014338,
+ "as_of": "2026-11-18 23:15",
+ "_pushed_at": 1795014934,
  "m15": {
   "pnl": -54532.39,
   "n": 110447,
@@ -64,7 +64,7 @@
   "per_trade": 0.91,
   "span": "11-09 ~ 11-18",
   "cycle": "11-19 14:00",
-  "hours_left": 14.9,
+  "hours_left": 14.7,
   "top": [
    {
     "sid": "cross_follow.v1",
@@ -187,16 +187,16 @@
  },
  "real": [
   {
-   "name": "链上实盘(官方口径·缓存)",
-   "settles": 52,
-   "wins": 30,
-   "winrate": 57.7,
-   "pnl": 3.61,
+   "name": "链上实盘(官方口径)",
+   "settles": 61,
+   "wins": 33,
+   "winrate": 54.1,
+   "pnl": -18.4,
    "open": 0,
-   "equity": 154.87,
+   "equity": 132.82,
    "status": "空仓停手",
-   "source": "api.hyperliquid.xyz/info userFills (official)",
-   "as_of": "2026-11-18 11:13:56"
+   "source": "https://api.hyperliquid.xyz/info userFills",
+   "as_of": "2026-11-18 23:15:44"
   }
  ],
  "gate": {
@@ -755,7 +755,7 @@
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T23:05:30.419326+08:00",
+  "as_of": "2026-11-18T23:13:34.065607+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 39,
@@ -767,7 +767,7 @@
   "rejects": 14,
   "fill_rate": 96.9,
   "avg_slip": 0.00049,
-  "cycles": 1184,
+  "cycles": 1186,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
@@ -1243,7 +1243,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-18T23:05:18.477242+08:00",
+  "as_of": "2026-11-18T23:15:29.665894+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1731,7 +1731,7 @@
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T23:06:01.206199+08:00",
+  "as_of": "2026-11-18T23:15:42.295102+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2224,11 +2224,11 @@
   }
  },
  "forward100": {
-  "as_of": "2026-11-18T23:05:23.090137+08:00",
+  "as_of": "2026-11-18T23:15:48.390736+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-11-19T09:58:21.546588+08:00",
-  "hours_left": 10.9,
+  "hours_left": 10.7,
   "accounts": 4,
   "traded": 4,
   "profitable": 1,
@@ -2249,9 +2249,9 @@
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 553,
+  "scans": 577,
   "fills": 15,
-  "settlements": 14,
+  "settlements": 15,
   "rows": [
    {
     "sid": "short_fixed_time.px35_40",
@@ -2310,15 +2310,15 @@
    {
     "sid": "short_favored_follow.v36",
     "fam": "顺势跟随",
-    "eq": 56.01,
-    "pnl": -43.99,
-    "ret": -43.99,
-    "n": 8,
-    "wr": 25.0,
-    "yes": 6,
+    "eq": 71.73,
+    "pnl": -28.27,
+    "ret": -28.27,
+    "n": 9,
+    "wr": 33.3,
+    "yes": 7,
     "no": 2,
-    "open": 1,
-    "fees": 0.06,
+    "open": 0,
+    "fees": 0.1,
     "att": 36,
     "rej": 27,
     "fr": 25.0,
@@ -2327,12 +2327,12 @@
    }
   ],
   "events": {
-   "events": 40,
-   "settled": 44,
+   "events": 41,
+   "settled": 45,
    "per_event": 1.1,
-   "win": 15,
-   "wr": 37.5,
-   "pnl": -135.39,
+   "win": 16,
+   "wr": 39.0,
+   "pnl": -124.09,
    "thick": false
   }
  },
@@ -2614,8 +2614,8 @@
   "note": "事后从已跑完的池子里筛出的头部，存在幸存者偏差；仅作候选，不等于已验证。真正前瞻验证看 FORWARD-100。"
  },
  "ledger": {
-  "rebuilt_at": "2026-11-18 23:05:15",
-  "equity": 142.09967,
+  "rebuilt_at": "2026-11-18 23:15:13",
+  "equity": 132.81967,
   "total_pnl": -9.1153,
   "n_settled": 60,
   "n_win": 33,
@@ -2627,6 +2627,25 @@
     "n": 3,
     "pnl": 3.1973,
     "trades": [
+     {
+      "coin": "#396600",
+      "oid": 39660,
+      "side": "YES",
+      "perp": "BTC",
+      "expiry": "20261118-1515",
+      "sid": "short_favored_follow.px60_65",
+      "open_ms": 1795014314771,
+      "settle_ms": null,
+      "fill_px": 0.58,
+      "qty": 16.0,
+      "cost": 9.28,
+      "buy_fee": 0.0,
+      "settle_px": null,
+      "pnl": null,
+      "settle_fee": null,
+      "status": "open",
+      "result": "open"
+     },
      {
       "coin": "#396501",
       "oid": 39650,
@@ -3815,7 +3834,7 @@
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "23:05:09",
+  "ledger_mtime": "23:15:09",
   "last_repair": "2026-11-18 23:02:43"
  }
 }
