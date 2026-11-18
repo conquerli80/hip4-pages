@@ -1,16 +1,16 @@
 {
- "as_of": "2026-11-18 23:15",
- "_pushed_at": 1795014934,
+ "as_of": "2026-11-18 23:18",
+ "_pushed_at": 1795015124,
  "m15": {
-  "pnl": -54532.39,
-  "n": 110447,
-  "settles": 110447,
-  "exps": 2010,
+  "pnl": -54636.92,
+  "n": 110742,
+  "settles": 110742,
+  "exps": 2016,
   "sids": 238,
   "win": 60.8,
   "pos_sid": 28,
   "neg_sid": 210,
-  "hours": 123,
+  "hours": 124,
   "per_trade": -0.49,
   "mult": 54,
   "top": [
@@ -23,24 +23,24 @@
    },
    {
     "sid": "fixed_time.v7",
-    "pnl": 216.13,
-    "ind": 375,
-    "win": 44.6,
-    "t": 0.85
+    "pnl": 206.06,
+    "ind": 376,
+    "win": 44.5,
+    "t": 0.81
    },
    {
     "sid": "favored_follow.v36",
-    "pnl": 184.92,
-    "ind": 291,
-    "win": 50.5,
-    "t": 1.0
+    "pnl": 196.77,
+    "ind": 292,
+    "win": 50.7,
+    "t": 1.06
    },
    {
     "sid": "fixed_time.v2",
-    "pnl": 153.29,
-    "ind": 582,
-    "win": 55.3,
-    "t": 0.6
+    "pnl": 145.84,
+    "ind": 586,
+    "win": 55.2,
+    "t": 0.57
    },
    {
     "sid": "fixed_time.v10",
@@ -196,15 +196,15 @@
    "equity": 132.82,
    "status": "空仓停手",
    "source": "https://api.hyperliquid.xyz/info userFills",
-   "as_of": "2026-11-18 23:15:44"
+   "as_of": "2026-11-18 23:18:49"
   }
  ],
  "gate": {
   "sessions": "22/8",
   "sessions_ok": true,
-  "ev": "388/20",
+  "ev": "389/20",
   "ev_ok": true,
-  "mature": "0/3",
+  "mature": "1/3",
   "mature_ok": false,
   "regime": "PASS",
   "regime_ok": true,
@@ -755,7 +755,7 @@
   "tight_hit_rate": 64.4
  },
  "daily_parity": {
-  "as_of": "2026-11-18T23:13:34.065607+08:00",
+  "as_of": "2026-11-18T23:18:52.800073+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-11-16T19:56:22.817088+08:00",
   "accounts": 39,
@@ -767,7 +767,7 @@
   "rejects": 14,
   "fill_rate": 96.9,
   "avg_slip": 0.00049,
-  "cycles": 1186,
+  "cycles": 1187,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
@@ -1243,7 +1243,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-18T23:15:29.665894+08:00",
+  "as_of": "2026-11-18T23:18:53.410264+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-11-17T14:33:01.122811+08:00",
   "band": [
@@ -1731,7 +1731,7 @@
   }
  },
  "band_v2": {
-  "as_of": "2026-11-18T23:15:42.295102+08:00",
+  "as_of": "2026-11-18T23:18:48.072362+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -2224,7 +2224,7 @@
   }
  },
  "forward100": {
-  "as_of": "2026-11-18T23:15:48.390736+08:00",
+  "as_of": "2026-11-18T23:18:34.327129+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-11-19T09:58:21.546588+08:00",
@@ -2235,9 +2235,9 @@
   "starved": 0,
   "alive": 4,
   "median_pnl": -4.84,
-  "attempts": 52,
-  "rejects": 37,
-  "fill_rate": 28.8,
+  "attempts": 54,
+  "rejects": 39,
+  "fill_rate": 27.8,
   "avg_slip": -0.00416,
   "fill_model": {
    "latency_seconds": 0.35,
@@ -2249,7 +2249,7 @@
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 577,
+  "scans": 585,
   "fills": 15,
   "settlements": 15,
   "rows": [
@@ -2319,9 +2319,9 @@
     "no": 2,
     "open": 0,
     "fees": 0.1,
-    "att": 36,
-    "rej": 27,
-    "fr": 25.0,
+    "att": 38,
+    "rej": 29,
+    "fr": 23.7,
     "slip": 0.00527,
     "starved": false
    }
@@ -2614,37 +2614,37 @@
   "note": "事后从已跑完的池子里筛出的头部，存在幸存者偏差；仅作候选，不等于已验证。真正前瞻验证看 FORWARD-100。"
  },
  "ledger": {
-  "rebuilt_at": "2026-11-18 23:15:13",
+  "rebuilt_at": "2026-11-18 23:18:27",
   "equity": 132.81967,
-  "total_pnl": -9.1153,
-  "n_settled": 60,
+  "total_pnl": -18.3953,
+  "n_settled": 61,
   "n_win": 33,
-  "n_loss": 27,
-  "winrate": 55.0,
+  "n_loss": 28,
+  "winrate": 54.1,
   "groups": [
    {
     "sid": "short_favored_follow.px60_65",
-    "n": 3,
-    "pnl": 3.1973,
+    "n": 4,
+    "pnl": -6.0827,
     "trades": [
      {
       "coin": "#396600",
       "oid": 39660,
       "side": "YES",
-      "perp": "BTC",
-      "expiry": "20261118-1515",
+      "perp": "",
+      "expiry": "",
       "sid": "short_favored_follow.px60_65",
       "open_ms": 1795014314771,
-      "settle_ms": null,
+      "settle_ms": 1795014913148,
       "fill_px": 0.58,
       "qty": 16.0,
       "cost": 9.28,
       "buy_fee": 0.0,
-      "settle_px": null,
-      "pnl": null,
-      "settle_fee": null,
-      "status": "open",
-      "result": "open"
+      "settle_px": 0.0,
+      "pnl": -9.28,
+      "settle_fee": 0.0,
+      "status": "settled",
+      "result": "loss"
      },
      {
       "coin": "#396501",
@@ -3834,7 +3834,7 @@
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "23:15:09",
+  "ledger_mtime": "23:18:25",
   "last_repair": "2026-11-18 23:02:43"
  }
 }
