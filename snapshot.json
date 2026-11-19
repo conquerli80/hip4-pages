@@ -1,6 +1,6 @@
 {
- "as_of": "2026-11-20 03:56",
- "_pushed_at": 1795118177,
+ "as_of": "2026-11-20 04:16",
+ "_pushed_at": 1795119399,
  "focus": {
   "enabled": true,
   "sid": "short_fixed_time.px35_40",
@@ -16,9 +16,9 @@
    "stop_absolute": false,
    "stop_150": true,
    "ws_pid": 15432,
-   "ws_hb_age_s": 0.1,
+   "ws_hb_age_s": 6.0,
    "ws_alive": true,
-   "marks_age_s": 5.3,
+   "marks_age_s": 4.8,
    "engine_status": "实盘盯盘中（空仓等信号）",
    "equity": 139.7399,
    "floor_buffer": 89.74,
@@ -29,7 +29,7 @@
    "n_win": 42,
    "n_loss": 36,
    "winrate": 53.8,
-   "rebuilt_at": "2026-11-20 03:55:10",
+   "rebuilt_at": "2026-11-20 04:15:15",
    "sid_stats": {
     "sid": "short_fixed_time.px35_40",
     "n": 14,
@@ -2201,14 +2201,14 @@
   },
   "sampler": {
    "files": 2,
-   "rows": 6417,
-   "markets": 200,
+   "rows": 6759,
+   "markets": 208,
    "n_med": 24.0,
    "span_med_min": 5.6,
-   "decided": 174,
+   "decided": 181,
    "decided_pct": 87.0,
-   "newest_age_s": 29.6,
-   "heartbeat_age_s": 23.4
+   "newest_age_s": 14.1,
+   "heartbeat_age_s": 4.1
   }
  },
  "m15": {
@@ -2325,13 +2325,13 @@
    "equity": 139.74,
    "status": "实盘盯盘中（空仓等信号）",
    "source": "api.hyperliquid.xyz/info · userFills（官方权威）",
-   "as_of": "2026-11-20 03:55:10"
+   "as_of": "2026-11-20 04:15:15"
   }
  ],
  "gate": {
   "sessions": "27/8",
   "sessions_ok": true,
-  "ev": "490/20",
+  "ev": "492/20",
   "ev_ok": true,
   "mature": "1/3",
   "mature_ok": false,
@@ -2343,22 +2343,22 @@
  "multi100": null,
  "daily100": null,
  "parity100": {
-  "as_of": "2026-11-20T03:56:40.182915+08:00",
+  "as_of": "2026-11-20T04:17:19.059167+08:00",
   "start_at": "2026-11-15T19:22:56.144707+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
-  "hours_left": 1004.0,
+  "hours_left": 1003.7,
   "accounts": 248,
   "traded": 122,
-  "profitable": 11,
+  "profitable": 10,
   "starved": 88,
   "alive": 160,
   "median_pnl": -93.13,
-  "attempts": 12906,
-  "rejects": 2112,
+  "attempts": 12928,
+  "rejects": 2126,
   "fill_rate": 83.6,
-  "avg_slip": 0.03114,
+  "avg_slip": 0.03126,
   "phase": "running",
-  "scans": 9818,
+  "scans": 9870,
   "rows": [
    {
     "sid": "short_fixed_time.v7",
@@ -2384,23 +2384,23 @@
    {
     "sid": "short_momentum.px60_65",
     "fam": "动量跟涨跌",
-    "eq": 152.65,
-    "pnl": 52.65,
-    "ret": 52.65,
-    "n": 140,
-    "wr": 66.4,
-    "yes": 78,
-    "no": 62,
-    "open": 3,
-    "fees": 1.96,
+    "eq": 154.4,
+    "pnl": 54.4,
+    "ret": 54.4,
+    "n": 144,
+    "wr": 66.0,
+    "yes": 80,
+    "no": 64,
+    "open": 1,
+    "fees": 1.99,
     "starved": false,
-    "att": 198,
+    "att": 200,
     "rej": 55,
-    "fr": 72.2,
-    "slip": 0.00565,
+    "fr": 72.5,
+    "slip": 0.00549,
     "multi_pnl": 26.93,
     "multi_n": 7,
-    "diff": 25.72
+    "diff": 27.47
    },
    {
     "sid": "short_fixed_time.px45_50",
@@ -2489,23 +2489,44 @@
    {
     "sid": "short_fixed_time.px90_95",
     "fam": "固定时窗",
-    "eq": 110.78,
-    "pnl": 10.78,
-    "ret": 10.78,
-    "n": 111,
-    "wr": 92.8,
+    "eq": 111.64,
+    "pnl": 11.64,
+    "ret": 11.64,
+    "n": 112,
+    "wr": 92.9,
     "yes": 89,
-    "no": 22,
+    "no": 23,
     "open": 0,
-    "fees": 1.32,
+    "fees": 1.33,
     "starved": false,
-    "att": 179,
+    "att": 180,
     "rej": 68,
-    "fr": 62.0,
-    "slip": -0.00576,
+    "fr": 62.2,
+    "slip": -0.00579,
     "multi_pnl": -8.48,
     "multi_n": 7,
-    "diff": 19.26
+    "diff": 20.12
+   },
+   {
+    "sid": "short_fixed_time.px60_65_btc15m",
+    "fam": "固定时窗",
+    "eq": 111.18,
+    "pnl": 11.18,
+    "ret": 11.18,
+    "n": 2,
+    "wr": 100.0,
+    "yes": 1,
+    "no": 1,
+    "open": 0,
+    "fees": 0.02,
+    "starved": false,
+    "att": 6,
+    "rej": 4,
+    "fr": 33.3,
+    "slip": 0.035,
+    "multi_pnl": null,
+    "multi_n": null,
+    "diff": null
    },
    {
     "sid": "short_fixed_time.px35_40",
@@ -2527,48 +2548,6 @@
     "multi_pnl": 48.4,
     "multi_n": 3,
     "diff": -40.24
-   },
-   {
-    "sid": "short_fixed_time.px60_65_btc15m",
-    "fam": "固定时窗",
-    "eq": 105.59,
-    "pnl": 5.59,
-    "ret": 5.59,
-    "n": 1,
-    "wr": 100.0,
-    "yes": 1,
-    "no": 0,
-    "open": 0,
-    "fees": 0.01,
-    "starved": false,
-    "att": 5,
-    "rej": 4,
-    "fr": 20.0,
-    "slip": 0.02,
-    "multi_pnl": null,
-    "multi_n": null,
-    "diff": null
-   },
-   {
-    "sid": "short_favored_follow.v8",
-    "fam": "顺势跟随",
-    "eq": 102.49,
-    "pnl": 2.49,
-    "ret": 2.49,
-    "n": 294,
-    "wr": 49.0,
-    "yes": 159,
-    "no": 135,
-    "open": 3,
-    "fees": 3.63,
-    "starved": false,
-    "att": 392,
-    "rej": 95,
-    "fr": 75.8,
-    "slip": 0.00146,
-    "multi_pnl": 74.63,
-    "multi_n": 11,
-    "diff": -72.14
    },
    {
     "sid": "short_momentum.px35_40",
@@ -2613,6 +2592,27 @@
     "diff": 9.85
    },
    {
+    "sid": "short_favored_follow.v8",
+    "fam": "顺势跟随",
+    "eq": 94.96,
+    "pnl": -5.04,
+    "ret": -5.04,
+    "n": 297,
+    "wr": 48.5,
+    "yes": 162,
+    "no": 135,
+    "open": 0,
+    "fees": 3.63,
+    "starved": false,
+    "att": 392,
+    "rej": 95,
+    "fr": 75.8,
+    "slip": 0.00146,
+    "multi_pnl": 74.63,
+    "multi_n": 11,
+    "diff": -79.67
+   },
+   {
     "sid": "short_fixed_time.v9",
     "fam": "固定时窗",
     "eq": 93.34,
@@ -2625,9 +2625,9 @@
     "open": 0,
     "fees": 1.95,
     "starved": false,
-    "att": 220,
-    "rej": 25,
-    "fr": 88.6,
+    "att": 222,
+    "rej": 27,
+    "fr": 87.8,
     "slip": 0.02671,
     "multi_pnl": 32.81,
     "multi_n": 8,
@@ -2653,27 +2653,6 @@
     "multi_pnl": null,
     "multi_n": null,
     "diff": null
-   },
-   {
-    "sid": "short_momentum.px55_60",
-    "fam": "动量跟涨跌",
-    "eq": 84.4,
-    "pnl": -15.6,
-    "ret": -15.6,
-    "n": 113,
-    "wr": 58.4,
-    "yes": 61,
-    "no": 52,
-    "open": 1,
-    "fees": 1.44,
-    "starved": false,
-    "att": 160,
-    "rej": 46,
-    "fr": 71.2,
-    "slip": 0.0167,
-    "multi_pnl": 21.62,
-    "multi_n": 3,
-    "diff": -37.22
    },
    {
     "sid": "short_fixed_time.px30_35",
@@ -2718,46 +2697,67 @@
     "diff": -62.08
    },
    {
-    "sid": "short_favored_follow.px60_65",
-    "fam": "顺势跟随",
-    "eq": 75.8,
-    "pnl": -24.2,
-    "ret": -24.2,
-    "n": 399,
-    "wr": 63.2,
-    "yes": 204,
-    "no": 195,
-    "open": 3,
-    "fees": 4.68,
+    "sid": "short_momentum.px55_60",
+    "fam": "动量跟涨跌",
+    "eq": 80.05,
+    "pnl": -19.95,
+    "ret": -19.95,
+    "n": 114,
+    "wr": 57.9,
+    "yes": 62,
+    "no": 52,
+    "open": 1,
+    "fees": 1.44,
     "starved": false,
-    "att": 633,
-    "rej": 231,
-    "fr": 63.5,
-    "slip": 0.00882,
-    "multi_pnl": 46.74,
-    "multi_n": 22,
-    "diff": -70.94
+    "att": 162,
+    "rej": 47,
+    "fr": 71.0,
+    "slip": 0.01638,
+    "multi_pnl": 21.62,
+    "multi_n": 3,
+    "diff": -41.57
    },
    {
     "sid": "short_fixed_time.v2",
     "fam": "固定时窗",
-    "eq": 72.48,
-    "pnl": -27.52,
-    "ret": -27.52,
-    "n": 247,
-    "wr": 46.6,
+    "eq": 78.07,
+    "pnl": -21.93,
+    "ret": -21.93,
+    "n": 248,
+    "wr": 46.8,
     "yes": 128,
-    "no": 119,
+    "no": 120,
     "open": 0,
-    "fees": 2.41,
+    "fees": 2.42,
     "starved": false,
-    "att": 292,
+    "att": 293,
     "rej": 45,
     "fr": 84.6,
-    "slip": -0.005,
+    "slip": -0.00477,
     "multi_pnl": 40.09,
     "multi_n": 10,
-    "diff": -67.61
+    "diff": -62.02
+   },
+   {
+    "sid": "short_favored_follow.px60_65",
+    "fam": "顺势跟随",
+    "eq": 77.34,
+    "pnl": -22.66,
+    "ret": -22.66,
+    "n": 402,
+    "wr": 62.9,
+    "yes": 206,
+    "no": 196,
+    "open": 2,
+    "fees": 4.7,
+    "starved": false,
+    "att": 637,
+    "rej": 233,
+    "fr": 63.4,
+    "slip": 0.00866,
+    "multi_pnl": 46.74,
+    "multi_n": 22,
+    "diff": -69.4
    },
    {
     "sid": "short_fixed_time.px55_60",
@@ -2825,14 +2825,14 @@
    {
     "sid": "short_favored_follow.v31",
     "fam": "顺势跟随",
-    "eq": 49.92,
-    "pnl": -50.08,
-    "ret": -50.08,
-    "n": 155,
-    "wr": 46.5,
-    "yes": 80,
+    "eq": 49.35,
+    "pnl": -50.65,
+    "ret": -50.65,
+    "n": 157,
+    "wr": 45.9,
+    "yes": 82,
     "no": 75,
-    "open": 2,
+    "open": 0,
     "fees": 1.78,
     "starved": false,
     "att": 167,
@@ -2841,7 +2841,7 @@
     "slip": 0.00234,
     "multi_pnl": 55.56,
     "multi_n": 6,
-    "diff": -105.64
+    "diff": -106.21
    },
    {
     "sid": "short_fixed_time.px20_25",
@@ -2869,22 +2869,22 @@
    "n": 1197,
    "median": 0.0,
    "p90": 0.08,
-   "pos_share": 41.3
+   "pos_share": 41.4
   },
   "base_median": 14.63,
   "events": {
-   "events": 848,
-   "settled": 10500,
-   "per_event": 12.4,
-   "win": 467,
-   "wr": 55.1,
-   "pnl": -9055.16,
+   "events": 858,
+   "settled": 10520,
+   "per_event": 12.3,
+   "win": 472,
+   "wr": 55.0,
+   "pnl": -9148.92,
    "thick": true
   },
-  "tight_hit_rate": 65.8
+  "tight_hit_rate": 65.6
  },
  "daily_parity": {
-  "as_of": "2026-11-20T03:53:42.860645+08:00",
+  "as_of": "2026-11-20T04:17:22.810353+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
   "accounts": 40,
@@ -2896,7 +2896,7 @@
   "rejects": 17,
   "fill_rate": 97.1,
   "avg_slip": 0.00076,
-  "cycles": 1613,
+  "cycles": 1617,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
@@ -3372,7 +3372,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-20T03:56:37.280530+08:00",
+  "as_of": "2026-11-20T04:17:13.344408+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
   "band": [
@@ -3383,14 +3383,14 @@
   "accounts": 248,
   "traded": 87,
   "profitable": 31,
-  "median_pnl": -20.32,
-  "attempts": 3522,
-  "rejects": 1877,
+  "median_pnl": -20.89,
+  "attempts": 3536,
+  "rejects": 1883,
   "band_rejects": 1230,
   "fill_rate": 46.7,
-  "avg_slip": -0.00063,
+  "avg_slip": -0.00077,
   "starved": 12,
-  "alive": 236,
+  "alive": 234,
   "rows": [
    {
     "sid": "short_fixed_time.px35_40",
@@ -3526,25 +3526,6 @@
     "starved": false
    },
    {
-    "sid": "short_momentum.px40_45",
-    "fam": "动量跟涨跌",
-    "eq": 153.57,
-    "pnl": 53.57,
-    "ret": 53.57,
-    "n": 18,
-    "wr": 55.6,
-    "yes": 7,
-    "no": 11,
-    "open": 1,
-    "fees": 0.28,
-    "att": 22,
-    "rej": 3,
-    "fr": 86.4,
-    "slip": 0.0024,
-    "brej": 3,
-    "starved": false
-   },
-   {
     "sid": "short_fixed_time.v11",
     "fam": "固定时窗",
     "eq": 152.56,
@@ -3561,6 +3542,25 @@
     "fr": 48.8,
     "slip": 0.00959,
     "brej": 10,
+    "starved": false
+   },
+   {
+    "sid": "short_momentum.px40_45",
+    "fam": "动量跟涨跌",
+    "eq": 152.02,
+    "pnl": 52.02,
+    "ret": 52.02,
+    "n": 18,
+    "wr": 55.6,
+    "yes": 7,
+    "no": 11,
+    "open": 1,
+    "fees": 0.28,
+    "att": 22,
+    "rej": 3,
+    "fr": 86.4,
+    "slip": 0.0024,
+    "brej": 3,
     "starved": false
    },
    {
@@ -3792,6 +3792,25 @@
     "starved": false
    },
    {
+    "sid": "short_favored_follow.v32",
+    "fam": "顺势跟随",
+    "eq": 121.1,
+    "pnl": 21.1,
+    "ret": 21.1,
+    "n": 26,
+    "wr": 46.2,
+    "yes": 0,
+    "no": 26,
+    "open": 0,
+    "fees": 0.28,
+    "att": 59,
+    "rej": 33,
+    "fr": 44.1,
+    "slip": -0.00735,
+    "brej": 15,
+    "starved": false
+   },
+   {
     "sid": "short_favored_follow.px40_45",
     "fam": "顺势跟随",
     "eq": 116.36,
@@ -3808,25 +3827,6 @@
     "fr": 58.5,
     "slip": -0.00158,
     "brej": 12,
-    "starved": false
-   },
-   {
-    "sid": "short_favored_follow.v32",
-    "fam": "顺势跟随",
-    "eq": 116.13,
-    "pnl": 16.13,
-    "ret": 16.13,
-    "n": 24,
-    "wr": 41.7,
-    "yes": 0,
-    "no": 24,
-    "open": 2,
-    "fees": 0.22,
-    "att": 59,
-    "rej": 33,
-    "fr": 44.1,
-    "slip": -0.00735,
-    "brej": 15,
     "starved": false
    },
    {
@@ -3850,17 +3850,17 @@
    }
   ],
   "events": {
-   "events": 229,
-   "settled": 1634,
+   "events": 232,
+   "settled": 1637,
    "per_event": 7.1,
-   "win": 93,
-   "wr": 40.6,
-   "pnl": -1457.11,
+   "win": 95,
+   "wr": 40.9,
+   "pnl": -1437.48,
    "thick": true
   }
  },
  "band_v2": {
-  "as_of": "2026-11-20T03:56:50.019377+08:00",
+  "as_of": "2026-11-20T04:17:38.383438+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -4353,11 +4353,11 @@
   }
  },
  "forward100": {
-  "as_of": "2026-11-20T03:56:41.526748+08:00",
+  "as_of": "2026-11-20T04:17:08.620238+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
-  "hours_left": 1004.0,
+  "hours_left": 1003.7,
   "accounts": 4,
   "traded": 4,
   "profitable": 1,
@@ -4378,7 +4378,7 @@
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 5461,
+  "scans": 5521,
   "fills": 75,
   "settlements": 75,
   "rows": [
@@ -4466,43 +4466,43 @@
   }
  },
  "elite": {
-  "rule": "盈利>0 且 去掉最赚3笔后仍>0 且 样本达标(15m>=40,低价盘>=10) ｜ 模拟盘持续运行中（5/5 盘 running · 最新扫描 11-20 03:56:50 · 当前在途 26 单）｜ 实盘严格池：short_fixed_time.px35_40",
+  "rule": "盈利>0 且 去掉最赚3笔后仍>0 且 样本达标(15m>=40,低价盘>=10) ｜ 模拟盘持续运行中（5/5 盘 running · 最新扫描 11-20 04:17:41 · 当前在途 24 单）｜ 实盘严格池：short_fixed_time.px35_40",
   "boards": {
    "parity100": [
     {
      "sid": "short_momentum.px60_65",
-     "fam": "short_momentum · 模拟权益152.7U · 在途3单",
+     "fam": "short_momentum · 模拟权益154.4U · 在途1单",
      "base_fam": "short_momentum",
      "slot": "15m",
      "board": "parity100",
-     "n": 140,
-     "pnl": 66.86,
-     "drop3": 36.32,
-     "wr": 66.4,
-     "eq": 152.65,
-     "cash": 134.85,
-     "open": 3,
-     "att": 198,
+     "n": 144,
+     "pnl": 58.38,
+     "drop3": 27.83,
+     "wr": 66.0,
+     "eq": 154.4,
+     "cash": 147.78,
+     "open": 1,
+     "att": 200,
      "rej": 55,
-     "last_mark_ts": "2026-11-20T03:56:40.182915+08:00",
+     "last_mark_ts": "2026-11-20T04:16:50.555744+08:00",
      "repeat": 2
     },
     {
      "sid": "short_fixed_time.px90_95",
-     "fam": "short_fixed_time · 模拟权益110.8U · 在途0单",
+     "fam": "short_fixed_time · 模拟权益111.6U · 在途0单",
      "base_fam": "short_fixed_time",
      "slot": "15m",
      "board": "parity100",
-     "n": 111,
-     "pnl": 10.78,
-     "drop3": 3.48,
-     "wr": 92.8,
-     "eq": 110.78,
-     "cash": 110.78,
+     "n": 112,
+     "pnl": 11.64,
+     "drop3": 4.34,
+     "wr": 92.9,
+     "eq": 111.64,
+     "cash": 111.64,
      "open": 0,
-     "att": 179,
+     "att": 180,
      "rej": 68,
-     "last_mark_ts": "2026-11-20T03:56:40.182915+08:00",
+     "last_mark_ts": "2026-11-20T04:16:50.555744+08:00",
      "repeat": 2
     }
    ],
@@ -4522,7 +4522,7 @@
      "open": 0,
      "att": 46,
      "rej": 27,
-     "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+     "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
      "repeat": 2
     },
     {
@@ -4540,7 +4540,7 @@
      "open": 0,
      "att": 23,
      "rej": 4,
-     "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+     "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
      "repeat": 2
     },
     {
@@ -4558,7 +4558,7 @@
      "open": 0,
      "att": 31,
      "rej": 14,
-     "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+     "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
      "repeat": 2
     },
     {
@@ -4576,7 +4576,7 @@
      "open": 0,
      "att": 31,
      "rej": 14,
-     "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+     "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
      "repeat": 2
     },
     {
@@ -4594,12 +4594,12 @@
      "open": 0,
      "att": 66,
      "rej": 41,
-     "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+     "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
      "repeat": 1
     },
     {
      "sid": "short_momentum.px40_45",
-     "fam": "short_momentum · 模拟权益153.6U · 在途1单",
+     "fam": "short_momentum · 模拟权益152.0U · 在途1单",
      "base_fam": "short_momentum",
      "slot": "15m",
      "board": "band100",
@@ -4607,12 +4607,12 @@
      "pnl": 61.09,
      "drop3": 5.68,
      "wr": 55.6,
-     "eq": 153.56,
+     "eq": 152.02,
      "cash": 150.45,
      "open": 1,
      "att": 22,
      "rej": 3,
-     "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+     "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
      "repeat": 2
     },
     {
@@ -4630,7 +4630,7 @@
      "open": 0,
      "att": 58,
      "rej": 31,
-     "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+     "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
      "repeat": 1
     }
    ],
@@ -4784,38 +4784,38 @@
   "top": [
    {
     "sid": "short_momentum.px60_65",
-    "fam": "short_momentum · 模拟权益152.7U · 在途3单",
+    "fam": "short_momentum · 模拟权益154.4U · 在途1单",
     "base_fam": "short_momentum",
     "slot": "15m",
     "board": "parity100",
-    "n": 140,
-    "pnl": 66.86,
-    "drop3": 36.32,
-    "wr": 66.4,
-    "eq": 152.65,
-    "cash": 134.85,
-    "open": 3,
-    "att": 198,
+    "n": 144,
+    "pnl": 58.38,
+    "drop3": 27.83,
+    "wr": 66.0,
+    "eq": 154.4,
+    "cash": 147.78,
+    "open": 1,
+    "att": 200,
     "rej": 55,
-    "last_mark_ts": "2026-11-20T03:56:40.182915+08:00",
+    "last_mark_ts": "2026-11-20T04:16:50.555744+08:00",
     "repeat": 2
    },
    {
     "sid": "short_fixed_time.px90_95",
-    "fam": "short_fixed_time · 模拟权益110.8U · 在途0单",
+    "fam": "short_fixed_time · 模拟权益111.6U · 在途0单",
     "base_fam": "short_fixed_time",
     "slot": "15m",
     "board": "parity100",
-    "n": 111,
-    "pnl": 10.78,
-    "drop3": 3.48,
-    "wr": 92.8,
-    "eq": 110.78,
-    "cash": 110.78,
+    "n": 112,
+    "pnl": 11.64,
+    "drop3": 4.34,
+    "wr": 92.9,
+    "eq": 111.64,
+    "cash": 111.64,
     "open": 0,
-    "att": 179,
+    "att": 180,
     "rej": 68,
-    "last_mark_ts": "2026-11-20T03:56:40.182915+08:00",
+    "last_mark_ts": "2026-11-20T04:16:50.555744+08:00",
     "repeat": 2
    }
   ],
@@ -4843,11 +4843,11 @@
    "rolling_vol_mapped": [
     "daily_parity"
    ],
-   "short_momentum · 模拟权益152.7U · 在途3单": [
+   "short_momentum · 模拟权益154.4U · 在途1单": [
     "band100",
     "parity100"
    ],
-   "short_fixed_time · 模拟权益110.8U · 在途0单": [
+   "short_fixed_time · 模拟权益111.6U · 在途0单": [
     "band100",
     "parity100"
    ],
@@ -4870,7 +4870,7 @@
    "short_favored_follow · 模拟权益173.3U · 在途0单": [
     "band100"
    ],
-   "short_momentum · 模拟权益153.6U · 在途1单": [
+   "short_momentum · 模拟权益152.0U · 在途1单": [
     "band100",
     "parity100"
    ],
@@ -4893,10 +4893,10 @@
   "sim_status": {
    "running_boards": 5,
    "total_boards": 5,
-   "latest_scan": "2026-11-20T03:56:50.360318+08:00",
-   "latest_scan_bj": "11-20 03:56:50",
-   "tot_open": 26,
-   "tot_fills": 11902,
+   "latest_scan": "2026-11-20T04:17:41.052153+08:00",
+   "latest_scan_bj": "11-20 04:17:41",
+   "tot_open": 24,
+   "tot_fills": 11918,
    "live_focus": [
     "short_fixed_time.px35_40"
    ],
@@ -4905,51 +4905,51 @@
      "board": "parity100",
      "label": "PARITY-100 全池同构",
      "phase": "running",
-     "scans": 9818,
-     "fills": 10516,
-     "settlements": 10500,
-     "last_scan": "2026-11-20T03:56:40.182915+08:00",
-     "last_scan_bj": "11-20 03:56:40"
+     "scans": 9870,
+     "fills": 10524,
+     "settlements": 10520,
+     "last_scan": "2026-11-20T04:17:19.059167+08:00",
+     "last_scan_bj": "11-20 04:17:19"
     },
     {
      "board": "band100",
      "label": "BAND-100 低价区间",
      "phase": "running",
-     "scans": 5129,
-     "fills": 714,
-     "settlements": 705,
-     "last_scan": "2026-11-20T03:56:37.280530+08:00",
-     "last_scan_bj": "11-20 03:56:37"
+     "scans": 5184,
+     "fills": 722,
+     "settlements": 708,
+     "last_scan": "2026-11-20T04:17:13.344408+08:00",
+     "last_scan_bj": "11-20 04:17:13"
     },
     {
      "board": "forward100",
      "label": "FORWARD-100 前瞻验证",
      "phase": "running",
-     "scans": 5461,
+     "scans": 5521,
      "fills": 75,
      "settlements": 75,
-     "last_scan": "2026-11-20T03:56:41.526748+08:00",
-     "last_scan_bj": "11-20 03:56:41"
+     "last_scan": "2026-11-20T04:17:08.620238+08:00",
+     "last_scan_bj": "11-20 04:17:08"
     },
     {
      "board": "elite_lab",
      "label": "ELITE-LAB V3 迭代赛马",
      "phase": "running",
-     "scans": 3430,
+     "scans": 3492,
      "fills": 33,
      "settlements": 33,
-     "last_scan": "2026-11-20T03:56:50.360318+08:00",
-     "last_scan_bj": "11-20 03:56:50"
+     "last_scan": "2026-11-20T04:17:41.052153+08:00",
+     "last_scan_bj": "11-20 04:17:41"
     },
     {
      "board": "daily_parity",
      "label": "DAILY-PARITY 24h日盘同构",
      "phase": "running",
-     "scans": 1613,
+     "scans": 1617,
      "fills": 564,
      "settlements": 0,
-     "last_scan": "2026-11-20T03:53:42.697630+08:00",
-     "last_scan_bj": "11-20 03:53:42"
+     "last_scan": "2026-11-20T04:17:21.797928+08:00",
+     "last_scan_bj": "11-20 04:17:21"
     }
    ]
   },
@@ -6730,28 +6730,47 @@
     "board": "parity100",
     "sid": "short_momentum.px60_65",
     "fam": "short_momentum",
-    "eq": 152.65,
-    "cash": 134.85,
-    "pnl": 52.65,
-    "n": 140,
-    "wins": 93,
-    "wr": 66.4,
-    "open": 3,
-    "att": 198,
+    "eq": 154.4,
+    "cash": 147.78,
+    "pnl": 54.4,
+    "n": 144,
+    "wins": 95,
+    "wr": 66.0,
+    "open": 1,
+    "att": 200,
     "rej": 55,
-    "last_mark_ts": "2026-11-20T03:56:40.182915+08:00",
+    "last_mark_ts": "2026-11-20T04:16:50.555744+08:00",
     "open_list": [
      {
-      "oid": 40830,
+      "oid": 40834,
+      "perp": "BTC",
+      "issuer": "fox",
+      "slot": "hourly",
+      "side": "BUY_NO",
+      "px": 0.62343,
+      "qty": 17,
+      "cost": 10.598310000000001,
+      "opened_at": "2026-11-20T04:03:02.950473+08:00",
+      "status": "open"
+     }
+    ],
+    "recent_trades": [
+     {
+      "oid": 40840,
       "perp": "ETH",
       "issuer": "out",
-      "slot": "hourly",
-      "side": "BUY_YES",
-      "px": 0.617,
+      "slot": "15m",
+      "side": "BUY_NO",
+      "px": 0.614,
       "qty": 17,
-      "cost": 10.489,
-      "opened_at": "2026-11-20T03:47:59.936887+08:00",
-      "status": "open"
+      "cost": 10.438,
+      "payout": 16.9762,
+      "pnl": 6.538199999999998,
+      "settle_fraction": 0.0,
+      "opened_at": "2026-11-20T04:02:40.584631+08:00",
+      "settled_at": "2026-11-20T04:15:02.748816+08:00",
+      "win": true,
+      "status": "settled"
      },
      {
       "oid": 40828,
@@ -6762,8 +6781,30 @@
       "px": 0.64,
       "qty": 17,
       "cost": 10.88,
+      "payout": 0.0,
+      "pnl": -10.88,
+      "settle_fraction": 0.0,
       "opened_at": "2026-11-20T03:47:24.475368+08:00",
-      "status": "open"
+      "settled_at": "2026-11-20T04:00:30.135799+08:00",
+      "win": false,
+      "status": "settled"
+     },
+     {
+      "oid": 40830,
+      "perp": "ETH",
+      "issuer": "out",
+      "slot": "hourly",
+      "side": "BUY_YES",
+      "px": 0.617,
+      "qty": 17,
+      "cost": 10.489,
+      "payout": 0.0,
+      "pnl": -10.489,
+      "settle_fraction": 0.0,
+      "opened_at": "2026-11-20T03:47:59.936887+08:00",
+      "settled_at": "2026-11-20T04:00:30.135799+08:00",
+      "win": false,
+      "status": "settled"
      },
      {
       "oid": 40791,
@@ -6774,11 +6815,14 @@
       "px": 0.62582,
       "qty": 17,
       "cost": 10.638940000000002,
+      "payout": 16.9881,
+      "pnl": 6.349159999999998,
+      "settle_fraction": 0.0,
       "opened_at": "2026-11-20T03:28:20.690808+08:00",
-      "status": "open"
-     }
-    ],
-    "recent_trades": [
+      "settled_at": "2026-11-20T04:00:30.135799+08:00",
+      "win": true,
+      "status": "settled"
+     },
      {
       "oid": 40749,
       "perp": "BTC",
@@ -6965,74 +7009,6 @@
       "settled_at": "2026-11-19T22:00:14.404604+08:00",
       "win": true,
       "status": "settled"
-     },
-     {
-      "oid": 40556,
-      "perp": "BTC",
-      "issuer": "fox",
-      "slot": "hourly",
-      "side": "BUY_NO",
-      "px": 0.64244,
-      "qty": 17,
-      "cost": 10.92148,
-      "payout": 0.0,
-      "pnl": -10.92148,
-      "settle_fraction": 1.0,
-      "opened_at": "2026-11-19T21:08:30.516548+08:00",
-      "settled_at": "2026-11-19T22:00:14.404604+08:00",
-      "win": false,
-      "status": "settled"
-     },
-     {
-      "oid": 40580,
-      "perp": "ETH",
-      "issuer": "out",
-      "slot": "15m",
-      "side": "BUY_YES",
-      "px": 0.615,
-      "qty": 17,
-      "cost": 10.455,
-      "payout": 16.9762,
-      "pnl": 6.5211999999999986,
-      "settle_fraction": 1.0,
-      "opened_at": "2026-11-19T21:33:44.939202+08:00",
-      "settled_at": "2026-11-19T21:45:13.076847+08:00",
-      "win": true,
-      "status": "settled"
-     },
-     {
-      "oid": 40543,
-      "perp": "HYPE",
-      "issuer": "out",
-      "slot": "15m",
-      "side": "BUY_YES",
-      "px": 0.61,
-      "qty": 18,
-      "cost": 10.98,
-      "payout": 17.9748,
-      "pnl": 6.994799999999998,
-      "settle_fraction": 1.0,
-      "opened_at": "2026-11-19T20:34:01.595594+08:00",
-      "settled_at": "2026-11-19T20:45:16.725367+08:00",
-      "win": true,
-      "status": "settled"
-     },
-     {
-      "oid": 40530,
-      "perp": "BTC",
-      "issuer": "fox",
-      "slot": "15m",
-      "side": "BUY_YES",
-      "px": 0.61,
-      "qty": 18,
-      "cost": 10.98,
-      "payout": 0.0,
-      "pnl": -10.98,
-      "settle_fraction": 0.0,
-      "opened_at": "2026-11-19T20:17:43.488344+08:00",
-      "settled_at": "2026-11-19T20:30:41.650195+08:00",
-      "win": false,
-      "status": "settled"
      }
     ]
    },
@@ -7040,16 +7016,16 @@
     "board": "band100",
     "sid": "short_momentum.px40_45",
     "fam": "short_momentum",
-    "eq": 153.56,
+    "eq": 152.02,
     "cash": 150.45,
-    "pnl": 53.56,
+    "pnl": 52.02,
     "n": 18,
     "wins": 10,
     "wr": 55.6,
     "open": 1,
     "att": 22,
     "rej": 3,
-    "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+    "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
     "open_list": [
      {
       "oid": 39858,
@@ -7335,7 +7311,7 @@
     "open": 0,
     "att": 2,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T03:55:50.179147+08:00",
+    "last_mark_ts": "2026-11-20T04:17:17.371943+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7387,7 +7363,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T03:55:50.179147+08:00",
+    "last_mark_ts": "2026-11-20T04:17:17.371943+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7404,7 +7380,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T03:55:50.179147+08:00",
+    "last_mark_ts": "2026-11-20T04:17:17.371943+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7421,7 +7397,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T03:55:50.179147+08:00",
+    "last_mark_ts": "2026-11-20T04:17:17.371943+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7438,7 +7414,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T03:55:50.179147+08:00",
+    "last_mark_ts": "2026-11-20T04:17:17.371943+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7455,7 +7431,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T03:55:50.179147+08:00",
+    "last_mark_ts": "2026-11-20T04:17:17.371943+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7472,7 +7448,7 @@
     "open": 0,
     "att": 28,
     "rej": 18,
-    "last_mark_ts": "2026-11-20T03:55:50.179147+08:00",
+    "last_mark_ts": "2026-11-20T04:17:17.371943+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7660,7 +7636,7 @@
     "open": 0,
     "att": 61,
     "rej": 40,
-    "last_mark_ts": "2026-11-20T03:55:50.179147+08:00",
+    "last_mark_ts": "2026-11-20T04:17:17.371943+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7924,18 +7900,35 @@
     "board": "parity100",
     "sid": "short_fixed_time.px90_95",
     "fam": "short_fixed_time",
-    "eq": 110.78,
-    "cash": 110.78,
-    "pnl": 10.78,
-    "n": 111,
-    "wins": 103,
-    "wr": 92.8,
+    "eq": 111.64,
+    "cash": 111.64,
+    "pnl": 11.64,
+    "n": 112,
+    "wins": 104,
+    "wr": 92.9,
     "open": 0,
-    "att": 179,
+    "att": 180,
     "rej": 68,
-    "last_mark_ts": "2026-11-20T03:56:40.182915+08:00",
+    "last_mark_ts": "2026-11-20T04:16:50.555744+08:00",
     "open_list": [],
     "recent_trades": [
+     {
+      "oid": 40841,
+      "perp": "BTC",
+      "issuer": "out",
+      "slot": "15m",
+      "side": "BUY_NO",
+      "px": 0.92,
+      "qty": 11,
+      "cost": 10.120000000000001,
+      "payout": 10.9846,
+      "pnl": 0.8645999999999994,
+      "settle_fraction": 0.0,
+      "opened_at": "2026-11-20T04:10:25.887366+08:00",
+      "settled_at": "2026-11-20T04:15:02.748816+08:00",
+      "win": true,
+      "status": "settled"
+     },
      {
       "oid": 40808,
       "perp": "BTC",
@@ -8173,23 +8166,6 @@
       "settled_at": "2026-11-19T21:00:39.249659+08:00",
       "win": true,
       "status": "settled"
-     },
-     {
-      "oid": 40548,
-      "perp": "BTC",
-      "issuer": "fox",
-      "slot": "hourly",
-      "side": "BUY_YES",
-      "px": 0.91846,
-      "qty": 11,
-      "cost": 10.103060000000001,
-      "payout": 10.9923,
-      "pnl": 0.8892399999999991,
-      "settle_fraction": 1.0,
-      "opened_at": "2026-11-19T20:55:43.381086+08:00",
-      "settled_at": "2026-11-19T21:00:39.249659+08:00",
-      "win": true,
-      "status": "settled"
      }
     ]
    },
@@ -8206,7 +8182,7 @@
     "open": 0,
     "att": 46,
     "rej": 32,
-    "last_mark_ts": "2026-11-20T03:55:41.448438+08:00",
+    "last_mark_ts": "2026-11-20T04:16:08.392649+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8462,7 +8438,7 @@
     "open": 0,
     "att": 106,
     "rej": 83,
-    "last_mark_ts": "2026-11-20T03:55:41.448438+08:00",
+    "last_mark_ts": "2026-11-20T04:16:08.392649+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8735,7 +8711,7 @@
     "open": 0,
     "att": 47,
     "rej": 30,
-    "last_mark_ts": "2026-11-20T03:55:41.448438+08:00",
+    "last_mark_ts": "2026-11-20T04:16:08.392649+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9008,7 +8984,7 @@
     "open": 0,
     "att": 216,
     "rej": 195,
-    "last_mark_ts": "2026-11-20T03:55:41.448438+08:00",
+    "last_mark_ts": "2026-11-20T04:16:08.392649+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9281,7 +9257,7 @@
     "open": 0,
     "att": 23,
     "rej": 4,
-    "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+    "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9554,7 +9530,7 @@
     "open": 0,
     "att": 46,
     "rej": 27,
-    "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+    "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9827,7 +9803,7 @@
     "open": 0,
     "att": 31,
     "rej": 14,
-    "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+    "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10100,7 +10076,7 @@
     "open": 0,
     "att": 31,
     "rej": 14,
-    "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+    "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10373,7 +10349,7 @@
     "open": 0,
     "att": 66,
     "rej": 41,
-    "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+    "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10646,7 +10622,7 @@
     "open": 0,
     "att": 58,
     "rej": 31,
-    "last_mark_ts": "2026-11-20T03:55:29.489637+08:00",
+    "last_mark_ts": "2026-11-20T04:17:13.344408+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10910,7 +10886,7 @@
   "note": "PARITY-100 / BAND-100 / FORWARD-100 / ELITE-LAB V3 实时模拟运行中，与实盘严格策略同步对照。"
  },
  "ledger": {
-  "rebuilt_at": "2026-11-20 03:55:10",
+  "rebuilt_at": "2026-11-20 04:15:15",
   "equity": 139.73986,
   "total_pnl": -11.3627,
   "n_settled": 78,
@@ -12559,7 +12535,7 @@
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "03:54:59",
-  "last_repair": "2026-11-20 03:47:47"
+  "ledger_mtime": "04:14:46",
+  "last_repair": "2026-11-20 04:12:44"
  }
 }
