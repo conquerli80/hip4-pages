@@ -1,6 +1,6 @@
 {
- "as_of": "2026-11-19 23:26",
- "_pushed_at": 1795101969,
+ "as_of": "2026-11-19 23:36",
+ "_pushed_at": 1795102576,
  "focus": {
   "enabled": true,
   "sid": "short_fixed_time.px35_40",
@@ -16,28 +16,48 @@
    "stop_absolute": false,
    "stop_150": true,
    "ws_pid": 15432,
-   "ws_hb_age_s": 0.5,
+   "ws_hb_age_s": 5.6,
    "ws_alive": true,
-   "marks_age_s": 8.0,
+   "marks_age_s": 11.8,
    "engine_status": "实盘盯盘中（空仓等信号）",
-   "equity": 112.759,
-   "floor_buffer": 62.76,
-   "total_pnl": -38.4227,
-   "n_all": 68,
-   "n_settled": 68,
+   "equity": 124.145,
+   "floor_buffer": 74.14,
+   "total_pnl": -27.0227,
+   "n_all": 69,
+   "n_settled": 69,
    "n_open": 0,
-   "n_win": 36,
+   "n_win": 37,
    "n_loss": 32,
-   "winrate": 52.9,
-   "rebuilt_at": "2026-11-19 23:25:16",
+   "winrate": 53.6,
+   "rebuilt_at": "2026-11-19 23:35:16",
    "sid_stats": {
     "sid": "short_fixed_time.px35_40",
-    "n": 4,
-    "win": 3,
+    "n": 5,
+    "win": 4,
     "loss": 1,
-    "pnl": 31.5283
+    "pnl": 42.9283
    },
    "recent_trades": [
+    {
+     "coin": "#406511",
+     "oid": 40651,
+     "side": "NO",
+     "perp": "",
+     "expiry": "",
+     "sid": "short_fixed_time.px35_40",
+     "open_ms": 1795101930722,
+     "settle_ms": 1795102234218,
+     "fill_px": 0.43,
+     "qty": 20.0,
+     "cost": 8.6,
+     "buy_fee": 0.0,
+     "settle_px": 1.0,
+     "pnl": 11.4,
+     "settle_fee": 0.014,
+     "status": "settled",
+     "result": "win",
+     "close_type": "settlement"
+    },
     {
      "coin": "#406340",
      "oid": 40634,
@@ -257,29 +277,29 @@
      "status": "settled",
      "result": "win",
      "close_type": "settlement"
-    },
-    {
-     "coin": "#396030",
-     "oid": 39603,
-     "side": "YES",
-     "perp": "",
-     "expiry": "",
-     "sid": "short_fixed_time.px55_60",
-     "open_ms": 1795009202056,
-     "settle_ms": 1795009513295,
-     "fill_px": 0.55785,
-     "qty": 18.0,
-     "cost": 10.0413,
-     "buy_fee": 0.0,
-     "settle_px": 0.0,
-     "pnl": -10.0413,
-     "settle_fee": 0.0,
-     "status": "settled",
-     "result": "loss",
-     "close_type": "settlement"
     }
    ],
    "all_trades": [
+    {
+     "coin": "#406511",
+     "oid": 40651,
+     "side": "NO",
+     "perp": "",
+     "expiry": "",
+     "sid": "short_fixed_time.px35_40",
+     "open_ms": 1795101930722,
+     "settle_ms": 1795102234218,
+     "fill_px": 0.43,
+     "qty": 20.0,
+     "cost": 8.6,
+     "buy_fee": 0.0,
+     "settle_px": 1.0,
+     "pnl": 11.4,
+     "settle_fee": 0.014,
+     "status": "settled",
+     "result": "win",
+     "close_type": "settlement"
+    },
     {
      "coin": "#406340",
      "oid": 40634,
@@ -2001,42 +2021,42 @@
   },
   "sampler": {
    "files": 1,
-   "rows": 3272,
-   "markets": 105,
+   "rows": 3331,
+   "markets": 109,
    "n_med": 22,
    "span_med_min": 5.6,
-   "decided": 90,
-   "decided_pct": 85.7,
-   "newest_age_s": 39.6,
-   "heartbeat_age_s": 1.9
+   "decided": 93,
+   "decided_pct": 85.3,
+   "newest_age_s": 12.1,
+   "heartbeat_age_s": 2.6
   }
  },
  "m15": {
-  "pnl": -64145.26,
-  "n": 128575,
-  "settles": 128575,
-  "exps": 2413,
+  "pnl": -63654.69,
+  "n": 128649,
+  "settles": 128649,
+  "exps": 2419,
   "sids": 238,
-  "win": 60.8,
+  "win": 60.9,
   "pos_sid": 24,
   "neg_sid": 214,
   "hours": 148,
-  "per_trade": -0.5,
+  "per_trade": -0.49,
   "mult": 53,
   "top": [
    {
     "sid": "fixed_time.v14",
-    "pnl": 304.24,
-    "ind": 296,
-    "win": 41.9,
-    "t": 1.23
+    "pnl": 314.93,
+    "ind": 297,
+    "win": 42.1,
+    "t": 1.27
    },
    {
     "sid": "fixed_time.v7",
-    "pnl": 276.95,
-    "ind": 423,
-    "win": 45.0,
-    "t": 1.03
+    "pnl": 287.64,
+    "ind": 424,
+    "win": 45.1,
+    "t": 1.07
    },
    {
     "sid": "favored_follow.v36",
@@ -2047,17 +2067,17 @@
    },
    {
     "sid": "fixed_time.v8",
-    "pnl": 210.05,
-    "ind": 346,
-    "win": 40.6,
-    "t": 0.8
+    "pnl": 220.74,
+    "ind": 347,
+    "win": 40.8,
+    "t": 0.84
    },
    {
-    "sid": "fixed_time.px35_40",
-    "pnl": 147.61,
-    "ind": 78,
-    "win": 43.8,
-    "t": 1.21
+    "sid": "fixed_time.v10",
+    "pnl": 156.51,
+    "ind": 263,
+    "win": 40.3,
+    "t": 0.68
    }
   ],
   "candidates": []
@@ -2117,15 +2137,15 @@
  "real": [
   {
    "name": "链上实盘(官方口径)",
-   "settles": 68,
-   "wins": 36,
-   "winrate": 52.9,
-   "pnl": -38.42,
+   "settles": 69,
+   "wins": 37,
+   "winrate": 53.6,
+   "pnl": -27.02,
    "open": 0,
-   "equity": 112.76,
+   "equity": 124.14,
    "status": "实盘盯盘中（空仓等信号）",
    "source": "api.hyperliquid.xyz/info · userFills（官方权威）",
-   "as_of": "2026-11-19 23:25:16"
+   "as_of": "2026-11-19 23:35:16"
   }
  ],
  "gate": {
@@ -2143,22 +2163,22 @@
  "multi100": null,
  "daily100": null,
  "parity100": {
-  "as_of": "2026-11-19T23:26:27.895656+08:00",
+  "as_of": "2026-11-19T23:36:57.495337+08:00",
   "start_at": "2026-11-15T19:22:56.144707+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
-  "hours_left": 1008.5,
+  "hours_left": 1008.4,
   "accounts": 248,
   "traded": 122,
   "profitable": 16,
-  "starved": 84,
-  "alive": 164,
+  "starved": 85,
+  "alive": 163,
   "median_pnl": -92.69,
-  "attempts": 12295,
-  "rejects": 1755,
+  "attempts": 12304,
+  "rejects": 1760,
   "fill_rate": 85.7,
-  "avg_slip": 0.03133,
+  "avg_slip": 0.03132,
   "phase": "running",
-  "scans": 9191,
+  "scans": 9219,
   "rows": [
    {
     "sid": "short_favored_follow.v8",
@@ -2184,23 +2204,44 @@
    {
     "sid": "short_fixed_time.v7",
     "fam": "固定时窗",
-    "eq": 168.37,
-    "pnl": 68.37,
-    "ret": 68.37,
-    "n": 154,
-    "wr": 40.9,
+    "eq": 189.47,
+    "pnl": 89.47,
+    "ret": 89.47,
+    "n": 155,
+    "wr": 41.3,
     "yes": 78,
-    "no": 76,
+    "no": 77,
     "open": 0,
-    "fees": 1.53,
+    "fees": 1.56,
     "starved": false,
-    "att": 171,
+    "att": 172,
     "rej": 17,
     "fr": 90.1,
-    "slip": 0.01291,
+    "slip": 0.01166,
     "multi_pnl": 56.25,
     "multi_n": 7,
-    "diff": 12.12
+    "diff": 33.22
+   },
+   {
+    "sid": "short_momentum.px60_65",
+    "fam": "动量跟涨跌",
+    "eq": 166.11,
+    "pnl": 66.11,
+    "ret": 66.11,
+    "n": 132,
+    "wr": 66.7,
+    "yes": 73,
+    "no": 59,
+    "open": 1,
+    "fees": 1.83,
+    "starved": false,
+    "att": 171,
+    "rej": 38,
+    "fr": 77.8,
+    "slip": 0.00617,
+    "multi_pnl": 26.93,
+    "multi_n": 7,
+    "diff": 39.18
    },
    {
     "sid": "short_fixed_time.px45_50",
@@ -2224,46 +2265,25 @@
     "diff": 33.99
    },
    {
-    "sid": "short_momentum.px60_65",
-    "fam": "动量跟涨跌",
-    "eq": 158.24,
-    "pnl": 58.24,
-    "ret": 58.24,
-    "n": 132,
-    "wr": 66.7,
-    "yes": 73,
-    "no": 59,
-    "open": 1,
-    "fees": 1.83,
-    "starved": false,
-    "att": 171,
-    "rej": 38,
-    "fr": 77.8,
-    "slip": 0.00617,
-    "multi_pnl": 26.93,
-    "multi_n": 7,
-    "diff": 31.31
-   },
-   {
     "sid": "short_favored_follow.px60_65",
     "fam": "顺势跟随",
-    "eq": 138.86,
-    "pnl": 38.86,
-    "ret": 38.86,
+    "eq": 146.73,
+    "pnl": 46.73,
+    "ret": 46.73,
     "n": 373,
     "wr": 63.8,
     "yes": 197,
     "no": 176,
-    "open": 1,
+    "open": 2,
     "fees": 4.43,
     "starved": false,
-    "att": 553,
+    "att": 554,
     "rej": 179,
-    "fr": 67.6,
-    "slip": 0.009,
+    "fr": 67.7,
+    "slip": 0.00898,
     "multi_pnl": 46.74,
     "multi_n": 22,
-    "diff": -7.88
+    "diff": -0.01
    },
    {
     "sid": "short_favored_follow.v31",
@@ -2425,9 +2445,9 @@
     "open": 0,
     "fees": 1.33,
     "starved": false,
-    "att": 131,
-    "rej": 30,
-    "fr": 77.1,
+    "att": 133,
+    "rej": 32,
+    "fr": 75.9,
     "slip": 0.01928,
     "multi_pnl": 21.62,
     "multi_n": 3,
@@ -2455,6 +2475,27 @@
     "diff": null
    },
    {
+    "sid": "short_fixed_time.v2",
+    "fam": "固定时窗",
+    "eq": 104.65,
+    "pnl": 4.65,
+    "ret": 4.65,
+    "n": 229,
+    "wr": 47.2,
+    "yes": 115,
+    "no": 114,
+    "open": 0,
+    "fees": 2.23,
+    "starved": false,
+    "att": 261,
+    "rej": 32,
+    "fr": 87.7,
+    "slip": -0.00403,
+    "multi_pnl": 40.09,
+    "multi_n": 10,
+    "diff": -35.44
+   },
+   {
     "sid": "short_momentum.px35_40",
     "fam": "动量跟涨跌",
     "eq": 101.58,
@@ -2476,27 +2517,6 @@
     "diff": -4.78
    },
    {
-    "sid": "short_cheap_fade.v1",
-    "fam": "反向抄便宜",
-    "eq": 100.69,
-    "pnl": 0.69,
-    "ret": 0.69,
-    "n": 0,
-    "wr": null,
-    "yes": 0,
-    "no": 0,
-    "open": 1,
-    "fees": 0.0,
-    "starved": false,
-    "att": 1,
-    "rej": 0,
-    "fr": 100.0,
-    "slip": -0.01595,
-    "multi_pnl": -20.06,
-    "multi_n": 2,
-    "diff": 20.75
-   },
-   {
     "sid": "short_fixed_time.px25_30",
     "fam": "固定时窗",
     "eq": 99.7,
@@ -2516,27 +2536,6 @@
     "multi_pnl": -10.15,
     "multi_n": 1,
     "diff": 9.85
-   },
-   {
-    "sid": "short_fixed_time.v2",
-    "fam": "固定时窗",
-    "eq": 96.56,
-    "pnl": -3.44,
-    "ret": -3.44,
-    "n": 228,
-    "wr": 46.9,
-    "yes": 115,
-    "no": 113,
-    "open": 1,
-    "fees": 2.22,
-    "starved": false,
-    "att": 261,
-    "rej": 32,
-    "fr": 87.7,
-    "slip": -0.00403,
-    "multi_pnl": 40.09,
-    "multi_n": 10,
-    "diff": -43.53
    },
    {
     "sid": "short_fixed_time.px30_35",
@@ -2581,6 +2580,48 @@
     "diff": null
    },
    {
+    "sid": "short_cheap_fade.v1",
+    "fam": "反向抄便宜",
+    "eq": 89.09,
+    "pnl": -10.91,
+    "ret": -10.91,
+    "n": 1,
+    "wr": 0.0,
+    "yes": 1,
+    "no": 0,
+    "open": 0,
+    "fees": 0.0,
+    "starved": false,
+    "att": 1,
+    "rej": 0,
+    "fr": 100.0,
+    "slip": -0.01595,
+    "multi_pnl": -20.06,
+    "multi_n": 2,
+    "diff": 9.15
+   },
+   {
+    "sid": "short_fixed_time.v9",
+    "fam": "固定时窗",
+    "eq": 83.39,
+    "pnl": -16.61,
+    "ret": -16.61,
+    "n": 180,
+    "wr": 43.9,
+    "yes": 94,
+    "no": 86,
+    "open": 0,
+    "fees": 1.76,
+    "starved": false,
+    "att": 200,
+    "rej": 20,
+    "fr": 90.0,
+    "slip": 0.02835,
+    "multi_pnl": 32.81,
+    "multi_n": 8,
+    "diff": -49.42
+   },
+   {
     "sid": "short_fixed_time.px55_60",
     "fam": "固定时窗",
     "eq": 68.59,
@@ -2602,48 +2643,6 @@
     "diff": -52.27
    },
    {
-    "sid": "short_favored_follow.px45_50",
-    "fam": "顺势跟随",
-    "eq": 66.47,
-    "pnl": -33.53,
-    "ret": -33.53,
-    "n": 227,
-    "wr": 47.1,
-    "yes": 118,
-    "no": 109,
-    "open": 1,
-    "fees": 2.52,
-    "starved": false,
-    "att": 344,
-    "rej": 116,
-    "fr": 66.3,
-    "slip": 0.00304,
-    "multi_pnl": -55.76,
-    "multi_n": 14,
-    "diff": 22.23
-   },
-   {
-    "sid": "short_fixed_time.v9",
-    "fam": "固定时窗",
-    "eq": 62.29,
-    "pnl": -37.71,
-    "ret": -37.71,
-    "n": 179,
-    "wr": 43.6,
-    "yes": 94,
-    "no": 85,
-    "open": 0,
-    "fees": 1.74,
-    "starved": false,
-    "att": 199,
-    "rej": 20,
-    "fr": 89.9,
-    "slip": 0.02951,
-    "multi_pnl": 32.81,
-    "multi_n": 8,
-    "diff": -70.52
-   },
-   {
     "sid": "short_favored_follow.v27",
     "fam": "顺势跟随",
     "eq": 61.02,
@@ -2663,28 +2662,49 @@
     "multi_pnl": -2.88,
     "multi_n": 11,
     "diff": -36.1
+   },
+   {
+    "sid": "short_favored_follow.px45_50",
+    "fam": "顺势跟随",
+    "eq": 60.54,
+    "pnl": -39.46,
+    "ret": -39.46,
+    "n": 227,
+    "wr": 47.1,
+    "yes": 118,
+    "no": 109,
+    "open": 1,
+    "fees": 2.52,
+    "starved": false,
+    "att": 344,
+    "rej": 116,
+    "fr": 66.3,
+    "slip": 0.00304,
+    "multi_pnl": -55.76,
+    "multi_n": 14,
+    "diff": 16.3
    }
   ],
   "gap": {
    "n": 1200,
    "median": 0.0,
-   "p90": 0.0757,
-   "pos_share": 41.6
+   "p90": 0.072,
+   "pos_share": 41.2
   },
   "base_median": 14.63,
   "events": {
-   "events": 778,
-   "settled": 10258,
+   "events": 780,
+   "settled": 10262,
    "per_event": 13.2,
-   "win": 435,
+   "win": 436,
    "wr": 55.9,
-   "pnl": -8663.43,
+   "pnl": -8624.78,
    "thick": true
   },
-  "tight_hit_rate": 65.5
+  "tight_hit_rate": 66.0
  },
  "daily_parity": {
-  "as_of": "2026-11-19T23:26:07.376306+08:00",
+  "as_of": "2026-11-19T23:33:28.536402+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
   "accounts": 40,
@@ -2696,7 +2716,7 @@
   "rejects": 17,
   "fill_rate": 96.9,
   "avg_slip": 0.00071,
-  "cycles": 1554,
+  "cycles": 1556,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
@@ -3172,7 +3192,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-19T23:26:40.443515+08:00",
+  "as_of": "2026-11-19T23:37:10.819503+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
   "band": [
@@ -3182,7 +3202,7 @@
   "max_bets": 6,
   "accounts": 248,
   "traded": 86,
-  "profitable": 29,
+  "profitable": 30,
   "median_pnl": -25.53,
   "attempts": 2913,
   "rejects": 1558,
@@ -3660,7 +3680,7 @@
   }
  },
  "band_v2": {
-  "as_of": "2026-11-19T23:26:48.590129+08:00",
+  "as_of": "2026-11-19T23:36:52.819130+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -4153,11 +4173,11 @@
   }
  },
  "forward100": {
-  "as_of": "2026-11-19T23:26:28.853759+08:00",
+  "as_of": "2026-11-19T23:37:15.680111+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
-  "hours_left": 1008.5,
+  "hours_left": 1008.4,
   "accounts": 4,
   "traded": 4,
   "profitable": 1,
@@ -4178,7 +4198,7 @@
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 4689,
+  "scans": 4719,
   "fills": 72,
   "settlements": 72,
   "rows": [
@@ -4266,7 +4286,7 @@
   }
  },
  "elite": {
-  "rule": "盈利>0 且 去掉最赚3笔后仍>0 且 样本达标(15m>=40,低价盘>=10) ｜ 模拟盘持续运行中（5/5 盘 running · 最新扫描 11-19 23:26:53 · 当前在途 18 单）｜ 实盘严格池：short_fixed_time.px35_40",
+  "rule": "盈利>0 且 去掉最赚3笔后仍>0 且 样本达标(15m>=40,低价盘>=10) ｜ 模拟盘持续运行中（5/5 盘 running · 最新扫描 11-19 23:37:15 · 当前在途 19 单）｜ 实盘严格池：short_fixed_time.px35_40",
   "boards": {
    "parity100": [
     {
@@ -4284,12 +4304,12 @@
      "open": 0,
      "att": 338,
      "rej": 72,
-     "last_mark_ts": "2026-11-19T23:26:27.895656+08:00",
+     "last_mark_ts": "2026-11-19T23:36:33.539831+08:00",
      "repeat": 2
     },
     {
      "sid": "short_momentum.px60_65",
-     "fam": "short_momentum · 模拟权益158.2U · 在途1单",
+     "fam": "short_momentum · 模拟权益166.1U · 在途1单",
      "base_fam": "short_momentum",
      "slot": "15m",
      "board": "parity100",
@@ -4297,17 +4317,17 @@
      "pnl": 66.11,
      "drop3": 35.57,
      "wr": 66.7,
-     "eq": 158.24,
+     "eq": 166.11,
      "cash": 155.16,
      "open": 1,
      "att": 171,
      "rej": 38,
-     "last_mark_ts": "2026-11-19T23:26:27.895656+08:00",
+     "last_mark_ts": "2026-11-19T23:36:33.539831+08:00",
      "repeat": 2
     },
     {
      "sid": "short_favored_follow.px60_65",
-     "fam": "short_favored_follow · 模拟权益138.9U · 在途1单",
+     "fam": "short_favored_follow · 模拟权益146.7U · 在途2单",
      "base_fam": "short_favored_follow",
      "slot": "15m",
      "board": "parity100",
@@ -4315,12 +4335,12 @@
      "pnl": 46.73,
      "drop3": 10.17,
      "wr": 63.8,
-     "eq": 138.86,
-     "cash": 135.78,
-     "open": 1,
-     "att": 553,
+     "eq": 146.73,
+     "cash": 125.38,
+     "open": 2,
+     "att": 554,
      "rej": 179,
-     "last_mark_ts": "2026-11-19T23:26:27.895656+08:00",
+     "last_mark_ts": "2026-11-19T23:36:33.539831+08:00",
      "repeat": 2
     },
     {
@@ -4338,7 +4358,7 @@
      "open": 0,
      "att": 154,
      "rej": 53,
-     "last_mark_ts": "2026-11-19T23:26:27.895656+08:00",
+     "last_mark_ts": "2026-11-19T23:36:33.539831+08:00",
      "repeat": 2
     }
    ],
@@ -4358,7 +4378,7 @@
      "open": 0,
      "att": 42,
      "rej": 23,
-     "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+     "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
      "repeat": 2
     },
     {
@@ -4376,7 +4396,7 @@
      "open": 0,
      "att": 40,
      "rej": 22,
-     "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+     "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
      "repeat": 2
     },
     {
@@ -4394,7 +4414,7 @@
      "open": 0,
      "att": 20,
      "rej": 4,
-     "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+     "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
      "repeat": 2
     },
     {
@@ -4412,7 +4432,7 @@
      "open": 0,
      "att": 44,
      "rej": 23,
-     "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+     "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
      "repeat": 2
     },
     {
@@ -4430,7 +4450,7 @@
      "open": 0,
      "att": 30,
      "rej": 14,
-     "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+     "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
      "repeat": 2
     },
     {
@@ -4448,7 +4468,7 @@
      "open": 0,
      "att": 30,
      "rej": 14,
-     "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+     "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
      "repeat": 2
     },
     {
@@ -4466,7 +4486,7 @@
      "open": 0,
      "att": 38,
      "rej": 20,
-     "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+     "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
      "repeat": 2
     },
     {
@@ -4484,7 +4504,7 @@
      "open": 0,
      "att": 18,
      "rej": 2,
-     "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+     "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
      "repeat": 2
     },
     {
@@ -4502,7 +4522,7 @@
      "open": 0,
      "att": 20,
      "rej": 2,
-     "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+     "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
      "repeat": 2
     },
     {
@@ -4520,7 +4540,7 @@
      "open": 0,
      "att": 48,
      "rej": 30,
-     "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+     "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
      "repeat": 2
     }
    ],
@@ -4687,12 +4707,12 @@
     "open": 0,
     "att": 338,
     "rej": 72,
-    "last_mark_ts": "2026-11-19T23:26:27.895656+08:00",
+    "last_mark_ts": "2026-11-19T23:36:33.539831+08:00",
     "repeat": 2
    },
    {
     "sid": "short_momentum.px60_65",
-    "fam": "short_momentum · 模拟权益158.2U · 在途1单",
+    "fam": "short_momentum · 模拟权益166.1U · 在途1单",
     "base_fam": "short_momentum",
     "slot": "15m",
     "board": "parity100",
@@ -4700,17 +4720,17 @@
     "pnl": 66.11,
     "drop3": 35.57,
     "wr": 66.7,
-    "eq": 158.24,
+    "eq": 166.11,
     "cash": 155.16,
     "open": 1,
     "att": 171,
     "rej": 38,
-    "last_mark_ts": "2026-11-19T23:26:27.895656+08:00",
+    "last_mark_ts": "2026-11-19T23:36:33.539831+08:00",
     "repeat": 2
    },
    {
     "sid": "short_favored_follow.px60_65",
-    "fam": "short_favored_follow · 模拟权益138.9U · 在途1单",
+    "fam": "short_favored_follow · 模拟权益146.7U · 在途2单",
     "base_fam": "short_favored_follow",
     "slot": "15m",
     "board": "parity100",
@@ -4718,12 +4738,12 @@
     "pnl": 46.73,
     "drop3": 10.17,
     "wr": 63.8,
-    "eq": 138.86,
-    "cash": 135.78,
-    "open": 1,
-    "att": 553,
+    "eq": 146.73,
+    "cash": 125.38,
+    "open": 2,
+    "att": 554,
     "rej": 179,
-    "last_mark_ts": "2026-11-19T23:26:27.895656+08:00",
+    "last_mark_ts": "2026-11-19T23:36:33.539831+08:00",
     "repeat": 2
    },
    {
@@ -4741,7 +4761,7 @@
     "open": 0,
     "att": 154,
     "rej": 53,
-    "last_mark_ts": "2026-11-19T23:26:27.895656+08:00",
+    "last_mark_ts": "2026-11-19T23:36:33.539831+08:00",
     "repeat": 2
    }
   ],
@@ -4774,11 +4794,11 @@
     "band100",
     "parity100"
    ],
-   "short_momentum · 模拟权益158.2U · 在途1单": [
+   "short_momentum · 模拟权益166.1U · 在途1单": [
     "band100",
     "parity100"
    ],
-   "short_favored_follow · 模拟权益138.9U · 在途1单": [
+   "short_favored_follow · 模拟权益146.7U · 在途2单": [
     "band100",
     "parity100"
    ],
@@ -4842,10 +4862,10 @@
   "sim_status": {
    "running_boards": 5,
    "total_boards": 5,
-   "latest_scan": "2026-11-19T23:26:53.829794+08:00",
-   "latest_scan_bj": "11-19 23:26:53",
-   "tot_open": 18,
-   "tot_fills": 11324,
+   "latest_scan": "2026-11-19T23:37:15.680111+08:00",
+   "latest_scan_bj": "11-19 23:37:15",
+   "tot_open": 19,
+   "tot_fills": 11328,
    "live_focus": [
     "short_fixed_time.px35_40"
    ],
@@ -4854,51 +4874,51 @@
      "board": "parity100",
      "label": "PARITY-100 全池同构",
      "phase": "running",
-     "scans": 9191,
-     "fills": 10262,
-     "settlements": 10258,
-     "last_scan": "2026-11-19T23:26:27.895656+08:00",
-     "last_scan_bj": "11-19 23:26:27"
+     "scans": 9219,
+     "fills": 10266,
+     "settlements": 10262,
+     "last_scan": "2026-11-19T23:36:57.495337+08:00",
+     "last_scan_bj": "11-19 23:36:57"
     },
     {
      "board": "band100",
      "label": "BAND-100 低价区间",
      "phase": "running",
-     "scans": 4427,
+     "scans": 4457,
      "fills": 425,
      "settlements": 421,
-     "last_scan": "2026-11-19T23:26:40.443515+08:00",
-     "last_scan_bj": "11-19 23:26:40"
+     "last_scan": "2026-11-19T23:37:10.819503+08:00",
+     "last_scan_bj": "11-19 23:37:10"
     },
     {
      "board": "forward100",
      "label": "FORWARD-100 前瞻验证",
      "phase": "running",
-     "scans": 4689,
+     "scans": 4719,
      "fills": 72,
      "settlements": 72,
-     "last_scan": "2026-11-19T23:26:28.853759+08:00",
-     "last_scan_bj": "11-19 23:26:28"
+     "last_scan": "2026-11-19T23:37:15.680111+08:00",
+     "last_scan_bj": "11-19 23:37:15"
     },
     {
      "board": "elite_lab",
      "label": "ELITE-LAB V3 迭代赛马",
      "phase": "running",
-     "scans": 2650,
+     "scans": 2679,
      "fills": 27,
      "settlements": 27,
-     "last_scan": "2026-11-19T23:26:53.829794+08:00",
-     "last_scan_bj": "11-19 23:26:53"
+     "last_scan": "2026-11-19T23:37:03.299779+08:00",
+     "last_scan_bj": "11-19 23:37:03"
     },
     {
      "board": "daily_parity",
      "label": "DAILY-PARITY 24h日盘同构",
      "phase": "running",
-     "scans": 1554,
+     "scans": 1556,
      "fills": 538,
      "settlements": 0,
-     "last_scan": "2026-11-19T23:26:07.274107+08:00",
-     "last_scan_bj": "11-19 23:26:07"
+     "last_scan": "2026-11-19T23:33:28.338656+08:00",
+     "last_scan_bj": "11-19 23:33:28"
     }
    ]
   },
@@ -6605,18 +6625,316 @@
    },
    {
     "board": "parity100",
+    "sid": "short_favored_follow.px60_65",
+    "fam": "short_favored_follow",
+    "eq": 146.73,
+    "cash": 125.38,
+    "pnl": 46.73,
+    "n": 373,
+    "wins": 238,
+    "wr": 63.8,
+    "open": 2,
+    "att": 554,
+    "rej": 179,
+    "last_mark_ts": "2026-11-19T23:36:33.539831+08:00",
+    "open_list": [
+     {
+      "oid": 40656,
+      "perp": "HYPE",
+      "issuer": "out",
+      "slot": "15m",
+      "side": "BUY_NO",
+      "px": 0.612,
+      "qty": 17,
+      "cost": 10.404,
+      "opened_at": "2026-11-19T23:30:42.859234+08:00",
+      "status": "open"
+     },
+     {
+      "oid": 40632,
+      "perp": "BTC",
+      "issuer": "fox",
+      "slot": "hourly",
+      "side": "BUY_YES",
+      "px": 0.64408,
+      "qty": 17,
+      "cost": 10.94936,
+      "opened_at": "2026-11-19T23:09:37.949241+08:00",
+      "status": "open"
+     }
+    ],
+    "recent_trades": [
+     {
+      "oid": 40638,
+      "perp": "BTC",
+      "issuer": "out",
+      "slot": "15m",
+      "side": "BUY_YES",
+      "px": 0.6373458823529411,
+      "qty": 17,
+      "cost": 10.834879999999998,
+      "payout": 16.9762,
+      "pnl": 6.14132,
+      "settle_fraction": 1.0,
+      "opened_at": "2026-11-19T23:11:01.994238+08:00",
+      "settled_at": "2026-11-19T23:15:01.882775+08:00",
+      "win": true,
+      "status": "settled"
+     },
+     {
+      "oid": 40594,
+      "perp": "BTC",
+      "issuer": "fox",
+      "slot": "hourly",
+      "side": "BUY_YES",
+      "px": 0.64466,
+      "qty": 17,
+      "cost": 10.95922,
+      "payout": 0.0,
+      "pnl": -10.95922,
+      "settle_fraction": 0.0,
+      "opened_at": "2026-11-19T22:07:14.180564+08:00",
+      "settled_at": "2026-11-19T23:00:12.152072+08:00",
+      "win": false,
+      "status": "settled"
+     },
+     {
+      "oid": 40624,
+      "perp": "BTC",
+      "issuer": "fox",
+      "slot": "hourly",
+      "side": "BUY_YES",
+      "px": 0.62,
+      "qty": 17,
+      "cost": 10.54,
+      "payout": 0.0,
+      "pnl": -10.54,
+      "settle_fraction": 0.0,
+      "opened_at": "2026-11-19T22:51:28.442016+08:00",
+      "settled_at": "2026-11-19T23:00:12.152072+08:00",
+      "win": false,
+      "status": "settled"
+     },
+     {
+      "oid": 40627,
+      "perp": "BTC",
+      "issuer": "out",
+      "slot": "hourly",
+      "side": "BUY_YES",
+      "px": 0.60999,
+      "qty": 18,
+      "cost": 10.97982,
+      "payout": 0.0,
+      "pnl": -10.97982,
+      "settle_fraction": 0.0,
+      "opened_at": "2026-11-19T22:47:02.650581+08:00",
+      "settled_at": "2026-11-19T23:00:12.152072+08:00",
+      "win": false,
+      "status": "settled"
+     },
+     {
+      "oid": 40614,
+      "perp": "ETH",
+      "issuer": "fox",
+      "slot": "15m",
+      "side": "BUY_YES",
+      "px": 0.6446,
+      "qty": 17,
+      "cost": 10.9582,
+      "payout": 0.0,
+      "pnl": -10.9582,
+      "settle_fraction": 0.0,
+      "opened_at": "2026-11-19T22:34:50.545313+08:00",
+      "settled_at": "2026-11-19T22:45:23.933202+08:00",
+      "win": false,
+      "status": "settled"
+     },
+     {
+      "oid": 40598,
+      "perp": "ETH",
+      "issuer": "out",
+      "slot": "15m",
+      "side": "BUY_NO",
+      "px": 0.60699,
+      "qty": 18,
+      "cost": 10.92582,
+      "payout": 17.9748,
+      "pnl": 7.0489799999999985,
+      "settle_fraction": 0.0,
+      "opened_at": "2026-11-19T22:04:56.030823+08:00",
+      "settled_at": "2026-11-19T22:15:42.384358+08:00",
+      "win": true,
+      "status": "settled"
+     },
+     {
+      "oid": 40595,
+      "perp": "ETH",
+      "issuer": "fox",
+      "slot": "15m",
+      "side": "BUY_NO",
+      "px": 0.62112,
+      "qty": 17,
+      "cost": 10.55904,
+      "payout": 16.9881,
+      "pnl": 6.42906,
+      "settle_fraction": 0.0,
+      "opened_at": "2026-11-19T22:05:38.038944+08:00",
+      "settled_at": "2026-11-19T22:15:42.384358+08:00",
+      "win": true,
+      "status": "settled"
+     },
+     {
+      "oid": 40590,
+      "perp": "HYPE",
+      "issuer": "out",
+      "slot": "hourly",
+      "side": "BUY_YES",
+      "px": 0.63,
+      "qty": 17,
+      "cost": 10.71,
+      "payout": 16.9762,
+      "pnl": 6.266199999999998,
+      "settle_fraction": 1.0,
+      "opened_at": "2026-11-19T21:52:56.454867+08:00",
+      "settled_at": "2026-11-19T22:00:14.404604+08:00",
+      "win": true,
+      "status": "settled"
+     },
+     {
+      "oid": 40585,
+      "perp": "ETH",
+      "issuer": "fox",
+      "slot": "hourly",
+      "side": "BUY_YES",
+      "px": 0.62186,
+      "qty": 17,
+      "cost": 10.57162,
+      "payout": 16.9881,
+      "pnl": 6.41648,
+      "settle_fraction": 1.0,
+      "opened_at": "2026-11-19T21:50:39.647682+08:00",
+      "settled_at": "2026-11-19T22:00:14.404604+08:00",
+      "win": true,
+      "status": "settled"
+     },
+     {
+      "oid": 40556,
+      "perp": "BTC",
+      "issuer": "fox",
+      "slot": "hourly",
+      "side": "BUY_NO",
+      "px": 0.64495,
+      "qty": 17,
+      "cost": 10.96415,
+      "payout": 0.0,
+      "pnl": -10.96415,
+      "settle_fraction": 1.0,
+      "opened_at": "2026-11-19T21:00:14.690533+08:00",
+      "settled_at": "2026-11-19T22:00:14.404604+08:00",
+      "win": false,
+      "status": "settled"
+     },
+     {
+      "oid": 40580,
+      "perp": "ETH",
+      "issuer": "out",
+      "slot": "15m",
+      "side": "BUY_YES",
+      "px": 0.615,
+      "qty": 17,
+      "cost": 10.455,
+      "payout": 16.9762,
+      "pnl": 6.5211999999999986,
+      "settle_fraction": 1.0,
+      "opened_at": "2026-11-19T21:33:57.345852+08:00",
+      "settled_at": "2026-11-19T21:45:13.076847+08:00",
+      "win": true,
+      "status": "settled"
+     },
+     {
+      "oid": 40568,
+      "perp": "BTC",
+      "issuer": "fox",
+      "slot": "15m",
+      "side": "BUY_NO",
+      "px": 0.61001,
+      "qty": 18,
+      "cost": 10.98018,
+      "payout": 17.9874,
+      "pnl": 7.00722,
+      "settle_fraction": 0.0,
+      "opened_at": "2026-11-19T21:23:06.378232+08:00",
+      "settled_at": "2026-11-19T21:30:29.929541+08:00",
+      "win": true,
+      "status": "settled"
+     },
+     {
+      "oid": 40571,
+      "perp": "HYPE",
+      "issuer": "out",
+      "slot": "15m",
+      "side": "BUY_YES",
+      "px": 0.644,
+      "qty": 17,
+      "cost": 10.948,
+      "payout": 0.0,
+      "pnl": -10.948,
+      "settle_fraction": 0.0,
+      "opened_at": "2026-11-19T21:18:20.839970+08:00",
+      "settled_at": "2026-11-19T21:30:29.929541+08:00",
+      "win": false,
+      "status": "settled"
+     },
+     {
+      "oid": 40561,
+      "perp": "ETH",
+      "issuer": "out",
+      "slot": "15m",
+      "side": "BUY_YES",
+      "px": 0.639,
+      "qty": 17,
+      "cost": 10.863,
+      "payout": 16.9762,
+      "pnl": 6.113199999999999,
+      "settle_fraction": 1.0,
+      "opened_at": "2026-11-19T21:04:26.502428+08:00",
+      "settled_at": "2026-11-19T21:15:13.557476+08:00",
+      "win": true,
+      "status": "settled"
+     },
+     {
+      "oid": 40560,
+      "perp": "HYPE",
+      "issuer": "out",
+      "slot": "15m",
+      "side": "BUY_NO",
+      "px": 0.63,
+      "qty": 17,
+      "cost": 10.71,
+      "payout": 16.9762,
+      "pnl": 6.266199999999998,
+      "settle_fraction": 0.0,
+      "opened_at": "2026-11-19T21:09:03.867836+08:00",
+      "settled_at": "2026-11-19T21:15:13.557476+08:00",
+      "win": true,
+      "status": "settled"
+     }
+    ]
+   },
+   {
+    "board": "parity100",
     "sid": "short_momentum.px60_65",
     "fam": "short_momentum",
-    "eq": 158.24,
+    "eq": 166.11,
     "cash": 155.16,
-    "pnl": 58.24,
+    "pnl": 66.11,
     "n": 132,
     "wins": 88,
     "wr": 66.7,
     "open": 1,
     "att": 171,
     "rej": 38,
-    "last_mark_ts": "2026-11-19T23:26:27.895656+08:00",
+    "last_mark_ts": "2026-11-19T23:36:33.539831+08:00",
     "open_list": [
      {
       "oid": 40632,
@@ -6890,292 +7208,6 @@
     ]
    },
    {
-    "board": "parity100",
-    "sid": "short_favored_follow.px60_65",
-    "fam": "short_favored_follow",
-    "eq": 138.86,
-    "cash": 135.78,
-    "pnl": 38.86,
-    "n": 373,
-    "wins": 238,
-    "wr": 63.8,
-    "open": 1,
-    "att": 553,
-    "rej": 179,
-    "last_mark_ts": "2026-11-19T23:26:27.895656+08:00",
-    "open_list": [
-     {
-      "oid": 40632,
-      "perp": "BTC",
-      "issuer": "fox",
-      "slot": "hourly",
-      "side": "BUY_YES",
-      "px": 0.64408,
-      "qty": 17,
-      "cost": 10.94936,
-      "opened_at": "2026-11-19T23:09:37.949241+08:00",
-      "status": "open"
-     }
-    ],
-    "recent_trades": [
-     {
-      "oid": 40638,
-      "perp": "BTC",
-      "issuer": "out",
-      "slot": "15m",
-      "side": "BUY_YES",
-      "px": 0.6373458823529411,
-      "qty": 17,
-      "cost": 10.834879999999998,
-      "payout": 16.9762,
-      "pnl": 6.14132,
-      "settle_fraction": 1.0,
-      "opened_at": "2026-11-19T23:11:01.994238+08:00",
-      "settled_at": "2026-11-19T23:15:01.882775+08:00",
-      "win": true,
-      "status": "settled"
-     },
-     {
-      "oid": 40594,
-      "perp": "BTC",
-      "issuer": "fox",
-      "slot": "hourly",
-      "side": "BUY_YES",
-      "px": 0.64466,
-      "qty": 17,
-      "cost": 10.95922,
-      "payout": 0.0,
-      "pnl": -10.95922,
-      "settle_fraction": 0.0,
-      "opened_at": "2026-11-19T22:07:14.180564+08:00",
-      "settled_at": "2026-11-19T23:00:12.152072+08:00",
-      "win": false,
-      "status": "settled"
-     },
-     {
-      "oid": 40624,
-      "perp": "BTC",
-      "issuer": "fox",
-      "slot": "hourly",
-      "side": "BUY_YES",
-      "px": 0.62,
-      "qty": 17,
-      "cost": 10.54,
-      "payout": 0.0,
-      "pnl": -10.54,
-      "settle_fraction": 0.0,
-      "opened_at": "2026-11-19T22:51:28.442016+08:00",
-      "settled_at": "2026-11-19T23:00:12.152072+08:00",
-      "win": false,
-      "status": "settled"
-     },
-     {
-      "oid": 40627,
-      "perp": "BTC",
-      "issuer": "out",
-      "slot": "hourly",
-      "side": "BUY_YES",
-      "px": 0.60999,
-      "qty": 18,
-      "cost": 10.97982,
-      "payout": 0.0,
-      "pnl": -10.97982,
-      "settle_fraction": 0.0,
-      "opened_at": "2026-11-19T22:47:02.650581+08:00",
-      "settled_at": "2026-11-19T23:00:12.152072+08:00",
-      "win": false,
-      "status": "settled"
-     },
-     {
-      "oid": 40614,
-      "perp": "ETH",
-      "issuer": "fox",
-      "slot": "15m",
-      "side": "BUY_YES",
-      "px": 0.6446,
-      "qty": 17,
-      "cost": 10.9582,
-      "payout": 0.0,
-      "pnl": -10.9582,
-      "settle_fraction": 0.0,
-      "opened_at": "2026-11-19T22:34:50.545313+08:00",
-      "settled_at": "2026-11-19T22:45:23.933202+08:00",
-      "win": false,
-      "status": "settled"
-     },
-     {
-      "oid": 40598,
-      "perp": "ETH",
-      "issuer": "out",
-      "slot": "15m",
-      "side": "BUY_NO",
-      "px": 0.60699,
-      "qty": 18,
-      "cost": 10.92582,
-      "payout": 17.9748,
-      "pnl": 7.0489799999999985,
-      "settle_fraction": 0.0,
-      "opened_at": "2026-11-19T22:04:56.030823+08:00",
-      "settled_at": "2026-11-19T22:15:42.384358+08:00",
-      "win": true,
-      "status": "settled"
-     },
-     {
-      "oid": 40595,
-      "perp": "ETH",
-      "issuer": "fox",
-      "slot": "15m",
-      "side": "BUY_NO",
-      "px": 0.62112,
-      "qty": 17,
-      "cost": 10.55904,
-      "payout": 16.9881,
-      "pnl": 6.42906,
-      "settle_fraction": 0.0,
-      "opened_at": "2026-11-19T22:05:38.038944+08:00",
-      "settled_at": "2026-11-19T22:15:42.384358+08:00",
-      "win": true,
-      "status": "settled"
-     },
-     {
-      "oid": 40590,
-      "perp": "HYPE",
-      "issuer": "out",
-      "slot": "hourly",
-      "side": "BUY_YES",
-      "px": 0.63,
-      "qty": 17,
-      "cost": 10.71,
-      "payout": 16.9762,
-      "pnl": 6.266199999999998,
-      "settle_fraction": 1.0,
-      "opened_at": "2026-11-19T21:52:56.454867+08:00",
-      "settled_at": "2026-11-19T22:00:14.404604+08:00",
-      "win": true,
-      "status": "settled"
-     },
-     {
-      "oid": 40585,
-      "perp": "ETH",
-      "issuer": "fox",
-      "slot": "hourly",
-      "side": "BUY_YES",
-      "px": 0.62186,
-      "qty": 17,
-      "cost": 10.57162,
-      "payout": 16.9881,
-      "pnl": 6.41648,
-      "settle_fraction": 1.0,
-      "opened_at": "2026-11-19T21:50:39.647682+08:00",
-      "settled_at": "2026-11-19T22:00:14.404604+08:00",
-      "win": true,
-      "status": "settled"
-     },
-     {
-      "oid": 40556,
-      "perp": "BTC",
-      "issuer": "fox",
-      "slot": "hourly",
-      "side": "BUY_NO",
-      "px": 0.64495,
-      "qty": 17,
-      "cost": 10.96415,
-      "payout": 0.0,
-      "pnl": -10.96415,
-      "settle_fraction": 1.0,
-      "opened_at": "2026-11-19T21:00:14.690533+08:00",
-      "settled_at": "2026-11-19T22:00:14.404604+08:00",
-      "win": false,
-      "status": "settled"
-     },
-     {
-      "oid": 40580,
-      "perp": "ETH",
-      "issuer": "out",
-      "slot": "15m",
-      "side": "BUY_YES",
-      "px": 0.615,
-      "qty": 17,
-      "cost": 10.455,
-      "payout": 16.9762,
-      "pnl": 6.5211999999999986,
-      "settle_fraction": 1.0,
-      "opened_at": "2026-11-19T21:33:57.345852+08:00",
-      "settled_at": "2026-11-19T21:45:13.076847+08:00",
-      "win": true,
-      "status": "settled"
-     },
-     {
-      "oid": 40568,
-      "perp": "BTC",
-      "issuer": "fox",
-      "slot": "15m",
-      "side": "BUY_NO",
-      "px": 0.61001,
-      "qty": 18,
-      "cost": 10.98018,
-      "payout": 17.9874,
-      "pnl": 7.00722,
-      "settle_fraction": 0.0,
-      "opened_at": "2026-11-19T21:23:06.378232+08:00",
-      "settled_at": "2026-11-19T21:30:29.929541+08:00",
-      "win": true,
-      "status": "settled"
-     },
-     {
-      "oid": 40571,
-      "perp": "HYPE",
-      "issuer": "out",
-      "slot": "15m",
-      "side": "BUY_YES",
-      "px": 0.644,
-      "qty": 17,
-      "cost": 10.948,
-      "payout": 0.0,
-      "pnl": -10.948,
-      "settle_fraction": 0.0,
-      "opened_at": "2026-11-19T21:18:20.839970+08:00",
-      "settled_at": "2026-11-19T21:30:29.929541+08:00",
-      "win": false,
-      "status": "settled"
-     },
-     {
-      "oid": 40561,
-      "perp": "ETH",
-      "issuer": "out",
-      "slot": "15m",
-      "side": "BUY_YES",
-      "px": 0.639,
-      "qty": 17,
-      "cost": 10.863,
-      "payout": 16.9762,
-      "pnl": 6.113199999999999,
-      "settle_fraction": 1.0,
-      "opened_at": "2026-11-19T21:04:26.502428+08:00",
-      "settled_at": "2026-11-19T21:15:13.557476+08:00",
-      "win": true,
-      "status": "settled"
-     },
-     {
-      "oid": 40560,
-      "perp": "HYPE",
-      "issuer": "out",
-      "slot": "15m",
-      "side": "BUY_NO",
-      "px": 0.63,
-      "qty": 17,
-      "cost": 10.71,
-      "payout": 16.9762,
-      "pnl": 6.266199999999998,
-      "settle_fraction": 0.0,
-      "opened_at": "2026-11-19T21:09:03.867836+08:00",
-      "settled_at": "2026-11-19T21:15:13.557476+08:00",
-      "win": true,
-      "status": "settled"
-     }
-    ]
-   },
-   {
     "board": "elite_lab",
     "sid": "quant_follow_dual.v3_dual_er35",
     "fam": "quant_follow_dual",
@@ -7188,7 +7220,7 @@
     "open": 0,
     "att": 2,
     "rej": 0,
-    "last_mark_ts": "2026-11-19T23:26:33.753844+08:00",
+    "last_mark_ts": "2026-11-19T23:36:11.165830+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7240,7 +7272,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-19T23:26:33.753844+08:00",
+    "last_mark_ts": "2026-11-19T23:36:11.165830+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7257,7 +7289,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-19T23:26:33.753844+08:00",
+    "last_mark_ts": "2026-11-19T23:36:11.165830+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7274,7 +7306,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-19T23:26:33.753844+08:00",
+    "last_mark_ts": "2026-11-19T23:36:11.165830+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7291,7 +7323,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-19T23:26:33.753844+08:00",
+    "last_mark_ts": "2026-11-19T23:36:11.165830+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7308,7 +7340,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-19T23:26:33.753844+08:00",
+    "last_mark_ts": "2026-11-19T23:36:11.165830+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7325,7 +7357,7 @@
     "open": 0,
     "att": 24,
     "rej": 16,
-    "last_mark_ts": "2026-11-19T23:26:33.753844+08:00",
+    "last_mark_ts": "2026-11-19T23:36:11.165830+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7479,7 +7511,7 @@
     "open": 0,
     "att": 55,
     "rej": 38,
-    "last_mark_ts": "2026-11-19T23:26:33.753844+08:00",
+    "last_mark_ts": "2026-11-19T23:36:11.165830+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7752,7 +7784,7 @@
     "open": 0,
     "att": 338,
     "rej": 72,
-    "last_mark_ts": "2026-11-19T23:26:27.895656+08:00",
+    "last_mark_ts": "2026-11-19T23:36:33.539831+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8025,7 +8057,7 @@
     "open": 0,
     "att": 154,
     "rej": 53,
-    "last_mark_ts": "2026-11-19T23:26:27.895656+08:00",
+    "last_mark_ts": "2026-11-19T23:36:33.539831+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8298,7 +8330,7 @@
     "open": 0,
     "att": 42,
     "rej": 30,
-    "last_mark_ts": "2026-11-19T23:26:28.853759+08:00",
+    "last_mark_ts": "2026-11-19T23:36:55.685458+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8520,7 +8552,7 @@
     "open": 0,
     "att": 104,
     "rej": 81,
-    "last_mark_ts": "2026-11-19T23:26:28.853759+08:00",
+    "last_mark_ts": "2026-11-19T23:36:55.685458+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8793,7 +8825,7 @@
     "open": 0,
     "att": 46,
     "rej": 30,
-    "last_mark_ts": "2026-11-19T23:26:28.853759+08:00",
+    "last_mark_ts": "2026-11-19T23:36:55.685458+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9066,7 +9098,7 @@
     "open": 0,
     "att": 196,
     "rej": 175,
-    "last_mark_ts": "2026-11-19T23:26:28.853759+08:00",
+    "last_mark_ts": "2026-11-19T23:36:55.685458+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9339,7 +9371,7 @@
     "open": 0,
     "att": 40,
     "rej": 22,
-    "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+    "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9612,7 +9644,7 @@
     "open": 0,
     "att": 20,
     "rej": 4,
-    "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+    "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9885,7 +9917,7 @@
     "open": 0,
     "att": 42,
     "rej": 23,
-    "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+    "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10158,7 +10190,7 @@
     "open": 0,
     "att": 44,
     "rej": 23,
-    "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+    "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10431,7 +10463,7 @@
     "open": 0,
     "att": 30,
     "rej": 14,
-    "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+    "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10704,7 +10736,7 @@
     "open": 0,
     "att": 30,
     "rej": 14,
-    "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+    "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10977,7 +11009,7 @@
     "open": 0,
     "att": 20,
     "rej": 2,
-    "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+    "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -11250,7 +11282,7 @@
     "open": 0,
     "att": 38,
     "rej": 20,
-    "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+    "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -11523,7 +11555,7 @@
     "open": 0,
     "att": 18,
     "rej": 2,
-    "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+    "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -11796,7 +11828,7 @@
     "open": 0,
     "att": 48,
     "rej": 30,
-    "last_mark_ts": "2026-11-19T23:25:36.311174+08:00",
+    "last_mark_ts": "2026-11-19T23:36:49.196699+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -12060,19 +12092,39 @@
   "note": "PARITY-100 / BAND-100 / FORWARD-100 / ELITE-LAB V3 实时模拟运行中，与实盘严格策略同步对照。"
  },
  "ledger": {
-  "rebuilt_at": "2026-11-19 23:25:16",
-  "equity": 112.75896,
-  "total_pnl": -38.4227,
-  "n_settled": 68,
-  "n_win": 36,
+  "rebuilt_at": "2026-11-19 23:35:16",
+  "equity": 124.14496,
+  "total_pnl": -27.0227,
+  "n_settled": 69,
+  "n_win": 37,
   "n_loss": 32,
-  "winrate": 52.9,
+  "winrate": 53.6,
   "groups": [
    {
     "sid": "short_fixed_time.px35_40",
-    "n": 4,
-    "pnl": 31.5283,
+    "n": 5,
+    "pnl": 42.9283,
     "trades": [
+     {
+      "coin": "#406511",
+      "oid": 40651,
+      "side": "NO",
+      "perp": "",
+      "expiry": "",
+      "sid": "short_fixed_time.px35_40",
+      "open_ms": 1795101930722,
+      "settle_ms": 1795102234218,
+      "fill_px": 0.43,
+      "qty": 20.0,
+      "cost": 8.6,
+      "buy_fee": 0.0,
+      "settle_px": 1.0,
+      "pnl": 11.4,
+      "settle_fee": 0.014,
+      "status": "settled",
+      "result": "win",
+      "close_type": "settlement"
+     },
      {
       "coin": "#406340",
       "oid": 40634,
@@ -13509,7 +13561,7 @@
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "23:24:02",
+  "ledger_mtime": "23:34:45",
   "last_repair": "2026-11-19 23:16:37"
  }
 }
