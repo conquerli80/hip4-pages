@@ -1,6 +1,6 @@
 {
- "as_of": "2026-11-20 21:26",
- "_pushed_at": 1795181167,
+ "as_of": "2026-11-20 21:36",
+ "_pushed_at": 1795181761,
  "focus": {
   "enabled": true,
   "sid": "short_fixed_time.px35_40",
@@ -16,28 +16,48 @@
    "stop_absolute": false,
    "stop_150": true,
    "ws_pid": 28044,
-   "ws_hb_age_s": 4.9,
+   "ws_hb_age_s": 7.4,
    "ws_alive": true,
-   "marks_age_s": 21.4,
+   "marks_age_s": 5.7,
    "engine_status": "实盘盯盘中（空仓等信号）",
-   "equity": 80.7039,
-   "floor_buffer": 30.7,
-   "total_pnl": -70.2727,
-   "n_all": 103,
-   "n_settled": 103,
+   "equity": 70.9039,
+   "floor_buffer": 20.9,
+   "total_pnl": -80.0727,
+   "n_all": 104,
+   "n_settled": 104,
    "n_open": 0,
    "n_win": 51,
-   "n_loss": 52,
-   "winrate": 49.5,
-   "rebuilt_at": "2026-11-20 21:25:16",
+   "n_loss": 53,
+   "winrate": 49.0,
+   "rebuilt_at": "2026-11-20 21:35:25",
    "sid_stats": {
     "sid": "short_fixed_time.px35_40",
-    "n": 39,
+    "n": 40,
     "win": 18,
-    "loss": 21,
-    "pnl": -0.3217
+    "loss": 22,
+    "pnl": -10.1217
    },
    "recent_trades": [
+    {
+     "coin": "#416451",
+     "oid": 41645,
+     "side": "NO",
+     "perp": "",
+     "expiry": "",
+     "sid": "short_fixed_time.px35_40",
+     "open_ms": 1795181111895,
+     "settle_ms": 1795181409917,
+     "fill_px": 0.35,
+     "qty": 28.0,
+     "cost": 9.8,
+     "buy_fee": 0.0,
+     "settle_px": 0.0,
+     "pnl": -9.8,
+     "settle_fee": 0.0,
+     "status": "settled",
+     "result": "loss",
+     "close_type": "settlement"
+    },
     {
      "coin": "#415761",
      "oid": 41576,
@@ -257,16 +277,18 @@
      "status": "settled",
      "result": "loss",
      "close_type": "settlement"
-    },
+    }
+   ],
+   "all_trades": [
     {
-     "coin": "#410990",
-     "oid": 41099,
-     "side": "YES",
+     "coin": "#416451",
+     "oid": 41645,
+     "side": "NO",
      "perp": "",
      "expiry": "",
      "sid": "short_fixed_time.px35_40",
-     "open_ms": 1795138854016,
-     "settle_ms": 1795139147200,
+     "open_ms": 1795181111895,
+     "settle_ms": 1795181409917,
      "fill_px": 0.35,
      "qty": 28.0,
      "cost": 9.8,
@@ -277,9 +299,7 @@
      "status": "settled",
      "result": "loss",
      "close_type": "settlement"
-    }
-   ],
-   "all_trades": [
+    },
     {
      "coin": "#415761",
      "oid": 41576,
@@ -2702,27 +2722,27 @@
   },
   "sampler": {
    "files": 2,
-   "rows": 17642,
-   "markets": 568,
+   "rows": 17692,
+   "markets": 572,
    "n_med": 24.0,
    "span_med_min": 5.7,
-   "decided": 495,
+   "decided": 498,
    "decided_pct": 87.1,
-   "newest_age_s": 67.1,
-   "heartbeat_age_s": 2.4
+   "newest_age_s": 38.8,
+   "heartbeat_age_s": 6.1
   }
  },
  "m15": {
-  "pnl": -74570.97,
-  "n": 137885,
-  "settles": 137885,
-  "exps": 2744,
+  "pnl": -75423.95,
+  "n": 138083,
+  "settles": 138083,
+  "exps": 2750,
   "sids": 239,
   "win": 60.6,
   "pos_sid": 24,
   "neg_sid": 215,
   "hours": 169,
-  "per_trade": -0.54,
+  "per_trade": -0.55,
   "mult": 50,
   "top": [
    {
@@ -2818,21 +2838,21 @@
  "real": [
   {
    "name": "链上实盘(官方口径)",
-   "settles": 103,
+   "settles": 104,
    "wins": 51,
-   "winrate": 49.5,
-   "pnl": -70.27,
+   "winrate": 49.0,
+   "pnl": -80.07,
    "open": 0,
-   "equity": 80.7,
+   "equity": 70.9,
    "status": "实盘盯盘中（空仓等信号）",
    "source": "api.hyperliquid.xyz/info · userFills（官方权威）",
-   "as_of": "2026-11-20 21:25:16"
+   "as_of": "2026-11-20 21:35:25"
   }
  ],
  "gate": {
   "sessions": "30/8",
   "sessions_ok": true,
-  "ev": "533/20",
+  "ev": "534/20",
   "ev_ok": true,
   "mature": "1/3",
   "mature_ok": false,
@@ -2844,22 +2864,22 @@
  "multi100": null,
  "daily100": null,
  "parity100": {
-  "as_of": "2026-11-20T21:25:52.731878+08:00",
+  "as_of": "2026-11-20T21:35:48.557859+08:00",
   "start_at": "2026-11-15T19:22:56.144707+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
-  "hours_left": 986.6,
+  "hours_left": 986.4,
   "accounts": 248,
   "traded": 122,
   "profitable": 8,
-  "starved": 98,
-  "alive": 150,
+  "starved": 97,
+  "alive": 151,
   "median_pnl": -93.59,
-  "attempts": 14370,
-  "rejects": 2979,
+  "attempts": 14373,
+  "rejects": 2981,
   "fill_rate": 79.3,
   "avg_slip": 0.03064,
   "phase": "running",
-  "scans": 11779,
+  "scans": 11804,
   "rows": [
    {
     "sid": "short_fixed_time.px20_25",
@@ -2902,6 +2922,27 @@
     "multi_pnl": 25.06,
     "multi_n": 4,
     "diff": 15.19
+   },
+   {
+    "sid": "short_momentum.px35_40",
+    "fam": "动量跟涨跌",
+    "eq": 127.28,
+    "pnl": 27.28,
+    "ret": 27.28,
+    "n": 11,
+    "wr": 45.5,
+    "yes": 6,
+    "no": 5,
+    "open": 0,
+    "fees": 0.16,
+    "starved": false,
+    "att": 26,
+    "rej": 15,
+    "fr": 42.3,
+    "slip": 0.03228,
+    "multi_pnl": 6.36,
+    "multi_n": 2,
+    "diff": 20.92
    },
    {
     "sid": "short_fixed_time.px40_45",
@@ -3007,27 +3048,6 @@
     "multi_pnl": null,
     "multi_n": null,
     "diff": null
-   },
-   {
-    "sid": "short_momentum.px35_40",
-    "fam": "动量跟涨跌",
-    "eq": 103.17,
-    "pnl": 3.17,
-    "ret": 3.17,
-    "n": 10,
-    "wr": 40.0,
-    "yes": 5,
-    "no": 5,
-    "open": 1,
-    "fees": 0.12,
-    "starved": false,
-    "att": 26,
-    "rej": 15,
-    "fr": 42.3,
-    "slip": 0.03228,
-    "multi_pnl": 6.36,
-    "multi_n": 2,
-    "diff": -3.19
    },
    {
     "sid": "short_fixed_time.px90_95",
@@ -3177,6 +3197,27 @@
     "diff": -22.83
    },
    {
+    "sid": "short_favored_follow.v8",
+    "fam": "顺势跟随",
+    "eq": 53.64,
+    "pnl": -46.36,
+    "ret": -46.36,
+    "n": 418,
+    "wr": 46.4,
+    "yes": 235,
+    "no": 183,
+    "open": 1,
+    "fees": 4.98,
+    "starved": false,
+    "att": 607,
+    "rej": 188,
+    "fr": 69.0,
+    "slip": -0.00353,
+    "multi_pnl": 74.63,
+    "multi_n": 11,
+    "diff": -120.99
+   },
+   {
     "sid": "short_fixed_time.px55_60",
     "fam": "固定时窗",
     "eq": 51.66,
@@ -3189,9 +3230,9 @@
     "open": 0,
     "fees": 0.42,
     "starved": false,
-    "att": 89,
-    "rej": 42,
-    "fr": 52.8,
+    "att": 91,
+    "rej": 44,
+    "fr": 51.6,
     "slip": -0.0051,
     "multi_pnl": 20.86,
     "multi_n": 5,
@@ -3238,27 +3279,6 @@
     "multi_pnl": 3.6,
     "multi_n": 3,
     "diff": -71.91
-   },
-   {
-    "sid": "short_favored_follow.v8",
-    "fam": "顺势跟随",
-    "eq": 26.15,
-    "pnl": -73.85,
-    "ret": -73.85,
-    "n": 415,
-    "wr": 46.3,
-    "yes": 232,
-    "no": 183,
-    "open": 3,
-    "fees": 4.92,
-    "starved": true,
-    "att": 606,
-    "rej": 188,
-    "fr": 69.0,
-    "slip": -0.00347,
-    "multi_pnl": 74.63,
-    "multi_n": 11,
-    "diff": -148.48
    },
    {
     "sid": "short_momentum.px40_45",
@@ -3368,24 +3388,24 @@
   ],
   "gap": {
    "n": 1199,
-   "median": 0.004,
+   "median": 0.003,
    "p90": 0.1021,
-   "pos_share": 48.5
+   "pos_share": 48.4
   },
   "base_median": 14.63,
   "events": {
-   "events": 1093,
-   "settled": 11110,
-   "per_event": 10.2,
-   "win": 574,
-   "wr": 52.5,
-   "pnl": -9859.42,
+   "events": 1096,
+   "settled": 11114,
+   "per_event": 10.1,
+   "win": 576,
+   "wr": 52.6,
+   "pnl": -9819.36,
    "thick": true
   },
-  "tight_hit_rate": 60.1
+  "tight_hit_rate": 60.2
  },
  "daily_parity": {
-  "as_of": "2026-11-20T21:25:18.480279+08:00",
+  "as_of": "2026-11-20T21:35:36.453372+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
   "accounts": 41,
@@ -3397,7 +3417,7 @@
   "rejects": 23,
   "fill_rate": 96.6,
   "avg_slip": 0.00139,
-  "cycles": 1795,
+  "cycles": 1797,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
@@ -3873,7 +3893,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-20T21:26:32.812768+08:00",
+  "as_of": "2026-11-20T21:36:06.623387+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
   "band": [
@@ -4160,6 +4180,25 @@
     "starved": false
    },
    {
+    "sid": "short_momentum.px50_55",
+    "fam": "动量跟涨跌",
+    "eq": 130.94,
+    "pnl": 30.94,
+    "ret": 30.94,
+    "n": 9,
+    "wr": 55.6,
+    "yes": 6,
+    "no": 3,
+    "open": 0,
+    "fees": 0.15,
+    "att": 21,
+    "rej": 12,
+    "fr": 42.9,
+    "slip": -0.06969,
+    "brej": 8,
+    "starved": false
+   },
+   {
     "sid": "short_fixed_time.px50_55",
     "fam": "固定时窗",
     "eq": 130.52,
@@ -4329,39 +4368,20 @@
     "slip": 0.02462,
     "brej": 8,
     "starved": false
-   },
-   {
-    "sid": "short_favored_follow.v32",
-    "fam": "顺势跟随",
-    "eq": 121.1,
-    "pnl": 21.1,
-    "ret": 21.1,
-    "n": 26,
-    "wr": 46.2,
-    "yes": 0,
-    "no": 26,
-    "open": 0,
-    "fees": 0.28,
-    "att": 59,
-    "rej": 33,
-    "fr": 44.1,
-    "slip": -0.00735,
-    "brej": 15,
-    "starved": false
    }
   ],
   "events": {
-   "events": 281,
-   "settled": 1770,
+   "events": 282,
+   "settled": 1771,
    "per_event": 6.3,
-   "win": 118,
-   "wr": 42.0,
-   "pnl": -1108.34,
+   "win": 119,
+   "wr": 42.2,
+   "pnl": -1085.27,
    "thick": true
   }
  },
  "band_v2": {
-  "as_of": "2026-11-20T21:26:29.257324+08:00",
+  "as_of": "2026-11-20T21:36:17.687638+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -4854,11 +4874,11 @@
   }
  },
  "forward100": {
-  "as_of": "2026-11-20T21:26:27.890447+08:00",
+  "as_of": "2026-11-20T21:36:10.888399+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
-  "hours_left": 986.6,
+  "hours_left": 986.4,
   "accounts": 4,
   "traded": 4,
   "profitable": 1,
@@ -4879,7 +4899,7 @@
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 8238,
+  "scans": 8266,
   "fills": 93,
   "settlements": 93,
   "rows": [
@@ -4967,7 +4987,7 @@
   }
  },
  "elite": {
-  "rule": "盈利>0 且 去掉最赚3笔后仍>0 且 样本达标(15m>=40,低价盘>=10) ｜ 模拟盘持续运行中（5/5 盘 running · 最新扫描 11-20 21:26:32 · 当前在途 11 单）｜ 实盘严格池：short_fixed_time.px35_40",
+  "rule": "盈利>0 且 去掉最赚3笔后仍>0 且 样本达标(15m>=40,低价盘>=10) ｜ 模拟盘持续运行中（5/5 盘 running · 最新扫描 11-20 21:36:10 · 当前在途 11 单）｜ 实盘严格池：short_fixed_time.px35_40",
   "boards": {
    "parity100": [],
    "band100": [
@@ -4986,7 +5006,7 @@
      "open": 0,
      "att": 54,
      "rej": 30,
-     "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+     "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
      "repeat": 1
     },
     {
@@ -5004,7 +5024,7 @@
      "open": 0,
      "att": 38,
      "rej": 15,
-     "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+     "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
      "repeat": 1
     },
     {
@@ -5022,7 +5042,7 @@
      "open": 0,
      "att": 38,
      "rej": 15,
-     "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+     "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
      "repeat": 1
     },
     {
@@ -5040,7 +5060,7 @@
      "open": 0,
      "att": 66,
      "rej": 41,
-     "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+     "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
      "repeat": 1
     },
     {
@@ -5058,7 +5078,7 @@
      "open": 0,
      "att": 26,
      "rej": 4,
-     "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+     "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
      "repeat": 1
     },
     {
@@ -5076,7 +5096,7 @@
      "open": 0,
      "att": 25,
      "rej": 3,
-     "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+     "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
      "repeat": 1
     },
     {
@@ -5094,7 +5114,7 @@
      "open": 0,
      "att": 31,
      "rej": 8,
-     "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+     "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
      "repeat": 1
     },
     {
@@ -5112,7 +5132,7 @@
      "open": 0,
      "att": 58,
      "rej": 31,
-     "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+     "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
      "repeat": 1
     }
    ],
@@ -5362,10 +5382,10 @@
   "sim_status": {
    "running_boards": 5,
    "total_boards": 5,
-   "latest_scan": "2026-11-20T21:26:32.812768+08:00",
-   "latest_scan_bj": "11-20 21:26:32",
+   "latest_scan": "2026-11-20T21:36:10.888399+08:00",
+   "latest_scan_bj": "11-20 21:36:10",
    "tot_open": 11,
-   "tot_fills": 11909,
+   "tot_fills": 11910,
    "live_focus": [
     "short_fixed_time.px35_40"
    ],
@@ -5374,51 +5394,51 @@
      "board": "parity100",
      "label": "PARITY-100 全池同构",
      "phase": "running",
-     "scans": 11780,
-     "fills": 11112,
-     "settlements": 11100,
-     "last_scan": "2026-11-20T21:26:16.664943+08:00",
-     "last_scan_bj": "11-20 21:26:16"
+     "scans": 11804,
+     "fills": 11113,
+     "settlements": 11104,
+     "last_scan": "2026-11-20T21:35:48.557859+08:00",
+     "last_scan_bj": "11-20 21:35:48"
     },
     {
      "board": "band100",
      "label": "BAND-100 低价区间",
      "phase": "running",
-     "scans": 287,
+     "scans": 312,
      "fills": 8,
-     "settlements": 7,
-     "last_scan": "2026-11-20T21:26:32.812768+08:00",
-     "last_scan_bj": "11-20 21:26:32"
+     "settlements": 8,
+     "last_scan": "2026-11-20T21:36:06.623387+08:00",
+     "last_scan_bj": "11-20 21:36:06"
     },
     {
      "board": "forward100",
      "label": "FORWARD-100 前瞻验证",
      "phase": "running",
-     "scans": 8238,
+     "scans": 8266,
      "fills": 93,
      "settlements": 93,
-     "last_scan": "2026-11-20T21:26:27.890447+08:00",
-     "last_scan_bj": "11-20 21:26:27"
+     "last_scan": "2026-11-20T21:36:10.888399+08:00",
+     "last_scan_bj": "11-20 21:36:10"
     },
     {
      "board": "elite_lab",
      "label": "ELITE-LAB V3 迭代赛马",
      "phase": "running",
-     "scans": 6205,
+     "scans": 6232,
      "fills": 47,
      "settlements": 47,
-     "last_scan": "2026-11-20T21:26:18.946308+08:00",
-     "last_scan_bj": "11-20 21:26:18"
+     "last_scan": "2026-11-20T21:36:02.156441+08:00",
+     "last_scan_bj": "11-20 21:36:02"
     },
     {
      "board": "daily_parity",
      "label": "DAILY-PARITY 24h日盘同构",
      "phase": "running",
-     "scans": 1795,
+     "scans": 1797,
      "fills": 649,
      "settlements": 0,
-     "last_scan": "2026-11-20T21:25:14.280710+08:00",
-     "last_scan_bj": "11-20 21:25:14"
+     "last_scan": "2026-11-20T21:33:48.430383+08:00",
+     "last_scan_bj": "11-20 21:33:48"
     }
    ]
   },
@@ -6887,7 +6907,7 @@
     "open": 0,
     "att": 5,
     "rej": 2,
-    "last_mark_ts": "2026-11-20T21:26:18.946308+08:00",
+    "last_mark_ts": "2026-11-20T21:35:01.972093+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -6956,7 +6976,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T21:26:18.946308+08:00",
+    "last_mark_ts": "2026-11-20T21:35:01.972093+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -6973,7 +6993,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T21:26:18.946308+08:00",
+    "last_mark_ts": "2026-11-20T21:35:01.972093+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -6990,7 +7010,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T21:26:18.946308+08:00",
+    "last_mark_ts": "2026-11-20T21:35:01.972093+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7007,7 +7027,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T21:26:18.946308+08:00",
+    "last_mark_ts": "2026-11-20T21:35:01.972093+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7024,7 +7044,7 @@
     "open": 0,
     "att": 3,
     "rej": 2,
-    "last_mark_ts": "2026-11-20T21:26:18.946308+08:00",
+    "last_mark_ts": "2026-11-20T21:35:01.972093+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7059,7 +7079,7 @@
     "open": 0,
     "att": 44,
     "rej": 29,
-    "last_mark_ts": "2026-11-20T21:26:18.946308+08:00",
+    "last_mark_ts": "2026-11-20T21:35:01.972093+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7332,7 +7352,7 @@
     "open": 0,
     "att": 87,
     "rej": 59,
-    "last_mark_ts": "2026-11-20T21:26:18.946308+08:00",
+    "last_mark_ts": "2026-11-20T21:35:01.972093+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7878,7 +7898,7 @@
     "open": 0,
     "att": 56,
     "rej": 40,
-    "last_mark_ts": "2026-11-20T21:25:24.952318+08:00",
+    "last_mark_ts": "2026-11-20T21:35:10.688916+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8151,7 +8171,7 @@
     "open": 0,
     "att": 133,
     "rej": 101,
-    "last_mark_ts": "2026-11-20T21:25:24.952318+08:00",
+    "last_mark_ts": "2026-11-20T21:35:10.688916+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8424,7 +8444,7 @@
     "open": 0,
     "att": 77,
     "rej": 53,
-    "last_mark_ts": "2026-11-20T21:25:24.952318+08:00",
+    "last_mark_ts": "2026-11-20T21:35:10.688916+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8697,7 +8717,7 @@
     "open": 0,
     "att": 286,
     "rej": 265,
-    "last_mark_ts": "2026-11-20T21:25:24.952318+08:00",
+    "last_mark_ts": "2026-11-20T21:35:10.688916+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8970,7 +8990,7 @@
     "open": 0,
     "att": 38,
     "rej": 15,
-    "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+    "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9243,7 +9263,7 @@
     "open": 0,
     "att": 38,
     "rej": 15,
-    "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+    "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9516,7 +9536,7 @@
     "open": 0,
     "att": 54,
     "rej": 30,
-    "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+    "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9789,7 +9809,7 @@
     "open": 0,
     "att": 26,
     "rej": 4,
-    "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+    "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10062,7 +10082,7 @@
     "open": 0,
     "att": 25,
     "rej": 3,
-    "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+    "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10335,7 +10355,7 @@
     "open": 0,
     "att": 66,
     "rej": 41,
-    "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+    "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10608,7 +10628,7 @@
     "open": 0,
     "att": 58,
     "rej": 31,
-    "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+    "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10881,7 +10901,7 @@
     "open": 0,
     "att": 31,
     "rej": 8,
-    "last_mark_ts": "2026-11-20T21:25:28.520407+08:00",
+    "last_mark_ts": "2026-11-20T21:35:19.406064+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -11145,19 +11165,39 @@
   "note": "PARITY-100 / BAND-100 / FORWARD-100 / ELITE-LAB V3 实时模拟运行中，与实盘严格策略同步对照。"
  },
  "ledger": {
-  "rebuilt_at": "2026-11-20 21:25:16",
-  "equity": 80.70386,
-  "total_pnl": -70.2727,
-  "n_settled": 103,
+  "rebuilt_at": "2026-11-20 21:35:25",
+  "equity": 70.90386,
+  "total_pnl": -80.0727,
+  "n_settled": 104,
   "n_win": 51,
-  "n_loss": 52,
-  "winrate": 49.5,
+  "n_loss": 53,
+  "winrate": 49.0,
   "groups": [
    {
     "sid": "short_fixed_time.px35_40",
-    "n": 39,
-    "pnl": -0.3217,
+    "n": 40,
+    "pnl": -10.1217,
     "trades": [
+     {
+      "coin": "#416451",
+      "oid": 41645,
+      "side": "NO",
+      "perp": "",
+      "expiry": "",
+      "sid": "short_fixed_time.px35_40",
+      "open_ms": 1795181111895,
+      "settle_ms": 1795181409917,
+      "fill_px": 0.35,
+      "qty": 28.0,
+      "cost": 9.8,
+      "buy_fee": 0.0,
+      "settle_px": 0.0,
+      "pnl": -9.8,
+      "settle_fee": 0.0,
+      "status": "settled",
+      "result": "loss",
+      "close_type": "settlement"
+     },
      {
       "coin": "#415761",
       "oid": 41576,
@@ -13294,7 +13334,7 @@
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "21:24:49",
-  "last_repair": "2026-11-20 21:07:47"
+  "ledger_mtime": "21:34:10",
+  "last_repair": "2026-11-20 21:35:10"
  }
 }
