@@ -1,6 +1,6 @@
 {
- "as_of": "2026-11-20 11:16",
- "_pushed_at": 1795144619,
+ "as_of": "2026-11-20 11:36",
+ "_pushed_at": 1795145777,
  "focus": {
   "enabled": true,
   "sid": "short_fixed_time.px35_40",
@@ -16,46 +16,47 @@
    "stop_absolute": false,
    "stop_150": true,
    "ws_pid": 34320,
-   "ws_hb_age_s": 0.4,
+   "ws_hb_age_s": 9.2,
    "ws_alive": true,
-   "marks_age_s": 6.9,
-   "engine_status": "实盘持仓中",
+   "marks_age_s": 9.1,
+   "engine_status": "实盘盯盘中（空仓等信号）",
    "equity": 108.9703,
    "floor_buffer": 58.97,
-   "total_pnl": -31.6427,
+   "total_pnl": -42.0427,
    "n_all": 94,
-   "n_settled": 93,
-   "n_open": 1,
+   "n_settled": 94,
+   "n_open": 0,
    "n_win": 48,
-   "n_loss": 45,
-   "winrate": 51.6,
-   "rebuilt_at": "2026-11-20 11:15:17",
+   "n_loss": 46,
+   "winrate": 51.1,
+   "rebuilt_at": "2026-11-20 11:35:13",
    "sid_stats": {
     "sid": "short_fixed_time.px35_40",
-    "n": 29,
+    "n": 30,
     "win": 15,
-    "loss": 14,
-    "pnl": 38.3083
+    "loss": 15,
+    "pnl": 27.9083
    },
    "recent_trades": [
     {
      "coin": "#411651",
      "oid": 41165,
      "side": "NO",
-     "perp": "BTC",
-     "expiry": "20261120-0315",
+     "perp": "",
+     "expiry": "",
      "sid": "short_fixed_time.px35_40",
      "open_ms": 1795144241428,
-     "settle_ms": null,
+     "settle_ms": 1795144547524,
      "fill_px": 0.65,
      "qty": 16.0,
      "cost": 10.4,
      "buy_fee": 0.0,
-     "settle_px": null,
-     "pnl": null,
-     "settle_fee": null,
-     "status": "open",
-     "result": "open"
+     "settle_px": 0.0,
+     "pnl": -10.4,
+     "settle_fee": 0.0,
+     "status": "settled",
+     "result": "loss",
+     "close_type": "settlement"
     },
     {
      "coin": "#411420",
@@ -283,20 +284,21 @@
      "coin": "#411651",
      "oid": 41165,
      "side": "NO",
-     "perp": "BTC",
-     "expiry": "20261120-0315",
+     "perp": "",
+     "expiry": "",
      "sid": "short_fixed_time.px35_40",
      "open_ms": 1795144241428,
-     "settle_ms": null,
+     "settle_ms": 1795144547524,
      "fill_px": 0.65,
      "qty": 16.0,
      "cost": 10.4,
      "buy_fee": 0.0,
-     "settle_px": null,
-     "pnl": null,
-     "settle_fee": null,
-     "status": "open",
-     "result": "open"
+     "settle_px": 0.0,
+     "pnl": -10.4,
+     "settle_fee": 0.0,
+     "status": "settled",
+     "result": "loss",
+     "close_type": "settlement"
     },
     {
      "coin": "#411420",
@@ -2520,26 +2522,26 @@
   },
   "sampler": {
    "files": 2,
-   "rows": 11736,
-   "markets": 356,
+   "rows": 12009,
+   "markets": 362,
    "n_med": 25.0,
    "span_med_min": 5.6,
-   "decided": 305,
-   "decided_pct": 85.7,
-   "newest_age_s": 13.4,
-   "heartbeat_age_s": 6.5
+   "decided": 312,
+   "decided_pct": 86.2,
+   "newest_age_s": 23.9,
+   "heartbeat_age_s": 2.9
   }
  },
  "m15": {
-  "pnl": -71850.52,
-  "n": 134173,
-  "settles": 134173,
-  "exps": 2600,
+  "pnl": -72296.73,
+  "n": 134321,
+  "settles": 134321,
+  "exps": 2611,
   "sids": 238,
   "win": 60.7,
-  "pos_sid": 27,
-  "neg_sid": 211,
-  "hours": 159,
+  "pos_sid": 26,
+  "neg_sid": 212,
+  "hours": 160,
   "per_trade": -0.54,
   "mult": 51,
   "top": [
@@ -2636,21 +2638,21 @@
  "real": [
   {
    "name": "链上实盘(官方口径)",
-   "settles": 93,
+   "settles": 94,
    "wins": 48,
-   "winrate": 51.6,
-   "pnl": -31.64,
-   "open": 1,
+   "winrate": 51.1,
+   "pnl": -42.04,
+   "open": 0,
    "equity": 108.97,
-   "status": "实盘持仓中",
+   "status": "实盘盯盘中（空仓等信号）",
    "source": "api.hyperliquid.xyz/info · userFills（官方权威）",
-   "as_of": "2026-11-20 11:15:17"
+   "as_of": "2026-11-20 11:35:13"
   }
  ],
  "gate": {
   "sessions": "28/8",
   "sessions_ok": true,
-  "ev": "513/20",
+  "ev": "514/20",
   "ev_ok": true,
   "mature": "1/3",
   "mature_ok": false,
@@ -2662,22 +2664,22 @@
  "multi100": null,
  "daily100": null,
  "parity100": {
-  "as_of": "2026-11-20T11:17:19.213427+08:00",
+  "as_of": "2026-11-20T11:36:58.841125+08:00",
   "start_at": "2026-11-15T19:22:56.144707+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
-  "hours_left": 996.7,
+  "hours_left": 996.4,
   "accounts": 248,
   "traded": 122,
   "profitable": 11,
   "starved": 91,
   "alive": 157,
   "median_pnl": -93.3,
-  "attempts": 13679,
-  "rejects": 2570,
+  "attempts": 13691,
+  "rejects": 2580,
   "fill_rate": 81.2,
   "avg_slip": 0.03057,
   "phase": "running",
-  "scans": 10811,
+  "scans": 10846,
   "rows": [
    {
     "sid": "short_favored_follow.v8",
@@ -2692,9 +2694,9 @@
     "open": 0,
     "fees": 4.4,
     "starved": false,
-    "att": 495,
-    "rej": 141,
-    "fr": 71.5,
+    "att": 496,
+    "rej": 142,
+    "fr": 71.4,
     "slip": -0.00168,
     "multi_pnl": 74.63,
     "multi_n": 11,
@@ -2734,9 +2736,9 @@
     "open": 0,
     "fees": 2.11,
     "starved": false,
-    "att": 243,
-    "rej": 86,
-    "fr": 64.6,
+    "att": 244,
+    "rej": 87,
+    "fr": 64.3,
     "slip": 0.00485,
     "multi_pnl": 26.93,
     "multi_n": 7,
@@ -2976,23 +2978,23 @@
    {
     "sid": "short_fixed_time.px90_95",
     "fam": "固定时窗",
-    "eq": 84.56,
-    "pnl": -15.44,
-    "ret": -15.44,
-    "n": 121,
-    "wr": 90.9,
-    "yes": 97,
+    "eq": 85.11,
+    "pnl": -14.89,
+    "ret": -14.89,
+    "n": 122,
+    "wr": 91.0,
+    "yes": 98,
     "no": 24,
     "open": 0,
-    "fees": 1.43,
+    "fees": 1.44,
     "starved": false,
-    "att": 201,
+    "att": 202,
     "rej": 80,
-    "fr": 60.2,
-    "slip": -0.0056,
+    "fr": 60.4,
+    "slip": -0.0053,
     "multi_pnl": -8.48,
     "multi_n": 7,
-    "diff": -6.96
+    "diff": -6.41
    },
    {
     "sid": "short_favored_follow.px60_65",
@@ -3007,8 +3009,8 @@
     "open": 0,
     "fees": 5.14,
     "starved": false,
-    "att": 782,
-    "rej": 339,
+    "att": 783,
+    "rej": 340,
     "fr": 56.6,
     "slip": 0.00796,
     "multi_pnl": 46.74,
@@ -3028,9 +3030,9 @@
     "open": 0,
     "fees": 1.57,
     "starved": false,
-    "att": 191,
-    "rej": 66,
-    "fr": 65.4,
+    "att": 192,
+    "rej": 67,
+    "fr": 65.1,
     "slip": 0.01445,
     "multi_pnl": 21.62,
     "multi_n": 3,
@@ -3163,47 +3165,47 @@
     "diff": null
    },
    {
-    "sid": "short_cheap_fade.v1",
-    "fam": "反向抄便宜",
-    "eq": 34.37,
-    "pnl": -65.63,
-    "ret": -65.63,
-    "n": 6,
-    "wr": 0.0,
-    "yes": 2,
-    "no": 4,
+    "sid": "short_fixed_time.px85_90",
+    "fam": "固定时窗",
+    "eq": 28.64,
+    "pnl": -71.36,
+    "ret": -71.36,
+    "n": 89,
+    "wr": 80.9,
+    "yes": 58,
+    "no": 31,
     "open": 0,
-    "fees": 0.0,
+    "fees": 0.94,
     "starved": false,
-    "att": 8,
-    "rej": 2,
-    "fr": 75.0,
-    "slip": -0.00424,
-    "multi_pnl": -20.06,
-    "multi_n": 2,
-    "diff": -45.57
+    "att": 129,
+    "rej": 40,
+    "fr": 69.0,
+    "slip": 0.0023,
+    "multi_pnl": 3.6,
+    "multi_n": 3,
+    "diff": -74.96
    }
   ],
   "gap": {
    "n": 1198,
    "median": 0.0,
    "p90": 0.08,
-   "pos_share": 43.1
+   "pos_share": 43.6
   },
   "base_median": 14.63,
   "events": {
-   "events": 973,
-   "settled": 10832,
+   "events": 975,
+   "settled": 10834,
    "per_event": 11.1,
-   "win": 526,
+   "win": 527,
    "wr": 54.1,
-   "pnl": -9155.26,
+   "pnl": -9165.72,
    "thick": true
   },
-  "tight_hit_rate": 65.0
+  "tight_hit_rate": 64.7
  },
  "daily_parity": {
-  "as_of": "2026-11-20T11:12:40.993393+08:00",
+  "as_of": "2026-11-20T11:36:35.832846+08:00",
   "start_at": "2026-11-15T19:56:22.817088+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
   "accounts": 40,
@@ -3215,7 +3217,7 @@
   "rejects": 17,
   "fill_rate": 97.1,
   "avg_slip": 0.00078,
-  "cycles": 1682,
+  "cycles": 1683,
   "rows": [
    {
     "sid": "fixed_vol_edge.v1_fast",
@@ -3691,7 +3693,7 @@
   }
  },
  "band100": {
-  "as_of": "2026-11-20T11:18:01.407713+08:00",
+  "as_of": "2026-11-20T11:37:21.900267+08:00",
   "start_at": "2026-11-16T14:33:01.122811+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
   "band": [
@@ -4179,7 +4181,7 @@
   }
  },
  "band_v2": {
-  "as_of": "2026-11-20T11:17:50.846940+08:00",
+  "as_of": "2026-11-20T11:37:41.498280+08:00",
   "start_at": "2026-11-17T14:33:01+08:00",
   "end_at": "2026-11-20T14:33:01+08:00",
   "band": [
@@ -4672,11 +4674,11 @@
   }
  },
  "forward100": {
-  "as_of": "2026-11-20T11:17:45.957220+08:00",
+  "as_of": "2026-11-20T11:37:37.589566+08:00",
   "campaign": "FORWARD-100-20261118",
   "start_at": "2026-11-18T09:58:21.546588+08:00",
   "end_at": "2026-12-31T23:59:59+08:00",
-  "hours_left": 996.7,
+  "hours_left": 996.4,
   "accounts": 4,
   "traded": 4,
   "profitable": 1,
@@ -4697,7 +4699,7 @@
    "settle_fee": "0.07% x (scale + max(scale,1)) on payout"
   },
   "phase": "running",
-  "scans": 6724,
+  "scans": 6782,
   "fills": 87,
   "settlements": 87,
   "rows": [
@@ -4785,7 +4787,7 @@
   }
  },
  "elite": {
-  "rule": "盈利>0 且 去掉最赚3笔后仍>0 且 样本达标(15m>=40,低价盘>=10) ｜ 模拟盘持续运行中（5/5 盘 running · 最新扫描 11-20 11:18:06 · 当前在途 22 单）｜ 实盘严格池：short_fixed_time.px35_40",
+  "rule": "盈利>0 且 去掉最赚3笔后仍>0 且 样本达标(15m>=40,低价盘>=10) ｜ 模拟盘持续运行中（5/5 盘 running · 最新扫描 11-20 11:37:44 · 当前在途 22 单）｜ 实盘严格池：short_fixed_time.px35_40",
   "boards": {
    "parity100": [
     {
@@ -4801,9 +4803,9 @@
      "eq": 237.09,
      "cash": 237.09,
      "open": 0,
-     "att": 495,
-     "rej": 141,
-     "last_mark_ts": "2026-11-20T11:17:19.213427+08:00",
+     "att": 496,
+     "rej": 142,
+     "last_mark_ts": "2026-11-20T11:36:58.841125+08:00",
      "repeat": 2
     },
     {
@@ -4819,9 +4821,9 @@
      "eq": 139.19,
      "cash": 139.19,
      "open": 0,
-     "att": 243,
-     "rej": 86,
-     "last_mark_ts": "2026-11-20T11:17:19.213427+08:00",
+     "att": 244,
+     "rej": 87,
+     "last_mark_ts": "2026-11-20T11:36:58.841125+08:00",
      "repeat": 2
     }
    ],
@@ -4841,7 +4843,7 @@
      "open": 0,
      "att": 50,
      "rej": 28,
-     "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+     "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
      "repeat": 1
     },
     {
@@ -4859,7 +4861,7 @@
      "open": 0,
      "att": 34,
      "rej": 15,
-     "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+     "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
      "repeat": 1
     },
     {
@@ -4877,7 +4879,7 @@
      "open": 0,
      "att": 34,
      "rej": 15,
-     "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+     "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
      "repeat": 1
     },
     {
@@ -4895,7 +4897,7 @@
      "open": 0,
      "att": 66,
      "rej": 41,
-     "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+     "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
      "repeat": 2
     },
     {
@@ -4913,7 +4915,7 @@
      "open": 0,
      "att": 26,
      "rej": 4,
-     "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+     "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
      "repeat": 1
     },
     {
@@ -4931,7 +4933,7 @@
      "open": 0,
      "att": 25,
      "rej": 3,
-     "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+     "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
      "repeat": 2
     },
     {
@@ -4949,7 +4951,7 @@
      "open": 0,
      "att": 58,
      "rej": 31,
-     "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+     "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
      "repeat": 2
     }
    ],
@@ -5114,9 +5116,9 @@
     "eq": 237.09,
     "cash": 237.09,
     "open": 0,
-    "att": 495,
-    "rej": 141,
-    "last_mark_ts": "2026-11-20T11:17:19.213427+08:00",
+    "att": 496,
+    "rej": 142,
+    "last_mark_ts": "2026-11-20T11:36:58.841125+08:00",
     "repeat": 2
    },
    {
@@ -5132,9 +5134,9 @@
     "eq": 139.19,
     "cash": 139.19,
     "open": 0,
-    "att": 243,
-    "rej": 86,
-    "last_mark_ts": "2026-11-20T11:17:19.213427+08:00",
+    "att": 244,
+    "rej": 87,
+    "last_mark_ts": "2026-11-20T11:36:58.841125+08:00",
     "repeat": 2
    }
   ],
@@ -5210,10 +5212,10 @@
   "sim_status": {
    "running_boards": 5,
    "total_boards": 5,
-   "latest_scan": "2026-11-20T11:18:06.204396+08:00",
-   "latest_scan_bj": "11-20 11:18:06",
+   "latest_scan": "2026-11-20T11:37:44.072155+08:00",
+   "latest_scan_bj": "11-20 11:37:44",
    "tot_open": 22,
-   "tot_fills": 12334,
+   "tot_fills": 12336,
    "live_focus": [
     "short_fixed_time.px35_40"
    ],
@@ -5222,51 +5224,51 @@
      "board": "parity100",
      "label": "PARITY-100 全池同构",
      "phase": "running",
-     "scans": 10813,
-     "fills": 10831,
-     "settlements": 10832,
-     "last_scan": "2026-11-20T11:18:06.204396+08:00",
-     "last_scan_bj": "11-20 11:18:06"
+     "scans": 10846,
+     "fills": 10833,
+     "settlements": 10834,
+     "last_scan": "2026-11-20T11:36:58.841125+08:00",
+     "last_scan_bj": "11-20 11:36:58"
     },
     {
      "board": "band100",
      "label": "BAND-100 低价区间",
      "phase": "running",
-     "scans": 6260,
+     "scans": 6304,
      "fills": 808,
      "settlements": 808,
-     "last_scan": "2026-11-20T11:18:01.407713+08:00",
-     "last_scan_bj": "11-20 11:18:01"
+     "last_scan": "2026-11-20T11:37:44.072155+08:00",
+     "last_scan_bj": "11-20 11:37:44"
     },
     {
      "board": "forward100",
      "label": "FORWARD-100 前瞻验证",
      "phase": "running",
-     "scans": 6724,
+     "scans": 6782,
      "fills": 87,
      "settlements": 87,
-     "last_scan": "2026-11-20T11:17:45.957220+08:00",
-     "last_scan_bj": "11-20 11:17:45"
+     "last_scan": "2026-11-20T11:37:37.589566+08:00",
+     "last_scan_bj": "11-20 11:37:37"
     },
     {
      "board": "elite_lab",
      "label": "ELITE-LAB V3 迭代赛马",
      "phase": "running",
-     "scans": 4694,
+     "scans": 4750,
      "fills": 41,
      "settlements": 41,
-     "last_scan": "2026-11-20T11:17:56.034346+08:00",
-     "last_scan_bj": "11-20 11:17:56"
+     "last_scan": "2026-11-20T11:37:10.854738+08:00",
+     "last_scan_bj": "11-20 11:37:10"
     },
     {
      "board": "daily_parity",
      "label": "DAILY-PARITY 24h日盘同构",
      "phase": "running",
-     "scans": 1682,
+     "scans": 1683,
      "fills": 567,
      "settlements": 0,
-     "last_scan": "2026-11-20T11:10:08.754222+08:00",
-     "last_scan_bj": "11-20 11:10:08"
+     "last_scan": "2026-11-20T11:24:40.773771+08:00",
+     "last_scan_bj": "11-20 11:24:40"
     }
    ]
   },
@@ -7056,7 +7058,7 @@
     "open": 0,
     "att": 2,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T11:16:55.724538+08:00",
+    "last_mark_ts": "2026-11-20T11:36:10.656725+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7108,7 +7110,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T11:16:55.724538+08:00",
+    "last_mark_ts": "2026-11-20T11:36:10.656725+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7125,7 +7127,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T11:16:55.724538+08:00",
+    "last_mark_ts": "2026-11-20T11:36:10.656725+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7142,7 +7144,7 @@
     "open": 0,
     "att": 2,
     "rej": 2,
-    "last_mark_ts": "2026-11-20T11:16:55.724538+08:00",
+    "last_mark_ts": "2026-11-20T11:36:10.656725+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7159,7 +7161,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T11:16:55.724538+08:00",
+    "last_mark_ts": "2026-11-20T11:36:10.656725+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7176,7 +7178,7 @@
     "open": 0,
     "att": 0,
     "rej": 0,
-    "last_mark_ts": "2026-11-20T11:16:55.724538+08:00",
+    "last_mark_ts": "2026-11-20T11:36:10.656725+08:00",
     "open_list": [],
     "recent_trades": []
    },
@@ -7193,7 +7195,7 @@
     "open": 0,
     "att": 32,
     "rej": 20,
-    "last_mark_ts": "2026-11-20T11:16:55.724538+08:00",
+    "last_mark_ts": "2026-11-20T11:36:10.656725+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7415,7 +7417,7 @@
     "open": 0,
     "att": 81,
     "rej": 54,
-    "last_mark_ts": "2026-11-20T11:16:55.724538+08:00",
+    "last_mark_ts": "2026-11-20T11:36:10.656725+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7686,9 +7688,9 @@
     "wins": 173,
     "wr": 48.9,
     "open": 0,
-    "att": 495,
-    "rej": 141,
-    "last_mark_ts": "2026-11-20T11:17:19.213427+08:00",
+    "att": 496,
+    "rej": 142,
+    "last_mark_ts": "2026-11-20T11:36:58.841125+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -7959,9 +7961,9 @@
     "wins": 102,
     "wr": 65.0,
     "open": 0,
-    "att": 243,
-    "rej": 86,
-    "last_mark_ts": "2026-11-20T11:17:19.213427+08:00",
+    "att": 244,
+    "rej": 87,
+    "last_mark_ts": "2026-11-20T11:36:58.841125+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8234,7 +8236,7 @@
     "open": 0,
     "att": 51,
     "rej": 35,
-    "last_mark_ts": "2026-11-20T11:16:45.244193+08:00",
+    "last_mark_ts": "2026-11-20T11:37:17.589865+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8507,7 +8509,7 @@
     "open": 0,
     "att": 116,
     "rej": 87,
-    "last_mark_ts": "2026-11-20T11:16:45.244193+08:00",
+    "last_mark_ts": "2026-11-20T11:37:17.589865+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -8780,7 +8782,7 @@
     "open": 0,
     "att": 59,
     "rej": 38,
-    "last_mark_ts": "2026-11-20T11:16:45.244193+08:00",
+    "last_mark_ts": "2026-11-20T11:37:17.589865+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9053,7 +9055,7 @@
     "open": 0,
     "att": 246,
     "rej": 225,
-    "last_mark_ts": "2026-11-20T11:16:45.244193+08:00",
+    "last_mark_ts": "2026-11-20T11:37:17.589865+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9326,7 +9328,7 @@
     "open": 0,
     "att": 50,
     "rej": 28,
-    "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+    "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9599,7 +9601,7 @@
     "open": 0,
     "att": 34,
     "rej": 15,
-    "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+    "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -9872,7 +9874,7 @@
     "open": 0,
     "att": 34,
     "rej": 15,
-    "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+    "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10145,7 +10147,7 @@
     "open": 0,
     "att": 26,
     "rej": 4,
-    "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+    "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10418,7 +10420,7 @@
     "open": 0,
     "att": 25,
     "rej": 3,
-    "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+    "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10691,7 +10693,7 @@
     "open": 0,
     "att": 66,
     "rej": 41,
-    "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+    "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -10964,7 +10966,7 @@
     "open": 0,
     "att": 58,
     "rej": 31,
-    "last_mark_ts": "2026-11-20T11:16:54.444072+08:00",
+    "last_mark_ts": "2026-11-20T11:36:32.243577+08:00",
     "open_list": [],
     "recent_trades": [
      {
@@ -11228,37 +11230,38 @@
   "note": "PARITY-100 / BAND-100 / FORWARD-100 / ELITE-LAB V3 实时模拟运行中，与实盘严格策略同步对照。"
  },
  "ledger": {
-  "rebuilt_at": "2026-11-20 11:15:17",
+  "rebuilt_at": "2026-11-20 11:35:13",
   "equity": 108.97026,
-  "total_pnl": -31.6427,
-  "n_settled": 93,
+  "total_pnl": -42.0427,
+  "n_settled": 94,
   "n_win": 48,
-  "n_loss": 45,
-  "winrate": 51.6,
+  "n_loss": 46,
+  "winrate": 51.1,
   "groups": [
    {
     "sid": "short_fixed_time.px35_40",
-    "n": 29,
-    "pnl": 38.3083,
+    "n": 30,
+    "pnl": 27.9083,
     "trades": [
      {
       "coin": "#411651",
       "oid": 41165,
       "side": "NO",
-      "perp": "BTC",
-      "expiry": "20261120-0315",
+      "perp": "",
+      "expiry": "",
       "sid": "short_fixed_time.px35_40",
       "open_ms": 1795144241428,
-      "settle_ms": null,
+      "settle_ms": 1795144547524,
       "fill_px": 0.65,
       "qty": 16.0,
       "cost": 10.4,
       "buy_fee": 0.0,
-      "settle_px": null,
-      "pnl": null,
-      "settle_fee": null,
-      "status": "open",
-      "result": "open"
+      "settle_px": 0.0,
+      "pnl": -10.4,
+      "settle_fee": 0.0,
+      "status": "settled",
+      "result": "loss",
+      "close_type": "settlement"
      },
      {
       "coin": "#411420",
@@ -13196,7 +13199,7 @@
  },
  "system": {
   "guardian": "运行中",
-  "ledger_mtime": "11:13:39",
-  "last_repair": "2026-11-20 11:15:15"
+  "ledger_mtime": "11:33:33",
+  "last_repair": "2026-11-20 11:35:14"
  }
 }
